@@ -6,7 +6,7 @@ CORPUS ?= ../.bench-data/mcp-security-scanner/corpus
 PRIVATE ?= ../.bench-data/mcp-security-scanner/private
 PLANTED ?= ../.bench-data/mcp-security-scanner/planted
 
-.PHONY: help all build dist demo-server test race vet fmt fmt-check coverage fuzz microbench bench compare corpus precision speed rules-doc diagram docker demo clean
+.PHONY: help all build dist demo-server test race vet fmt fmt-check coverage fuzz microbench bench compare corpus precision speed rules-doc diagram docker demo clean changelog cut-release
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
@@ -91,3 +91,9 @@ demo: build demo-server ## Record the demo GIFs with vhs
 
 clean: ## Remove build artifacts
 	rm -rf bin dist coverage.out
+
+changelog: ## Regenerate CHANGELOG.md from Conventional Commits (git-cliff)
+	git cliff --output CHANGELOG.md && perl -0pi -e 's/\n+\z/\n/' CHANGELOG.md
+
+cut-release: ## Cut a release locally: version bump, changelog, tag, GitHub release (RELEASE_VERSION=vX.Y.Z optional)
+	scripts/release.sh $(RELEASE_VERSION)
