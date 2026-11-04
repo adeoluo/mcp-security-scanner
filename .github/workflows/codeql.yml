@@ -8,20 +8,27 @@ on:
 
 permissions:
   contents: read
-  security-events: write
 
 jobs:
   analyze:
     name: Analyze (${{ matrix.language }})
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
     strategy:
       fail-fast: false
       matrix:
-        language: ["python"]
+        language: ["go"]
     steps:
       - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
       - uses: github/codeql-action/init@v4
         with:
           languages: ${{ matrix.language }}
-          queries: security-and-quality
+          build-mode: autobuild
       - uses: github/codeql-action/analyze@v4
+        with:
+          category: /language:${{ matrix.language }}
