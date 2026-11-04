@@ -1,0 +1,41 @@
+# MCP Security Scanner
+
+> A Go scanner for Model Context Protocol servers: taint analysis of server source, tool-poisoning checks on tool metadata, live probing over stdio and HTTP, and rug-pull pinning, with SARIF output for CI.
+
+Languages: Go. License: MIT. Source: https://github.com/adeoluo/mcp-security-scanner
+
+## Docs
+
+- [README](https://github.com/adeoluo/mcp-security-scanner/blob/main/README.md): motivation, architecture, results, quickstart, usage, design decisions, testing, responsible ai, limitations, roadmap
+- [AGENTS.md](https://github.com/adeoluo/mcp-security-scanner/blob/main/AGENTS.md): layout, commands and conventions for changing the code
+- [Architecture diagram](https://github.com/adeoluo/mcp-security-scanner/blob/main/docs/architecture/architecture.mmd): Mermaid source of the component diagram
+- [Architecture](https://github.com/adeoluo/mcp-security-scanner/blob/main/docs/ARCHITECTURE.md)
+- [Data card](https://github.com/adeoluo/mcp-security-scanner/blob/main/docs/DATA_CARD.md)
+- [Definition of Done](https://github.com/adeoluo/mcp-security-scanner/blob/main/docs/DEFINITION_OF_DONE.md)
+- [Evaluation report](https://github.com/adeoluo/mcp-security-scanner/blob/main/docs/EVALUATION_REPORT.md)
+- [Rules](https://github.com/adeoluo/mcp-security-scanner/blob/main/docs/RULES.md)
+- [Threat model](https://github.com/adeoluo/mcp-security-scanner/blob/main/docs/THREAT_MODEL.md)
+- [ADR 0001: Record architecture decisions](https://github.com/adeoluo/mcp-security-scanner/blob/main/docs/adr/0001-record-architecture-decisions.md)
+- [ADR 0002: A single Go binary with a hand-written lexer](https://github.com/adeoluo/mcp-security-scanner/blob/main/docs/adr/0002-go-binary-with-hand-written-lexer.md)
+- [ADR 0003: Token-level taint tracking with per-function summaries](https://github.com/adeoluo/mcp-security-scanner/blob/main/docs/adr/0003-token-level-taint-with-summaries.md)
+- [ADR 0004: Where tool input comes from](https://github.com/adeoluo/mcp-security-scanner/blob/main/docs/adr/0004-where-tool-input-comes-from.md)
+- [ADR 0005: Pinning tool definitions by hash](https://github.com/adeoluo/mcp-security-scanner/blob/main/docs/adr/0005-pinning-tool-definitions.md)
+- [ADR 0006: Measuring public servers without disclosing them](https://github.com/adeoluo/mcp-security-scanner/blob/main/docs/adr/0006-corpus-research-without-disclosure.md)
+- [ADR-NNNN: <short title>](https://github.com/adeoluo/mcp-security-scanner/blob/main/docs/adr/template.md)
+- [Changelog](https://github.com/adeoluo/mcp-security-scanner/blob/main/CHANGELOG.md): release history
+
+## Source
+
+- [cmd/mcp-demo-server](https://github.com/adeoluo/mcp-security-scanner/tree/main/cmd/mcp-demo-server): Command mcp-demo-server runs the inert demo MCP server over stdio or Streamable HTTP.
+- [cmd/mcpscan](https://github.com/adeoluo/mcp-security-scanner/tree/main/cmd/mcpscan): Command mcpscan scans Model Context Protocol servers and tool definitions for security issues.
+- [internal/analysis](https://github.com/adeoluo/mcp-security-scanner/tree/main/internal/analysis): Package analysis is the static analyzer for MCP server source code (JavaScript, TypeScript, Python).
+- [internal/cli](https://github.com/adeoluo/mcp-security-scanner/tree/main/internal/cli): Package cli implements the mcpscan command line.
+- [internal/demoserver](https://github.com/adeoluo/mcp-security-scanner/tree/main/internal/demoserver): Package demoserver is a small, inert MCP server used by tests, demos and the planted benchmark.
+- [internal/findings](https://github.com/adeoluo/mcp-security-scanner/tree/main/internal/findings): Package findings defines the finding model and the catalog of rules every analyzer reports against.
+- [internal/lexer](https://github.com/adeoluo/mcp-security-scanner/tree/main/internal/lexer): Package lexer turns JavaScript, TypeScript and Python source into a flat token stream.
+- [internal/manifest](https://github.com/adeoluo/mcp-security-scanner/tree/main/internal/manifest): Package manifest models what an MCP server exposes (tools, prompts, resources, instructions), checks tool schemas against the specification, and pins definitions by hash to detect rug pulls.
+- [internal/mcp](https://github.com/adeoluo/mcp-security-scanner/tree/main/internal/mcp): Package mcp is a minimal Model Context Protocol client for probing servers over stdio and Streamable HTTP: initialize, list tools, prompts and resources, and run transport checks.
+- [internal/plant](https://github.com/adeoluo/mcp-security-scanner/tree/main/internal/plant): Package plant generates the planted-vulnerability benchmark: small MCP servers in TypeScript and Python, each with exactly one labeled case (a planted vulnerability or a safe look-alike), plus...
+- [internal/poison](https://github.com/adeoluo/mcp-security-scanner/tree/main/internal/poison): Package poison analyzes tool metadata (names, descriptions, parameter descriptions) for tool-poisoning techniques: instructions aimed at the model, invisible Unicode, references to credential files...
+- [internal/report](https://github.com/adeoluo/mcp-security-scanner/tree/main/internal/report): Package report renders findings as text, JSON or SARIF 2.1.0.
+- [internal/server](https://github.com/adeoluo/mcp-security-scanner/tree/main/internal/server): Package server exposes the offline analyzers over HTTP with health, readiness and Prometheus metrics.
