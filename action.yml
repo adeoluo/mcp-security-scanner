@@ -1,0 +1,52 @@
+name: MCP Security Scanner
+description: Scan MCP server source and tool manifests for command injection, path traversal, SSRF, secrets and tool poisoning.
+author: Adeolu Ogunnoiki
+branding:
+  icon: shield
+  color: blue
+
+inputs:
+  path:
+    description: Directory or file to scan.
+    default: "."
+  format:
+    description: Report format (sarif, json or text).
+    default: sarif
+  output:
+    description: Report file path.
+    default: mcpscan.sarif
+  fail-on:
+    description: Fail the step when a finding has at least this severity (info, low, medium, high, critical, none).
+    default: high
+  args:
+    description: Extra arguments for mcpscan scan, for example --include-tests.
+    default: ""
+
+outputs:
+  report:
+    description: Path of the report file.
+    value: ${{ inputs.output }}
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-go@v7
+      with:
+        go-version-file: ${{ github.action_path }}/go.mod
+        cache: false
+
+    - name: Build mcpscan
+      shell: bash
+      run: cd "$GITHUB_ACTION_PATH" && go build -trimpath -o "$RUNNER_TEMP/mcpscan" ./cmd/mcpscan
+
+    - name: Scan
+      shell: bash
+      env:
+        SCAN_PATH: ${{ inputs.path }}
+        SCAN_FORMAT: ${{ inputs.format }}
+        SCAN_OUTPUT: ${{ inputs.output }}
+        SCAN_FAIL_ON: ${{ inputs.fail-on }}
+        SCAN_ARGS: ${{ inputs.args }}
+      run: |
+        # shellcheck disable=SC2086
+        "$RUNNER_TEMP/mcpscan" scan "$SCAN_PATH" --format "$SCAN_FORMAT" --output "$SCAN_OUTPUT" --fail-on "$SCAN_FAIL_ON" $SCAN_ARGS
