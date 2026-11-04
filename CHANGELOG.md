@@ -4,7 +4,7 @@ All notable changes to this project are documented here. The file is generated
 from Conventional Commits by [git-cliff](https://git-cliff.org) when a release is cut
 with `make cut-release`.
 
-## Unreleased
+## [0.1.0] 2026-11-04
 
 ### Features
 
@@ -14,6 +14,10 @@ with `make cut-release`.
 - Planted-vulnerability benchmark with Semgrep and Bandit comparison (#4)
 - Public corpus scan of 1,013 MCP servers with hand-labeled precision (#6)
 
+### Bug fixes
+
+- Include a failed stdio server's stderr in the error reliably (#8)
+
 ### Documentation
 
 - Use the standard license line in the README (#5)
@@ -21,3 +25,4 @@ with `make cut-release`.
 ### Maintenance
 
 - Scaffold project
+- Release tooling, changelog and agent notes (#7)
