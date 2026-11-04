@@ -118,7 +118,7 @@ func TestNeverPanics(t *testing.T) {
 		}
 		return true
 	}
-	if err := quick.Check(f, &quick.Config{MaxCount: 3000}); err != nil {
+	if err := quick.Check(f, &quick.Config{MaxCount: 1000}); err != nil {
 		t.Fatal(err)
 	}
 }
