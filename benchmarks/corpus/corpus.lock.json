@@ -1,0 +1,4065 @@
+{
+ "sources": [
+  "registry.modelcontextprotocol.io/v0/servers",
+  "https://github.com/modelcontextprotocol/servers",
+  "https://github.com/modelcontextprotocol/servers-archived"
+ ],
+ "registry_unique_github_repos": 4869,
+ "seed": 20261103,
+ "attempted": 1502,
+ "cloned": 1013,
+ "repos": [
+  {
+   "url": "https://github.com/00utku00/ghostviral-mcp",
+   "sha": "203ced64b2bdee4fed3ba3a86f56d99960135d1c"
+  },
+  {
+   "url": "https://github.com/10ml-com/perfume-finder-mcp",
+   "sha": "d80ff09f3fe273cd7cbf1e6148cf82423202b2d5"
+  },
+  {
+   "url": "https://github.com/1102tools-dev/federal-contracting-mcps",
+   "sha": "65a73a0b8b760877119ef720ad519bd12f407d9e"
+  },
+  {
+   "url": "https://github.com/2ools/mcp-server",
+   "sha": "477a235d5a9592d1d9f9e18274bc7a37b15a8cdf"
+  },
+  {
+   "url": "https://github.com/3doptix/skills",
+   "sha": "2e0191fbc4d7f1e82bbe745cb591cba34b2d8450"
+  },
+  {
+   "url": "https://github.com/455287876-design/medicine-data-mcp",
+   "sha": "bbf0ba26b30307c8bfc683a47701c9c44f6b1f8f"
+  },
+  {
+   "url": "https://github.com/aabhisrv/spiderbrain.ai-coremind",
+   "sha": "6e8b12102b2236181100b136ee963079b1c931cd"
+  },
+  {
+   "url": "https://github.com/aadilr/changethisfile-mcp",
+   "sha": "b265b1fff3234d862ca693d1275d96404500570c"
+  },
+  {
+   "url": "https://github.com/aarekaz/metro-mcp",
+   "sha": "a6bb62f2247f861fb88de84ef543e3be7e284ca1"
+  },
+  {
+   "url": "https://github.com/aaronkpickrell/openagent-registry",
+   "sha": "ff34411765ffa1690219dd91ed9a6b4dbdfb66e7"
+  },
+  {
+   "url": "https://github.com/abdulwahabraza123/toolyour-mcp",
+   "sha": "fabc0c293f4d9d639407a3030fbb029c7be57d9f"
+  },
+  {
+   "url": "https://github.com/abenzfr/flowsimp-mcp",
+   "sha": "5ff71ab8e1df351d8552e9348657505ae81af957"
+  },
+  {
+   "url": "https://github.com/abhayjnayakk/quant-integrity",
+   "sha": "85696d7300e14c61c614ce418e90b1646693b85e"
+  },
+  {
+   "url": "https://github.com/abhirupghosh/invoke-human-plugins",
+   "sha": "6764eda23f09ab0ea04a133f06b55bad651d4108"
+  },
+  {
+   "url": "https://github.com/academyone-inc/goldseam",
+   "sha": "1b03094a35c9f8df8e6b991f2ca38886eff7e5f3"
+  },
+  {
+   "url": "https://github.com/acstener/takes-plugin",
+   "sha": "030e21c1ab89ba36b6bd96304a88fb5c9817892b"
+  },
+  {
+   "url": "https://github.com/activationking/activationking-mcp",
+   "sha": "22aa46623e6efe1fd17a17c413c8e80ad53232d4"
+  },
+  {
+   "url": "https://github.com/activeguy/statsmapped-mcp",
+   "sha": "a35d3197a5328b1976cd396b3f569c87d66580fd"
+  },
+  {
+   "url": "https://github.com/acuris-gmbh/acuris-mcp",
+   "sha": "c97bb67932207eb5f812dfc2372b29dfe2aaf286"
+  },
+  {
+   "url": "https://github.com/adamtbull/billwatchdog",
+   "sha": "1e2897b2d19e28eb5d2e2a0e3bfc38d039bfb43c"
+  },
+  {
+   "url": "https://github.com/admin3007/decisionscalc-mcp",
+   "sha": "338d9545053ac4fdf3f3eb07ba9f354b0172ed43"
+  },
+  {
+   "url": "https://github.com/adrianczuczka/mason",
+   "sha": "ab2102e3894555bd25ae83a188518107ea3dcfe9"
+  },
+  {
+   "url": "https://github.com/aevum-technology/litei18n-mcp",
+   "sha": "8ea4c756e282e687d708afdae548edd5787b7f43"
+  },
+  {
+   "url": "https://github.com/afternsapp/afterns-mcp",
+   "sha": "cb6558b20943af439535dcbc0b631aeed25e87c3"
+  },
+  {
+   "url": "https://github.com/ag-bureau/mcp-search",
+   "sha": "8e781f8e1080206e532c9ae2c8d843f467d4dc16"
+  },
+  {
+   "url": "https://github.com/agent-gigmole/agentoolrank-mcp",
+   "sha": "cf0b4f91361ac54e2ea13ec9b35a4c1e902591ff"
+  },
+  {
+   "url": "https://github.com/agent-operating-system/emailwarmup-mcp",
+   "sha": "4f1c144dba152355a7de15f35acfc78ffcfc6cb4"
+  },
+  {
+   "url": "https://github.com/agentamusementpark/agent-amusement-park",
+   "sha": "f29b88074adf255d48b1e862aa6577842364d663"
+  },
+  {
+   "url": "https://github.com/agentgates-ai/agentgates",
+   "sha": "92f03589bb33ef538704d25c82b15749780b4d09"
+  },
+  {
+   "url": "https://github.com/agents-trust/agents-trust-mcp",
+   "sha": "07fa17561c8b478a88dd6925c0f437f42520b0b6"
+  },
+  {
+   "url": "https://github.com/agentspodium/agent-gateway",
+   "sha": "7511739e17362c85f1f838d6393cf6c2128ad1f0"
+  },
+  {
+   "url": "https://github.com/agenttoolworks/mcp-servers",
+   "sha": "e8d94e96bbed233346fbb96afbfcb49f978645b2"
+  },
+  {
+   "url": "https://github.com/agenttrust/mcp-server",
+   "sha": "b31f533630e20695501cbbe935cbf97d7cca0bb4"
+  },
+  {
+   "url": "https://github.com/agentwebmap/mcp",
+   "sha": "afbfcb441b8841617b7bdfc90444fc04ce06af21"
+  },
+  {
+   "url": "https://github.com/ai-directory-partners/tooldirectory-mcp",
+   "sha": "82ba0b6c02697de544d5426ae114894aad8c469c"
+  },
+  {
+   "url": "https://github.com/ai-kaiva/bridge",
+   "sha": "bbc3779b4be90c22c5915c3dbf739c90784ce805"
+  },
+  {
+   "url": "https://github.com/aiagentcycle/aiagentcycle-mcp",
+   "sha": "496c631cb3e4434de3cd926c650d4b56b7627f61"
+  },
+  {
+   "url": "https://github.com/aiapplyd/aiapplyd-mcp",
+   "sha": "8dc5de142f94fe776cbcf4ae44e9ebb92f1a2f24"
+  },
+  {
+   "url": "https://github.com/aikarjal/wilmai",
+   "sha": "44e4595008f96abe00b4ec69439b43289d85b684"
+  },
+  {
+   "url": "https://github.com/aimentiontracker/mcp",
+   "sha": "5d1426249a8df473bd0ade4c041f7faa45087cb9"
+  },
+  {
+   "url": "https://github.com/aipozi-analytics/mcp",
+   "sha": "4e000babd8a0a1a15c12418566806c4cc26bf1da"
+  },
+  {
+   "url": "https://github.com/aiqbee/aiqbee-ai",
+   "sha": "8067cccd1a771ea61353b5425ade7f07fdf976ae"
+  },
+  {
+   "url": "https://github.com/aistlabs-ai/aistlabs-mcp",
+   "sha": "564f817057ec7c0a18c30abb1a1151fc252b5ba6"
+  },
+  {
+   "url": "https://github.com/aitopiaai/skills",
+   "sha": "4dfb6eb88c6efeb072649709001f96cf74084807"
+  },
+  {
+   "url": "https://github.com/aiwatercolorgenerator/ai-watercolor-generator-mcp",
+   "sha": "13871488d7e7506ca7e3cabc055c19785444132f"
+  },
+  {
+   "url": "https://github.com/ajantoniou/uploadcheck-mcp",
+   "sha": "2412d6f20d75f37b77c3a3c0d0db02f85ac95805"
+  },
+  {
+   "url": "https://github.com/al-source-web/clarity-mcp",
+   "sha": "1414a0963a89c9a24da2877f2e1d010a3b332187"
+  },
+  {
+   "url": "https://github.com/alainsvrd/borealhost-mcp",
+   "sha": "70b520698244017030dda902d65e288cea16c1cf"
+  },
+  {
+   "url": "https://github.com/alexandrrzk-ctrl/zaimhub-mcp",
+   "sha": "75572d85f4ad69649637bf26759ccaec2896c602"
+  },
+  {
+   "url": "https://github.com/algovesta/mcp",
+   "sha": "2ea82a29da432fe4e861e5c1d1716fc888413148"
+  },
+  {
+   "url": "https://github.com/alhogeiri2025/statementsure-mcp",
+   "sha": "1d6c1e04269ed23cf07605a241aa7b48a2f0a625"
+  },
+  {
+   "url": "https://github.com/allrates-today/central-bank-mcp",
+   "sha": "782b4e48044380dcaccc43dea57d4c994687e626"
+  },
+  {
+   "url": "https://github.com/alopez3006/helvabase-mcp",
+   "sha": "c192ba45ea92f598a4705dba42a15819e075d9d7"
+  },
+  {
+   "url": "https://github.com/alp82/goodwatch-monorepo",
+   "sha": "f39b30605d1fa1656e0a5f9c7754124837dc1bec"
+  },
+  {
+   "url": "https://github.com/alperenguntekin/shotlingo-mcp",
+   "sha": "fe9fe3ab9c712862b771f50c542a78ed4b8f0fe1"
+  },
+  {
+   "url": "https://github.com/alphago2580/naramarketmcp",
+   "sha": "79fdfc2e9485261b006dd54426f1ba701a8f3dae"
+  },
+  {
+   "url": "https://github.com/altmetric/altmetric-mcp",
+   "sha": "0e39f52e7ee82abb13b02f68f3b79d85707cb09f"
+  },
+  {
+   "url": "https://github.com/aman-amith-shastry/scientific_computation_mcp",
+   "sha": "239f3bae8728d4b48bcdc3cafca1f79ccc474d89"
+  },
+  {
+   "url": "https://github.com/amekala/ads-mcp",
+   "sha": "1fbb85c11ad71776919c64912b08bb0f9d003861"
+  },
+  {
+   "url": "https://github.com/analyticslegends/analytics-legends-mcp",
+   "sha": "2b4092982335c03e6e5b51361d90652e6f90bbfa"
+  },
+  {
+   "url": "https://github.com/andrscrrn/internet-monitor-mcp",
+   "sha": "25ca1b878f59705516a2cd7e52e41d12e2884ae8"
+  },
+  {
+   "url": "https://github.com/anhnguyendj/spywinads-mcp",
+   "sha": "6f2c33725030fc09564f25498c24e2e7e2856a0c"
+  },
+  {
+   "url": "https://github.com/aniketshaw748-hub/groundtruth",
+   "sha": "e5be5312e819775952c27fd2f008c25770d9c318"
+  },
+  {
+   "url": "https://github.com/anirbanbasu/frankfurtermcp",
+   "sha": "9041905cf56ec5f46b03647e09067a62c9537ebe"
+  },
+  {
+   "url": "https://github.com/anirbanbasu/pymcp",
+   "sha": "87671688cea11b971a14c4bee10a53065c7a6e89"
+  },
+  {
+   "url": "https://github.com/anomalyarmor/agents",
+   "sha": "74fed026fa5e525b9164705d072e790233fd9c50"
+  },
+  {
+   "url": "https://github.com/anrawool/mailrith-agent-platform",
+   "sha": "f54599ac993653a33f4c587011b453ac92345857"
+  },
+  {
+   "url": "https://github.com/anshay/zenitsu-releases",
+   "sha": "d98d1e86ee4fdbc9d1a267b759953f2da8ef504e"
+  },
+  {
+   "url": "https://github.com/antoine-olivier/euroa11y",
+   "sha": "acdf67a72c451c5260ee25f944cf7f8985c7d7aa"
+  },
+  {
+   "url": "https://github.com/apex-byte-technologies/fictura-mcp",
+   "sha": "2ee01ccfec3f9d5dad36d4ec0f0b180cdfc73e7a"
+  },
+  {
+   "url": "https://github.com/apexai-academy/sample-agents",
+   "sha": "109e3bf0fad7aa30f808cb74c66e158747ef79e4"
+  },
+  {
+   "url": "https://github.com/apextick/apextick-starter-kit",
+   "sha": "396285571468142c3567c5472c09da1ccd7040fa"
+  },
+  {
+   "url": "https://github.com/apideck-libraries/mcp",
+   "sha": "33a4e0c9d2d0be3085fd3b7fb9995fbd20fb47c4"
+  },
+  {
+   "url": "https://github.com/apiverve/mcp-server",
+   "sha": "6cbf7be7fb01c39b8dc44b08d5abd3467559001b"
+  },
+  {
+   "url": "https://github.com/apmleokeo-gif/apmzoom-mcp",
+   "sha": "5d8c0d42e06133f11e2be9998eac8f48289dfaeb"
+  },
+  {
+   "url": "https://github.com/appendixhealth/mcp-server",
+   "sha": "00e83908bd2870af9a49423916edea5cfb65a406"
+  },
+  {
+   "url": "https://github.com/appscreenstudio/appscreenstudio-mcp",
+   "sha": "dd79df893796acbdd26604f77205b3bb578995fe"
+  },
+  {
+   "url": "https://github.com/aqeelshamz/wixzel-voice-sdks",
+   "sha": "12c08856040243cb75f09ccb3cc383b50bdd9013"
+  },
+  {
+   "url": "https://github.com/archer-clawbot/thesepticguide-mcp",
+   "sha": "5017083fb9f434274873f5f1ff253400ccfbc91d"
+  },
+  {
+   "url": "https://github.com/archieangelbewithus-prog/operandi-mcp",
+   "sha": "a8f4f1437e12873b15e954429cfcc0ca9f23059b"
+  },
+  {
+   "url": "https://github.com/arconkli/soleilpictures",
+   "sha": "c071436684dd54265c27e9011eee26b0787dd62a"
+  },
+  {
+   "url": "https://github.com/arcticrexorg/veloci-plugins",
+   "sha": "ab1b843801d0e7e40454f677a5787d0d5ad65b67"
+  },
+  {
+   "url": "https://github.com/argorant/argorant-mcp",
+   "sha": "bfecd59007e14e28c656b4673c0eea02509908bd"
+  },
+  {
+   "url": "https://github.com/arkhamintelligence/arkham-mcp",
+   "sha": "32cde4993917055eb68e8510e68cdba56312c408"
+  },
+  {
+   "url": "https://github.com/arsentev-ai/contextburn",
+   "sha": "fa4f91406fc50497b53b3c57413d75c27263240a"
+  },
+  {
+   "url": "https://github.com/arugulanet/arugula",
+   "sha": "3a424a653d60ffff43a92fcca19e7601a6906d48"
+  },
+  {
+   "url": "https://github.com/aryankeluskar/poke-video-mcp",
+   "sha": "2152b0db88cbf5179528dfa01ef698d2629f9836"
+  },
+  {
+   "url": "https://github.com/atagon-gmbh/kogiqa-mcp",
+   "sha": "8fc690ae6bfee300b4e5ea51a3bc53921438b0ca"
+  },
+  {
+   "url": "https://github.com/atromxintelligence/adcopilot-claude-plugin",
+   "sha": "d8b8c1a8361e1c220d9127c141e919ba27773ff2"
+  },
+  {
+   "url": "https://github.com/audryo/agent-toolkit",
+   "sha": "379e73fe9eb533b734ece19cd5bd18d0e2a90e2d"
+  },
+  {
+   "url": "https://github.com/auscahq/ausca-mcp",
+   "sha": "9e8497982a5b931475049ea53b7507c184d40a44"
+  },
+  {
+   "url": "https://github.com/auscahq/mcp-server",
+   "sha": "9e8497982a5b931475049ea53b7507c184d40a44"
+  },
+  {
+   "url": "https://github.com/auth0/auth0-mcp-server",
+   "sha": "10390b40dc488fa4b582ba52ce861d33b518a86a"
+  },
+  {
+   "url": "https://github.com/autonomad1/computeback-mcp",
+   "sha": "e7a692dda3467c9c8585bd0974c3c7007f2d439d"
+  },
+  {
+   "url": "https://github.com/autorfp/mcp",
+   "sha": "d3bc4506f634325260c365b99cfef399dcd887b4"
+  },
+  {
+   "url": "https://github.com/auxen-ai/auxen-mcp",
+   "sha": "02a64792f5e6b3172428e758ec60b64bd0dc8cc8"
+  },
+  {
+   "url": "https://github.com/averray-agent/agent",
+   "sha": "c75ca602c5d9b26e47ebd8bc06fa2ef777e3c685"
+  },
+  {
+   "url": "https://github.com/awardtravelfinder/mcp",
+   "sha": "640f508fe2eb623a63da180956213d359b45f99f"
+  },
+  {
+   "url": "https://github.com/axiomatic-ai/ax-prover-base-mcp",
+   "sha": "5ade6ba077f7f2e10abcd6a64f124a69fe2bc6ca"
+  },
+  {
+   "url": "https://github.com/azmartone67/dchub-mcp-server",
+   "sha": "a4a75bbee2509d198bf72c5d9307f8ebb9a397ae"
+  },
+  {
+   "url": "https://github.com/babyblueviper1/invinoveritas-sdk",
+   "sha": "b2755df2916e56d792cd0ef781878c49d932a676"
+  },
+  {
+   "url": "https://github.com/badam-cpu/revamp-travel",
+   "sha": "b1037f0eafd1a7aa12ec20f5b6a2d1cdf55e7af9"
+  },
+  {
+   "url": "https://github.com/badroobot/test_m",
+   "sha": "3923dd841da9216f7c6dee8e5e9fe1ad3b9f71ba"
+  },
+  {
+   "url": "https://github.com/bapatakshay1/proving-ground",
+   "sha": "8dc2a0d254d5eaa3c1765570639d28e8035427d2"
+  },
+  {
+   "url": "https://github.com/bebotech-ou/scrapewise-mcp",
+   "sha": "91f620a78ea4f71bd9741cf7e82966d4397c0b79"
+  },
+  {
+   "url": "https://github.com/bertpc/sytecheck-mcp",
+   "sha": "63f393afde0a2b1c5428fc7cfb71efc6ee6ec64d"
+  },
+  {
+   "url": "https://github.com/bewary-app/bewary",
+   "sha": "9862586be7bf552d7ace752931b12574666587ed"
+  },
+  {
+   "url": "https://github.com/bexai/metai",
+   "sha": "931c8b501a818d96416a1fea9221259c8811868e"
+  },
+  {
+   "url": "https://github.com/bidda-ai/bidda-mcp",
+   "sha": "6555fef8f2b30ed2c733b81e1bd18a338b1682d4"
+  },
+  {
+   "url": "https://github.com/bielacki/igdb-mcp-server",
+   "sha": "cc2ec3ed1b4ef408c8dda1cb95634ca70eedd9f2"
+  },
+  {
+   "url": "https://github.com/bildow/demipass",
+   "sha": "68b490600acc87d076121597877c7b58451095ec"
+  },
+  {
+   "url": "https://github.com/billingserv/mcp",
+   "sha": "4802cf123f653117212d925a67fc7f818b42bd20"
+  },
+  {
+   "url": "https://github.com/binggio/binggio",
+   "sha": "7d70ac33161c2955a05e3daf8d85906e875fde10"
+  },
+  {
+   "url": "https://github.com/bitroadai/bitroad-mcp",
+   "sha": "2d9aaf55abee02cc1b191288121d1d7f32981e9e"
+  },
+  {
+   "url": "https://github.com/bizverify/bizverify-mcp",
+   "sha": "a38abbccd23d4fce6552aae0a9da773c8abf547f"
+  },
+  {
+   "url": "https://github.com/black-swan-causal-labs/openfda-mcp",
+   "sha": "d9529428a28fe1abf99cda0028eb700d8fd9cfcd"
+  },
+  {
+   "url": "https://github.com/blockventurechaincapital-crypto/bvcc-agent-mcp",
+   "sha": "d96b6a1de826ca4aa6b7b4a42969509858e96564"
+  },
+  {
+   "url": "https://github.com/bluetieroperations-create/blackwall-mcp-remote",
+   "sha": "4a69626259ac61051f148bc118164d81193ce69a"
+  },
+  {
+   "url": "https://github.com/bobberrisford/affiliatemcp",
+   "sha": "cba5aff01d094e7c3f239ff57a4c3a2edefb052f"
+  },
+  {
+   "url": "https://github.com/bramwell-inc/machinerelations-plugins",
+   "sha": "869a0acb7792d9530fd0e15345cc6f37b4b3bbbf"
+  },
+  {
+   "url": "https://github.com/brand52agency/noden-marketplace",
+   "sha": "6e2fd433fb5a1488373a7c42c747217cb93679c9"
+  },
+  {
+   "url": "https://github.com/branderux/branderux-mcp",
+   "sha": "e58c9df07e3acc7a515dffe6ef4cc144bc720af8"
+  },
+  {
+   "url": "https://github.com/brasilnfe/brasilnfe-mcp",
+   "sha": "2c441fa48c2fd11915aec1ed299413f2a0a43c86"
+  },
+  {
+   "url": "https://github.com/brave/brave-search-mcp-server",
+   "sha": "ee06f81e2c028c7f25a2a87a85994d0dbe241a8e"
+  },
+  {
+   "url": "https://github.com/breakreach/breakreach",
+   "sha": "bb389629599ba3a724e2f9c14084630b967ef21c"
+  },
+  {
+   "url": "https://github.com/brendanlong/lion-reader",
+   "sha": "344847ac353217bb315ba90cc5b5bcb1a64684bc"
+  },
+  {
+   "url": "https://github.com/brettonb/canaryusers-mcp",
+   "sha": "d07636f37b6e157a99620a381f09b2e8576ac7da"
+  },
+  {
+   "url": "https://github.com/brissux-labs/4bl1ty-mcp",
+   "sha": "faac7bef10ce80be36914f42fa8d9a5b0d86dfe5"
+  },
+  {
+   "url": "https://github.com/brntech/mobilevalidate-sdk",
+   "sha": "b66ac2a93a2dbee0e6abf0d8e2f55153ef0a4bcd"
+  },
+  {
+   "url": "https://github.com/browserbase/mcp-server-browserbase",
+   "sha": "3e6f53461949037d5e65dd425da3ceb1263f11d6"
+  },
+  {
+   "url": "https://github.com/built-ai/prism-mcp",
+   "sha": "fc4ebe5b60b5b307acf68a8720ba1088255739a3"
+  },
+  {
+   "url": "https://github.com/builtbygo/wphealthkit-mcp",
+   "sha": "9c3e31dfc7b5f2efd7455c8bf98ea6a5e02518f5"
+  },
+  {
+   "url": "https://github.com/bumblebox/bumblebox-mcp",
+   "sha": "496d017790d928ac38c49b455ac743bd8f910a37"
+  },
+  {
+   "url": "https://github.com/businessmcp/mcp-gateway",
+   "sha": "0cb05363bbfc77b5903697fae6073f6179b47f21"
+  },
+  {
+   "url": "https://github.com/byjg/mcpserver-byjg-docs",
+   "sha": "9889b954a00d9f9fab7552f6c227c462754a7f6f"
+  },
+  {
+   "url": "https://github.com/bykarantelicom/bykaranteli-mcp",
+   "sha": "0761aafcf7768c70b78c9162a63a6f9310533596"
+  },
+  {
+   "url": "https://github.com/bynor-s-r-l/bynor-mcp",
+   "sha": "89672f03db0f24a03f8954e4e895508bbf3d040d"
+  },
+  {
+   "url": "https://github.com/calven-ai/calven-mcp",
+   "sha": "1e51f1ff06d8b90bd1bacb3355502a83ca075f80"
+  },
+  {
+   "url": "https://github.com/calx-sa/selis-mcp",
+   "sha": "93c69bc1d836756ea6731c59b395f11a29f63d15"
+  },
+  {
+   "url": "https://github.com/cameroncooke/xcodebuildmcp",
+   "sha": "2998ac77ebbca59544e88a27f34bfb830db9d924"
+  },
+  {
+   "url": "https://github.com/catalunya-2022/mcp",
+   "sha": "1c6f4912b2692a7eb5e2e25a718823c463be8538"
+  },
+  {
+   "url": "https://github.com/cfagan17/muffed-mcp",
+   "sha": "44aff85e1490cc15ada54855c81531221ec8edb1"
+  },
+  {
+   "url": "https://github.com/cgallic/kaicalls-mcp",
+   "sha": "5c374e7b38d14056c5c00be22234ef4bef5f3187"
+  },
+  {
+   "url": "https://github.com/charonferries/mnemosyne",
+   "sha": "20a9e755e1af0a8e1ee45d35e25825fbba103971"
+  },
+  {
+   "url": "https://github.com/cheng-big/haoyoubox-agent-skill",
+   "sha": "37ee323f9b8e8c0c0a97d4f8bb8bef4b50780f5d"
+  },
+  {
+   "url": "https://github.com/cherry-it/cavyro-mcp",
+   "sha": "7274390d36ac4097c5316b0371e1abbdfc6517db"
+  },
+  {
+   "url": "https://github.com/chocopie8/speakeroo-mcp",
+   "sha": "964b6ccdcd59ae2f0350f489bf32a25e2192c3d0"
+  },
+  {
+   "url": "https://github.com/chriserikbarnes/medrecpro",
+   "sha": "ab920e6564aa688166f2b3022f649a0b0d1bda15"
+  },
+  {
+   "url": "https://github.com/chrisroge/agent-rendezvous",
+   "sha": "f158ccc68af2979a7fabf293a8868014ee71b454"
+  },
+  {
+   "url": "https://github.com/christianhohlfeld/eichmannimmobilien",
+   "sha": "c6137e75ca6939ef7629e14b9ac34b46caf36dd7"
+  },
+  {
+   "url": "https://github.com/ci-treasure-hunt/ci-treasure-web",
+   "sha": "214ba00ebf1f1d8c8f0831ec081328fec882883a"
+  },
+  {
+   "url": "https://github.com/cindyloo/dropbox-mcp-server",
+   "sha": "5f4a26886e5bdb8357faf62556d4708e7cd7725a"
+  },
+  {
+   "url": "https://github.com/cinevva-engine/mcp",
+   "sha": "ec460b0f9060197f578ab743adba730e7503c4ee"
+  },
+  {
+   "url": "https://github.com/citestamp/mcp",
+   "sha": "b23bebb1c8c053838882cbdd99ee467c1040231a"
+  },
+  {
+   "url": "https://github.com/cituna/cituna-mcp",
+   "sha": "dc401f8349a2c8caf3a3d6d1c685ebfacc0433b8"
+  },
+  {
+   "url": "https://github.com/clarifo-com/clarifo-mcp",
+   "sha": "078490d47bfb8920eda31372d7db2b318b3d918a"
+  },
+  {
+   "url": "https://github.com/clauxel/agent-data-boundary-mcp",
+   "sha": "9d0fb32f30073d4574d1271e202f6ebc5dce7b4c"
+  },
+  {
+   "url": "https://github.com/clauxel/agent-monitor-relay-mcp",
+   "sha": "ef47bf148e87dbdd6d82ecab0cce9715e1fdf55f"
+  },
+  {
+   "url": "https://github.com/clauxel/agent-skill-update-gate-mcp",
+   "sha": "9b28b16b54d8d130bb5693987f6efce83ebb7239"
+  },
+  {
+   "url": "https://github.com/clauxel/antigravity-extension-gate-mcp",
+   "sha": "ce923915873c18e1f744345a029bca6aa031c61a"
+  },
+  {
+   "url": "https://github.com/clauxel/chrome-devtools-session-mcp-mcp",
+   "sha": "8c311ba8f0f5af40c6fd24f30df6c357df3a0222"
+  },
+  {
+   "url": "https://github.com/clauxel/clawmanager-fleet-control-mcp",
+   "sha": "52ab264a4e95f22b03f70971ceb23c8b09ed8b98"
+  },
+  {
+   "url": "https://github.com/clauxel/codeg-agent-workspace-mcp",
+   "sha": "f5d34330d76558a1bd57ed70724be60b66a0bcf0"
+  },
+  {
+   "url": "https://github.com/clauxel/codex-run-ledger-mcp",
+   "sha": "dc62f4f0ad1e01d08dfc712bfcd45956f9e4746d"
+  },
+  {
+   "url": "https://github.com/clauxel/copilot-cli-switch-gate-mcp",
+   "sha": "a5366b6804f467c15d47268b4bcd371db2742992"
+  },
+  {
+   "url": "https://github.com/clauxel/copilot-connector-ledger-mcp",
+   "sha": "544388f96a5a7bd407a83acbef272adb1fb8d5cc"
+  },
+  {
+   "url": "https://github.com/clauxel/futureagi-evalops-mcp-mcp",
+   "sha": "bfa2147902b57b3faf57da5c84ecd9b8870c176c"
+  },
+  {
+   "url": "https://github.com/clauxel/gemini-omni-rights-receipt-mcp",
+   "sha": "17a7a826970fcbb0120f216b67b724afbb63045c"
+  },
+  {
+   "url": "https://github.com/clauxel/jcode-harness-cloud-mcp",
+   "sha": "41c72f6584ada7f47b34bbb69c78fbf502e73d80"
+  },
+  {
+   "url": "https://github.com/clauxel/lix-agent-version-control-mcp",
+   "sha": "069a1e36d454331f2687ac80e20675fdf912d4dd"
+  },
+  {
+   "url": "https://github.com/clauxel/mcp-oauth-scope-gate-mcp",
+   "sha": "6ffa0f481982a146b2ea071d49b9c86845366a5f"
+  },
+  {
+   "url": "https://github.com/clauxel/mcp-scope-consent-mcp",
+   "sha": "885cbd5690ef1eafd083ee44dc1fd09f5a251921"
+  },
+  {
+   "url": "https://github.com/clauxel/mcp-uptime-ledger-mcp",
+   "sha": "3221db8512e3a0aa08e3eae0b98c329e2f3e752a"
+  },
+  {
+   "url": "https://github.com/clauxel/playwright-selector-guard-mcp",
+   "sha": "249da96de50ca6ba6f936e3eec468722ab39211a"
+  },
+  {
+   "url": "https://github.com/clauxel/shipswift-component-mcp-mcp",
+   "sha": "2c9197cc0db8021ff99649732ac533c78d6691cc"
+  },
+  {
+   "url": "https://github.com/clauxel/spec-kit-acceptance-gate-mcp",
+   "sha": "7b0d2fccd8f866f53af82a8567a0b182aac8bc17"
+  },
+  {
+   "url": "https://github.com/clauxel/statewright-transition-gate-mcp",
+   "sha": "12b320e99e085c816779be3bc53cff34b43ce189"
+  },
+  {
+   "url": "https://github.com/clauxel/webmcp-action-receipt-gate-mcp",
+   "sha": "4e847ff60bcbf15ea00ddd9282586cec0d7a0955"
+  },
+  {
+   "url": "https://github.com/clauxel/zeroid-agent-identity-mcp",
+   "sha": "d0ca6202c807f5caa643761fd4ff3aff546a3a06"
+  },
+  {
+   "url": "https://github.com/clavaa/offendersearch-quickstart",
+   "sha": "633a0e9178cb960acbb8d18f98b1d597f124f9e4"
+  },
+  {
+   "url": "https://github.com/clicksend/clicksend-mcp-server",
+   "sha": "d806cee3218357d9a223738bf2b7eb4bf88f69ef"
+  },
+  {
+   "url": "https://github.com/cloudcrane-dev/cloudcrane-mcp",
+   "sha": "9d894eac25ea3c0a654d849ad58a59fab1676cc5"
+  },
+  {
+   "url": "https://github.com/cnr-consulting/tillpad-mcp",
+   "sha": "6ddc031110cf802eb4d5910132327be319c7893b"
+  },
+  {
+   "url": "https://github.com/codeblockssk/easygroupflights-mcp",
+   "sha": "d3f91c2c1b57e89be521bd45e0d34d235f248668"
+  },
+  {
+   "url": "https://github.com/codebruinc/pikasim-mcp",
+   "sha": "ca5fc9232246e5b18f0f7957e9ff38d66a73bd4c"
+  },
+  {
+   "url": "https://github.com/codeshoel/llmtomd-mcp",
+   "sha": "649c6d0acf25087c97198601c0746011c1c276bf"
+  },
+  {
+   "url": "https://github.com/cofound-agent/plugin",
+   "sha": "0de6b5f1869116e42ccd49b22d0769acad8c153e"
+  },
+  {
+   "url": "https://github.com/colt2822/drex-dotz",
+   "sha": "87717576136b4a6bef27012bb621ffdfa256830c"
+  },
+  {
+   "url": "https://github.com/commonelements/common-elements-claude-plugins",
+   "sha": "1376ffa8e41236538ee87b8771486152f8481856"
+  },
+  {
+   "url": "https://github.com/commonlandsabbe/commonlands-mcp",
+   "sha": "659c3a8fbe07577edc306cfa4807000a6c6edfe9"
+  },
+  {
+   "url": "https://github.com/compellerai/compeller-mcp",
+   "sha": "3295876bb72fc029f44800d4bb5d2de7721235d8"
+  },
+  {
+   "url": "https://github.com/compoid/compoid-mcp",
+   "sha": "e20f77f033b2c17e94b200018c3674ba78435065"
+  },
+  {
+   "url": "https://github.com/connectmachine/mcp-server",
+   "sha": "d3b63db92d54ac9d899bdc5f6a3af55d1b2c7c08"
+  },
+  {
+   "url": "https://github.com/considus/pagespeed-insights-mcp",
+   "sha": "fd027126d2aee5a7b453d725da420813c3291bd7"
+  },
+  {
+   "url": "https://github.com/contactkontey-dotcom/brydge-mcp",
+   "sha": "8b2fa399ef7198404528a2699cb7a9f6dfb821f8"
+  },
+  {
+   "url": "https://github.com/contactzapp/contactzapp-mcp",
+   "sha": "cca4a089719cad66693e11b92e1dc767cb9fcb13"
+  },
+  {
+   "url": "https://github.com/contentasoftware/mcp-launcher",
+   "sha": "6a43aa6cca5c328516eeecc216b97e5e70f62bda"
+  },
+  {
+   "url": "https://github.com/contentforge-press/esp32-mcp",
+   "sha": "2e603b9d1278b98a7c214bdabff5d3483c91bc9b"
+  },
+  {
+   "url": "https://github.com/contraptionco/mcp",
+   "sha": "0884b6977499d806d220914cca01c7e972e058fe"
+  },
+  {
+   "url": "https://github.com/conv2pdf/mcp",
+   "sha": "e210b8d2bc95197f4fed50aa623bbdcdd9f7f2f3"
+  },
+  {
+   "url": "https://github.com/conversionapi/mcp",
+   "sha": "d29345a65944b4903c693b4fa5d2d75d1260c17f"
+  },
+  {
+   "url": "https://github.com/cooldk/clize-cli",
+   "sha": "a6830b23f8621fe4ba27a9e4a3e825e02e7ec1d8"
+  },
+  {
+   "url": "https://github.com/core-nexis/corenexis-api",
+   "sha": "2bdcf1f52483de5aa69aabfe7a80e1e3bf772c01"
+  },
+  {
+   "url": "https://github.com/corralimited/snapdiff-mcp",
+   "sha": "e4201755db973f08b471083dc3b0dabbcaaddd89"
+  },
+  {
+   "url": "https://github.com/crashedfox/cosmik-mcp",
+   "sha": "44ad6d452a38bfc0f8529978e8677104cdc0e4b1"
+  },
+  {
+   "url": "https://github.com/creativeclawco/creative-claw-marketplace",
+   "sha": "8ef524092886ed3a9565a1287be9c1a530dd606a"
+  },
+  {
+   "url": "https://github.com/crimson-pass/nabit-codex-plugin",
+   "sha": "0fa4bce9f01fa54c3d665f6ecde65cb8b08ed90b"
+  },
+  {
+   "url": "https://github.com/cris-middleton/tordo",
+   "sha": "934c8d466b481a42866cd06b7848f719a766de46"
+  },
+  {
+   "url": "https://github.com/cristianoaredes/mcp-dadosbr",
+   "sha": "9be4a1bb4e75574a58c7934031a4a6a90033900c"
+  },
+  {
+   "url": "https://github.com/crm-inputs/mcp",
+   "sha": "813b5f358c6f24354549f4cb838327e029cdbeca"
+  },
+  {
+   "url": "https://github.com/crossdeckhq/crossdeck-prism",
+   "sha": "6b8f07b708b3dfb2e26d65182d7de656f74c5d34"
+  },
+  {
+   "url": "https://github.com/crustapi/crustapi-mcp",
+   "sha": "389d192af2525b7bb6aada7bb02cce8f511294b0"
+  },
+  {
+   "url": "https://github.com/cubigcorp/syntitan-mcp",
+   "sha": "bfdce080fcab71fc9917bc499cdce95a3127cd30"
+  },
+  {
+   "url": "https://github.com/cueapi/cueapi-mcp",
+   "sha": "f29c97d0113c1e0d609dc39ec152cacc147676ff"
+  },
+  {
+   "url": "https://github.com/cueframe-ai/cueframe-mcp",
+   "sha": "94391425e38c29079b65f21dfca2646f0e121014"
+  },
+  {
+   "url": "https://github.com/cultrodistro/digitalgemology-mcp",
+   "sha": "b53a7b71acce961caa519bcb9b1f19d857f28b49"
+  },
+  {
+   "url": "https://github.com/culturecreates/artsdata-mcp-server",
+   "sha": "543deac59fbfdd706aa783cdb1e2b882ef73b613"
+  },
+  {
+   "url": "https://github.com/cumulativewebinc/cwi-mcp-server",
+   "sha": "4700849ac97d74b9e235c8f568a75bfe0ef8898c"
+  },
+  {
+   "url": "https://github.com/cuongpo/coti-mcp",
+   "sha": "4f6d47fa4dd66c91ccc7a507048d6ba6613a43ea"
+  },
+  {
+   "url": "https://github.com/dagrang-repository/aplusz",
+   "sha": "5da7f55be70ddfd985b82d3449c1b7682c3ea68e"
+  },
+  {
+   "url": "https://github.com/dandyer/jobkeepr-mcp",
+   "sha": "47089378d30f3c31ee16facfbd4e9c7ee78c87ce"
+  },
+  {
+   "url": "https://github.com/danioni/coordinalo-mcp",
+   "sha": "7916fc5d1c69ea503f7d3a82fca8e791727153b6"
+  },
+  {
+   "url": "https://github.com/darkfunnels-ai/darkfunnels-mcp",
+   "sha": "0ba8c0d01ea954d3a329f393dac347d81fb79286"
+  },
+  {
+   "url": "https://github.com/dataclawe/dcl-spec",
+   "sha": "373a5464c0135122ca6707067b41487a8b3f2995"
+  },
+  {
+   "url": "https://github.com/datakoot/base-intel-mcp",
+   "sha": "883f1614fc921daaa8722c6fc94b1c3546e1f319"
+  },
+  {
+   "url": "https://github.com/datakoot/regulatory-intel-mcp",
+   "sha": "8cd20d0e56976461416bb29019c120c5510f5766"
+  },
+  {
+   "url": "https://github.com/datamagnet-co/datamagnet-mcp",
+   "sha": "84eafaf084d3ca53e9eb38cfdb951deaa99ee870"
+  },
+  {
+   "url": "https://github.com/datpaq/mcp",
+   "sha": "fa40c75d33e11ab321889e54d3739bcc676e2f63"
+  },
+  {
+   "url": "https://github.com/datpascal/frankki-mcp",
+   "sha": "af8c28c6f60c26ad14577a97dd9340b23d1ed443"
+  },
+  {
+   "url": "https://github.com/dayschedule/dayschedule-mcp",
+   "sha": "a7aeccff057cbdedf5772066f27af82c3a8d5305"
+  },
+  {
+   "url": "https://github.com/debugbundle/debugbundle",
+   "sha": "0ef64a60e3f93db4026ec293f8ff4de1e25bfddf"
+  },
+  {
+   "url": "https://github.com/decimal-labs/decimalai-mcp",
+   "sha": "a033c9f22052fe1528a7c4e200b62ad6b2dc0d8d"
+  },
+  {
+   "url": "https://github.com/deepfirsthq/deepfirstsearch",
+   "sha": "22cbe4949cb61e4d6be67fdbd631737b22809ead"
+  },
+  {
+   "url": "https://github.com/defrr-com/defrr-mcp",
+   "sha": "38c3fcda44ce9403f3a4e8308e8c38a53a9b7aec"
+  },
+  {
+   "url": "https://github.com/deirfgeiz/programscape-mcp",
+   "sha": "7398cbdb7751d175a714a962be395d6a11dc0c67"
+  },
+  {
+   "url": "https://github.com/delmas41/gradusnotation",
+   "sha": "aaafb772c45e846f7f72a8026f2c066d9cc70165"
+  },
+  {
+   "url": "https://github.com/deltologic/datadoe-mcp",
+   "sha": "d82ca4ab667d73d2dfe8245131b1701603b84ad0"
+  },
+  {
+   "url": "https://github.com/dgodibadze/kartvelians-knowledge",
+   "sha": "2c1091c5715c5d41d092ee0359c397d5705dbd7e"
+  },
+  {
+   "url": "https://github.com/digital-science/dimensions-analytics-mcp",
+   "sha": "2def2fd63addbb7e2ee6fda07f15227268d9c82c"
+  },
+  {
+   "url": "https://github.com/digitalbrewllc/playbykey-dev-tools",
+   "sha": "0df6759e3f5bfdbe5bd4b4b9f7792373c6e19e09"
+  },
+  {
+   "url": "https://github.com/dinglebear-ai/yarr",
+   "sha": "357b86a856d7f9d5e050a2b183980da7f5d19a3a"
+  },
+  {
+   "url": "https://github.com/dnsdata/dns-data-mcp",
+   "sha": "a6899037e5a8a2ffd9a552bd3825d61ad6edc13a"
+  },
+  {
+   "url": "https://github.com/dock-ai/mcp",
+   "sha": "a8b90b05d8146e94a37d4042528bdd56319c4ae1"
+  },
+  {
+   "url": "https://github.com/dogrucanemek-alt/tugra",
+   "sha": "330e24b7f784adcd7a63b0b99ff5c16aa540e0e9"
+  },
+  {
+   "url": "https://github.com/donnywin85/dex-data-mcp",
+   "sha": "189c86e8a028e08caa3af85780e39600247fd884"
+  },
+  {
+   "url": "https://github.com/dopost-co/dopost-plugins",
+   "sha": "204208974aa0a17d65538867bb35bcbef1ef52a9"
+  },
+  {
+   "url": "https://github.com/dotstell/dotstell",
+   "sha": "cc3a1787427bd11b19303b1c18494f523e23e338"
+  },
+  {
+   "url": "https://github.com/doublespeed-main/mcp",
+   "sha": "6d18d1b2fc8ab507d44d41fa5bde0aad2235787f"
+  },
+  {
+   "url": "https://github.com/dougal-paw/pawpulse",
+   "sha": "f984c2a925cd5d6ceff79074b59c0b7a033f8f8e"
+  },
+  {
+   "url": "https://github.com/drburakuysal/meshingly-mcp",
+   "sha": "64374174c0868eefdfa69a33cfe18afb85670cad"
+  },
+  {
+   "url": "https://github.com/dregs-sdk/dregs-mcp",
+   "sha": "e4c9fef5da31157dce3a54514ca9291d6c99e0d9"
+  },
+  {
+   "url": "https://github.com/dri-water/mcpcharts",
+   "sha": "9156f62a0719033288f54627d1c9794a1d09caef"
+  },
+  {
+   "url": "https://github.com/drknowhow/fluxdots-mcp",
+   "sha": "5e877ea6e1c2607157c27e062dbdd24a4dafdae9"
+  },
+  {
+   "url": "https://github.com/dsdev-d/takemeup-mcp",
+   "sha": "a9a565f317e153ede734d9915b1cd7d63faa88f5"
+  },
+  {
+   "url": "https://github.com/dssdave/animation-machine-mcp",
+   "sha": "0418b053965a24a82064dba365edfdf26973fdbe"
+  },
+  {
+   "url": "https://github.com/durwardjohnson/breckenwander-travel-connector",
+   "sha": "f81220f476d4165e8581c7e29e146928d9014587"
+  },
+  {
+   "url": "https://github.com/dxpert-ai/uns-tools",
+   "sha": "11aa7baaee3d9ae0c254103395b39b7387463c2c"
+  },
+  {
+   "url": "https://github.com/dyslexia-steps/dyslexiasteps-mcp",
+   "sha": "c38c4a826f4fd53b657b8b53eb56a52befb46b0e"
+  },
+  {
+   "url": "https://github.com/easydocforms/easydocforms-mcp",
+   "sha": "34dc9f3bb556ca0b5e4ab95eb64796a3b3084e55"
+  },
+  {
+   "url": "https://github.com/echo-mem/echo-mem",
+   "sha": "ab811f5a84c904feaf9bdcdb968fb31783bfab81"
+  },
+  {
+   "url": "https://github.com/ecriswell7/award-flight-daily-mcp",
+   "sha": "22cb27ff863b9e851ec27986ab9bd3769d58ccdc"
+  },
+  {
+   "url": "https://github.com/edgeplat/edgepedia-mcp",
+   "sha": "c5dd152f22b14be40c2a1cf84c5b2d4e2d59cde2"
+  },
+  {
+   "url": "https://github.com/edwardk91/agentfilings-api",
+   "sha": "1d8f51bd0c9e1d1ca9e6dcaf3654a1bd98bc78cc"
+  },
+  {
+   "url": "https://github.com/edyda99/tools-berry-mcp",
+   "sha": "0ecbe37eb2ca097713982aa58814fcbb2753bf77"
+  },
+  {
+   "url": "https://github.com/eggybug42069/namewhisper-mcp",
+   "sha": "11d34a1cd8d232a1c211ab4d612d04501c3a773d"
+  },
+  {
+   "url": "https://github.com/ejazmu/thrifle-mcp",
+   "sha": "3fae407c47ad1f33c82a7c7d016d3ee65666ba73"
+  },
+  {
+   "url": "https://github.com/ekwo-ai/ekwo-os",
+   "sha": "74de7d8e2fd1d56720981687852f6e4d21931a41"
+  },
+  {
+   "url": "https://github.com/elfa-ai/mcp",
+   "sha": "4ef1b35043aa3dfd76e0d260ea762465c044f17f"
+  },
+  {
+   "url": "https://github.com/eli665/armasourcing-mcp",
+   "sha": "51de49c84d607adf7a0c92593925244f440d188d"
+  },
+  {
+   "url": "https://github.com/elliot-rosen/compatsy-mcp",
+   "sha": "3e02f4a11a2947c98d4cb09d5e4d82c3ffd2cb33"
+  },
+  {
+   "url": "https://github.com/elopstudio/ai-wave-mcp",
+   "sha": "a9433d5b763ccd381d2fc65a1163209ed6909b7f"
+  },
+  {
+   "url": "https://github.com/embracingearth-space/ai2fin-tax-mcp",
+   "sha": "84d8ece496721b6b545ec14edda1f3cf295cc852"
+  },
+  {
+   "url": "https://github.com/emrecolako/unified-reading",
+   "sha": "c7f3a6dcd4b3f9ce4d13457976a1a5b66138e728"
+  },
+  {
+   "url": "https://github.com/eng213035/gachi-data-api",
+   "sha": "8857b5c4dd9f6a2dcae707a56b92df57cacf4a69"
+  },
+  {
+   "url": "https://github.com/eng213035/japan-data-mcp",
+   "sha": "8857b5c4dd9f6a2dcae707a56b92df57cacf4a69"
+  },
+  {
+   "url": "https://github.com/eonik-ai/eonik-mcp",
+   "sha": "c81f2cd4727d7ff9ee516b807e4cdcab34e5a892"
+  },
+  {
+   "url": "https://github.com/etacbae6768-a11y/tools-that-dont-upload",
+   "sha": "cf8b37b757f04472d12926ffa014a3174e3dbd75"
+  },
+  {
+   "url": "https://github.com/ethannschwartz/faivelo-mcp",
+   "sha": "8eb4372552fc113fc367f212ca161a2c500afa2d"
+  },
+  {
+   "url": "https://github.com/ethicaldigital/ahsuite-mcp",
+   "sha": "48dc0d1cc463cbd2510e26bcd7a17e73de4332f9"
+  },
+  {
+   "url": "https://github.com/everypageapp/everypage-mcp",
+   "sha": "d4b57120b297ab6f007a9628073e461782348635"
+  },
+  {
+   "url": "https://github.com/evlek/evlek-mcp",
+   "sha": "2a728f3eb65b46f910a380a2771dfb0b828e4fed"
+  },
+  {
+   "url": "https://github.com/eztexting/mcp-server",
+   "sha": "087b3e1e0a5d11661abf92808793b1b055f35085"
+  },
+  {
+   "url": "https://github.com/fablerlabs/x402-tools",
+   "sha": "8f7db9dae9dfef5e76d910446fdfbae98167879a"
+  },
+  {
+   "url": "https://github.com/fabric-pro/databricks-field-guide-mcp",
+   "sha": "a78e8b372a72db3329fbd9cf4c4aaa8ca6179bc7"
+  },
+  {
+   "url": "https://github.com/facesignai/facesign-api",
+   "sha": "bbd3377b62ab75e0c497e2aa047e303f3bc166c0"
+  },
+  {
+   "url": "https://github.com/fgac-ai/fine_grain_access_control",
+   "sha": "653091e556a23ae982e062ee6f6d322a89ae02c6"
+  },
+  {
+   "url": "https://github.com/fiatdock/fiatdock",
+   "sha": "0cf11fec35db28e500d3b5479f33249330ef4306"
+  },
+  {
+   "url": "https://github.com/figma/mcp-server-guide",
+   "sha": "19be8d51c6a2f8ca949d33e5cd8e9662c5d243e8"
+  },
+  {
+   "url": "https://github.com/final-commerce/final-pos-mcp",
+   "sha": "240bdf0876c28a2bfcf095f71157dee64588bbae"
+  },
+  {
+   "url": "https://github.com/financial-reports/financial-reports-mcp-server",
+   "sha": "0f70d0e7e46cfa9c3a7332696312a68666b9aa35"
+  },
+  {
+   "url": "https://github.com/findabis/mcp",
+   "sha": "94ce6b5a722e84a82b1d9e0fa892cac893b38708"
+  },
+  {
+   "url": "https://github.com/fingersaiofficial/fingers-mcp",
+   "sha": "6a2cd8a32e15d3f6186efc93ca80ede6c2b0eb0c"
+  },
+  {
+   "url": "https://github.com/fipex-labs/dataset",
+   "sha": "a32d34c24633e8f15a6308937a89c82c553ecd3c"
+  },
+  {
+   "url": "https://github.com/flash-cards/flash",
+   "sha": "9df37e87951791294ff68c922786072bd81a2137"
+  },
+  {
+   "url": "https://github.com/flight-queue/mcp",
+   "sha": "ecb8875306de05bc67c0faff409d9194f7128a2b"
+  },
+  {
+   "url": "https://github.com/flightclaw/agents",
+   "sha": "7df2e70fd90df89dcafdea15dc77a83f60e5c817"
+  },
+  {
+   "url": "https://github.com/flightmussy/filmmap-mcp",
+   "sha": "18ff97c85aab9b14a9c7a2dc19e7b04d4d608f10"
+  },
+  {
+   "url": "https://github.com/florafauna-ai/flora-mcp-skills",
+   "sha": "ed201f195ccb8b26bea450ee6a9fefa7614a0318"
+  },
+  {
+   "url": "https://github.com/flovoice53-tech/acp-sandbox",
+   "sha": "4f9ccbc24c76843b861635ec426e07866d7b103c"
+  },
+  {
+   "url": "https://github.com/flowdot-llc/mcp-server",
+   "sha": "22d51d3fa3e6d38afd1ba2bee842fc66062fe1e9"
+  },
+  {
+   "url": "https://github.com/flowershow/flowershow",
+   "sha": "0f6f6f546613b0b5d84acb5d931e5eeef8358ac3"
+  },
+  {
+   "url": "https://github.com/flownato/flownato-mcp",
+   "sha": "3826cc41dc8f270408ac35091d00695f2f8a80d7"
+  },
+  {
+   "url": "https://github.com/fnlowl/skills",
+   "sha": "c3723c570a3c62e19e979c19cf6811141f4f59e9"
+  },
+  {
+   "url": "https://github.com/focus-gts/aep-mcp-server",
+   "sha": "531520b8ff1e956b7deabda266bed04a1ac3021c"
+  },
+  {
+   "url": "https://github.com/fold-laboratories/fold-agents",
+   "sha": "7051f3bcb00ab63849cb9cef0340ca2e6ff199e9"
+  },
+  {
+   "url": "https://github.com/followanton/sleepwalker",
+   "sha": "ae6b9d01224ef2bf008416f53f10e091d18f155d"
+  },
+  {
+   "url": "https://github.com/forevertools/kiprio-mcp",
+   "sha": "eebe9b1fa6e28665e3d7166b2a308973f468c37d"
+  },
+  {
+   "url": "https://github.com/formgong/mcp",
+   "sha": "230456ccdc93a7dc5c233efb2991f47547cd20d5"
+  },
+  {
+   "url": "https://github.com/fortisil/gateco-sdk-python",
+   "sha": "9fad58394822f23a9b44978e32d489d357e1f4ba"
+  },
+  {
+   "url": "https://github.com/founden-bot/yap-mcp",
+   "sha": "ebb20c9b6b5ddd3aa771682209f9b6ee7780b1f1"
+  },
+  {
+   "url": "https://github.com/francistremblay30-netizen/confirme",
+   "sha": "3697299f289d7d369363b7f391c20988477316e8"
+  },
+  {
+   "url": "https://github.com/frisian-mcp/frisian-mcp",
+   "sha": "3029db111adc0751f8bf5dcf60ef366d8ee9250e"
+  },
+  {
+   "url": "https://github.com/fynepdf/fynepdf-mcp",
+   "sha": "95a0dbbe00fe35c18d7fbae5ef82e2a7628b6263"
+  },
+  {
+   "url": "https://github.com/gahrons/mathter-mcp",
+   "sha": "ca73805b7c4c8fabae40d8a5998ca940c1720ff1"
+  },
+  {
+   "url": "https://github.com/gatecoreai-com/gatecore-mcp",
+   "sha": "7056a2f0f985fd5cbeb834abcf6d4785ac042b73"
+  },
+  {
+   "url": "https://github.com/gatyh/3dtexel-mcp",
+   "sha": "debaa663dc201887cfaccacfe61bb1e915a8c3f8"
+  },
+  {
+   "url": "https://github.com/gemmeinhq/gemmein-release",
+   "sha": "318c23eeccb1345e036ecc05b0a8fe005dabe5e1"
+  },
+  {
+   "url": "https://github.com/generect/generect_mcp",
+   "sha": "7acac14b05261a8ba6162dd621b82be0fdc7014f"
+  },
+  {
+   "url": "https://github.com/get-mcp-ads/apple-ads-mcp-server",
+   "sha": "f8de67c0414acd50b28cbc9c8a9d0e443a7ac75a"
+  },
+  {
+   "url": "https://github.com/get-mcp-ads/google-analytics-mcp-server",
+   "sha": "d66f3d7a199c22af2837d9bb3775137f8a592eab"
+  },
+  {
+   "url": "https://github.com/get-mcp-ads/linkedin-ads-mcp-server",
+   "sha": "116b15a6ad88d3e0e083e8adb33bf30efe842457"
+  },
+  {
+   "url": "https://github.com/get-mcp-ads/pinterest-ads-mcp-server",
+   "sha": "77d783e321e414fdab92132cef8449ce0e128eb7"
+  },
+  {
+   "url": "https://github.com/getfacade/mcp",
+   "sha": "6de11f8a6921089978d0c1a9c1d6829dc43087d8"
+  },
+  {
+   "url": "https://github.com/getmochify/mochify-cli",
+   "sha": "77d4d6d76bd69778dbbe129ff076d20d406ac208"
+  },
+  {
+   "url": "https://github.com/getmunin/munin",
+   "sha": "f7e33694ffed751c77f95a891e356daea6be06a5"
+  },
+  {
+   "url": "https://github.com/getoneprofile/connectors",
+   "sha": "b025abde16bdaf4dcb22ca818dcdc6927c11d18c"
+  },
+  {
+   "url": "https://github.com/getquario/mcp",
+   "sha": "6f8f2a08d82113dd2c501099ba61dc38da7a3f10"
+  },
+  {
+   "url": "https://github.com/gitscrum-core/mcp-server",
+   "sha": "b1a051875876113f66708b42ec304a052b965afd"
+  },
+  {
+   "url": "https://github.com/giushansen/listsignal-mcp",
+   "sha": "085dc40d92b27084c012a6bdb098c374ab6b1223"
+  },
+  {
+   "url": "https://github.com/glassflow/rius-mcp-server",
+   "sha": "e3ba244a7676c3e3431042bd20beaa1b746c25c4"
+  },
+  {
+   "url": "https://github.com/gleanwork/remote-mcp-server",
+   "sha": "8fc3156bc78b9f25503b03a029b15211cdd3a9ae"
+  },
+  {
+   "url": "https://github.com/global-database/mcp-server",
+   "sha": "c80ffb59ecfe21feab42b7917c87a42351494bc6"
+  },
+  {
+   "url": "https://github.com/gmansystems/agent-stack-directory",
+   "sha": "9e7bb25d24c3a4d8892604c38e15eb32a99e5712"
+  },
+  {
+   "url": "https://github.com/gmapsextractor/google-maps-scraper-mcp-server",
+   "sha": "e172f99eb7ec178110c2745855f9722d8345657e"
+  },
+  {
+   "url": "https://github.com/gns-foundation/grafomem",
+   "sha": "f564cf0545849e26df4a1167d7ebf6574709a8a0"
+  },
+  {
+   "url": "https://github.com/goalie-mcp/trademark-mcp",
+   "sha": "2c083ab73a507b6cdfad39ef18492bc890933b71"
+  },
+  {
+   "url": "https://github.com/gofrantic/frantic-mcp",
+   "sha": "755268aab87dfd8fb95b4c4c67c9b39a498eca56"
+  },
+  {
+   "url": "https://github.com/gosadu/loophole-tape",
+   "sha": "c45f1f06bca717755ae80f07950ec8bde23dd07f"
+  },
+  {
+   "url": "https://github.com/goudastudios/gouda-studios-agent-tools",
+   "sha": "09f9be489eef405560c55dd30aff54b5362f86af"
+  },
+  {
+   "url": "https://github.com/green-screen-memes/green-screen-memes-api",
+   "sha": "89e75992512b62c1360c44dcd60968b8d6155a30"
+  },
+  {
+   "url": "https://github.com/greenlitbooks/mcp",
+   "sha": "c1d4583f7051fd9081d855cccc0cfead8c7cf784"
+  },
+  {
+   "url": "https://github.com/grenzfrei/sprytools-mcp",
+   "sha": "82e6e6222b38de3f19da113eab906d44ee74fa57"
+  },
+  {
+   "url": "https://github.com/gribstream/gribstream-mcp",
+   "sha": "9bac674d27e5a8fbb778c24547dfaa8ecb59e7cc"
+  },
+  {
+   "url": "https://github.com/gtcc777/mcp-pulsenetwork",
+   "sha": "8fdc3aa3176aba732e5cd7130a50b988432156c7"
+  },
+  {
+   "url": "https://github.com/gtmotto/mcp",
+   "sha": "86511e139c5157c32e3341e2aa51ba37de28594c"
+  },
+  {
+   "url": "https://github.com/guruhq/remote-mcp-server",
+   "sha": "8224c669bd842f64f4fe66190382cb33e0b68b37"
+  },
+  {
+   "url": "https://github.com/gveshk/atlasyield-mcp",
+   "sha": "1af5b011c2d7629ff8a10cb6ed834fa923eb3e26"
+  },
+  {
+   "url": "https://github.com/haider-nawaz/app-store-screenshots-mcp",
+   "sha": "8554e802ee8d33f01216f675852fba009cd3c35a"
+  },
+  {
+   "url": "https://github.com/handsforagents/handsforagents-mcp",
+   "sha": "e478d63fac07d2a20c4ce654a306d5772abae415"
+  },
+  {
+   "url": "https://github.com/hangingfox67/funex",
+   "sha": "9ecc8c97c963a7309d9e53485dead4d3614a8cdc"
+  },
+  {
+   "url": "https://github.com/hanicker/proofite-mcp",
+   "sha": "a24c0e0e7089b57d70bd50f1e38d9afd5f06f156"
+  },
+  {
+   "url": "https://github.com/hasdata/chatgpt-mcp",
+   "sha": "815161414b67012f48bff6a82418a90dddfb0147"
+  },
+  {
+   "url": "https://github.com/hasdata/google-images-mcp",
+   "sha": "53173986267ffbdf10f4952d3557269dc844f881"
+  },
+  {
+   "url": "https://github.com/hasdata/google-maps-mcp",
+   "sha": "73a2ecc754dfdcac6fce30e8f69fa01ae6407ab7"
+  },
+  {
+   "url": "https://github.com/hasdata/google-search-mcp",
+   "sha": "69f16e3128f5afcf8ee6308c56c7a4e5346ffd7a"
+  },
+  {
+   "url": "https://github.com/hasdata/hasdata-mcp",
+   "sha": "e84b4ea67a92a722aef7f190051215b63d579d11"
+  },
+  {
+   "url": "https://github.com/hasdata/redfin-mcp",
+   "sha": "96ff74bf33bd54a2e65265f6f309de8d3bca3435"
+  },
+  {
+   "url": "https://github.com/hasdata/shopify-mcp",
+   "sha": "a451d693944822d96bf15bc50ed2ea82ff37a3b4"
+  },
+  {
+   "url": "https://github.com/hasdata/yelp-mcp",
+   "sha": "a59c835aa9d96683e2097783fa9ee96f660da18f"
+  },
+  {
+   "url": "https://github.com/hasdata/youtube-mcp",
+   "sha": "636ce7949cb86c4a984b4c5b7bb44df23c17f4e5"
+  },
+  {
+   "url": "https://github.com/hasdata/zillow-mcp",
+   "sha": "c67f3a5eb04417229e4e6ad5a9decf6c7800e4d6"
+  },
+  {
+   "url": "https://github.com/hashgrid-labs/sdk",
+   "sha": "c22dc810bf4fa64e6b872830567fcf6407f6267a"
+  },
+  {
+   "url": "https://github.com/hatoup/scorekeeper-mcp",
+   "sha": "f60a8cc83d8129750f2d84cc0ef0d2a7b7d14319"
+  },
+  {
+   "url": "https://github.com/hei33enberg/mosadd-os",
+   "sha": "25923164e97299e000f875738b27fc6d75695984"
+  },
+  {
+   "url": "https://github.com/heista-co/heista-mcp",
+   "sha": "b9bf0cc73b46efc15247731f6df702ff09210cbc"
+  },
+  {
+   "url": "https://github.com/hey-cactus/cactus-mcp",
+   "sha": "a3ad01b7d9743d5552bee2b1e07ecd5cffe72de1"
+  },
+  {
+   "url": "https://github.com/heyalerio/legalfournier-spain-legal-mcp",
+   "sha": "06df156a6061577af948c577d6c1da0a6408732c"
+  },
+  {
+   "url": "https://github.com/heyputer/puter",
+   "sha": "8264837d9f63822741e86ba4259955885232ec58"
+  },
+  {
+   "url": "https://github.com/hi-synth/hiasynth-mcp-server",
+   "sha": "d1c426506d42c519af3e980ee2014ef4d9eb4e3e"
+  },
+  {
+   "url": "https://github.com/himalayas-app/himalayas-mcp",
+   "sha": "28c4a0d6ee277bc39c5def0b6790cd4051887bf5"
+  },
+  {
+   "url": "https://github.com/hithereiamaliff/mcp-nextcloud",
+   "sha": "05be513a6579fe46be07da7f1a3630cdfc8dffb1"
+  },
+  {
+   "url": "https://github.com/hitsteps/mcp",
+   "sha": "9ce4b28d7c60ccd61fe253541a491795882947fa"
+  },
+  {
+   "url": "https://github.com/hivemindunit/llmintel-mcp",
+   "sha": "2e2a1f25a6ee8d54cce5a15322c2499015235ae4"
+  },
+  {
+   "url": "https://github.com/hmamut39/playwrightgen",
+   "sha": "9830481efde58485a5dbe9d9452ff7254290dde5"
+  },
+  {
+   "url": "https://github.com/hodlodds/hodlodds-sdk",
+   "sha": "041f39288c83355f1ee305d2613f789dc7f768cd"
+  },
+  {
+   "url": "https://github.com/hollaugo/tutorials",
+   "sha": "21cf4ff9e293a7b6af97450a7d0574986ef01182"
+  },
+  {
+   "url": "https://github.com/hoplix/hoplix-print-on-demand-mcp",
+   "sha": "ff32af98b729e9cf07f6a0b065882de42da6396f"
+  },
+  {
+   "url": "https://github.com/hotelscasa/hotelscasa-mcp",
+   "sha": "0cfc102e9a6c92fc2aa55e561be57e65d6d004fb"
+  },
+  {
+   "url": "https://github.com/hovecapital/read-only-local-mysql-mcp-server",
+   "sha": "bac3c34c436e13fbefdd4a65096098cbc1e186b5"
+  },
+  {
+   "url": "https://github.com/hovercode-ltd/hovercode-mcp",
+   "sha": "0f0cad9333cb9dbc6cd273b2964dbcfeacee3e98"
+  },
+  {
+   "url": "https://github.com/howseen-ai/howseen-mcp",
+   "sha": "888389b50eeca274cc59e47d9b5a3950bc4b42a0"
+  },
+  {
+   "url": "https://github.com/hs902/oxford-ledge-mcp",
+   "sha": "fe4d3cce6f0bba4158a28276e27198665dce14f7"
+  },
+  {
+   "url": "https://github.com/human-beyond/mainbook-mcp",
+   "sha": "ed3e9470a4d13fe83acbd2240fd6ad8102b84218"
+  },
+  {
+   "url": "https://github.com/hustcc/mcp-mermaid",
+   "sha": "13497062a98061295ed2f7546612bd6d235219eb"
+  },
+  {
+   "url": "https://github.com/hyai-dev/checkaifree-mcp",
+   "sha": "b1446f5054df2536546cb57358c627594828dbe3"
+  },
+  {
+   "url": "https://github.com/hyneq00/minddory-mcp",
+   "sha": "f1d1020fb7320626925c621231cc6f9f0c4141db"
+  },
+  {
+   "url": "https://github.com/hypernaturalai/hypernatural-mcp",
+   "sha": "ff29948dca73d86c1535794e2d6b46ca6ef2a2bb"
+  },
+  {
+   "url": "https://github.com/ibluetext/ibluetext-mcp",
+   "sha": "5c4e002709ec2bba8b6e365ae4854477287a94c7"
+  },
+  {
+   "url": "https://github.com/idealo/mcp-server-guide",
+   "sha": "16b7b20661bec6ae50fc082033d24cd77979089d"
+  },
+  {
+   "url": "https://github.com/idos-games/idosgames-mcp",
+   "sha": "218cc6e94d3e8a382f4f3e898c45dcb48e7d9eda"
+  },
+  {
+   "url": "https://github.com/ifttt/ifttt-plugins",
+   "sha": "85869bbbfe1e3bd911668c22266aac07e1c6ae72"
+  },
+  {
+   "url": "https://github.com/igalfeigin/cheap-ny-publication-mcp",
+   "sha": "fe95eaaa7855934fdbb045c13ef7d4deaca7f24e"
+  },
+  {
+   "url": "https://github.com/ilovevideoeditor/mcp-server",
+   "sha": "ed93a3588865ec6cd1fa579785cc62a76c28a7e3"
+  },
+  {
+   "url": "https://github.com/ilyagusev/academia_mcp",
+   "sha": "4a2ed42870059800500b7b28f16a25c417bb113b"
+  },
+  {
+   "url": "https://github.com/immopix/mcp",
+   "sha": "0c0c174709a658a6fc7f3e1a3a2cd74af93b78e9"
+  },
+  {
+   "url": "https://github.com/imnoo-team/quality-control-plan-mcp",
+   "sha": "4b89fcaef3dc19657a7409baaef43b59d8e8b4b4"
+  },
+  {
+   "url": "https://github.com/imronai/mcp-server-browserbase",
+   "sha": "81377bb83a2d60fd3c6aeb4d6345cfb27676d2ba"
+  },
+  {
+   "url": "https://github.com/industrylensop/industrylens-mcp-docs",
+   "sha": "28dd1a590ef7c0e6ac9b16e8bb3c2c0c81bf51bc"
+  },
+  {
+   "url": "https://github.com/inite-ai/inite-agents",
+   "sha": "2d1f229c6c2d272fa8072d0f73e009f85b6347ce"
+  },
+  {
+   "url": "https://github.com/instantstudioai/instantclips-mcp",
+   "sha": "3dd59863560d4e3015a2897fd5fe30abffc617cb"
+  },
+  {
+   "url": "https://github.com/integromat/make-skills",
+   "sha": "9947cbe7e50bcd7cc6e178408d316951d307fb69"
+  },
+  {
+   "url": "https://github.com/interviewflowai/interviewflowai-mcp",
+   "sha": "e55f756c1ce8f66545e22a4db2d00fe79f51a72d"
+  },
+  {
+   "url": "https://github.com/invoicexml/invoicexml-mcp",
+   "sha": "33484f62fd598b6a2e37c98a815ed96614a62102"
+  },
+  {
+   "url": "https://github.com/isaaceryn/a11ychk",
+   "sha": "877c94105435f240ea76d1284d8057a0d2057007"
+  },
+  {
+   "url": "https://github.com/isipsafe/isipsafe-python",
+   "sha": "e5992ab0f2540dc5f72c57ea258f227815ed6e4b"
+  },
+  {
+   "url": "https://github.com/ismailgalaxys25-del/imgvx-ai-mcp",
+   "sha": "6013beb01c8a07fb8b4bd5d5ee4323af74cb97e1"
+  },
+  {
+   "url": "https://github.com/ismailgalaxys25-del/songup-ai-mcp",
+   "sha": "40e0f74c116574a6da821fa0a3edbb36f3bf102e"
+  },
+  {
+   "url": "https://github.com/isoprest/omniwatchguard-mcp",
+   "sha": "59450bb33f33dcd30373800318c587efb08a8508"
+  },
+  {
+   "url": "https://github.com/itsmeadamdamroma/mazzagrp-mcp",
+   "sha": "e1899a206c1c208c21decf6ee69b004721308623"
+  },
+  {
+   "url": "https://github.com/j-256/guildcontrol",
+   "sha": "bc1290d04680a59c73011845300a612d02b8c2e2"
+  },
+  {
+   "url": "https://github.com/j-fidel/agentworkpad",
+   "sha": "a955812f1d215c1db902f864a10c4222e4d12f9d"
+  },
+  {
+   "url": "https://github.com/jamesrosing/tebra-mcp-server",
+   "sha": "b0af37badfa51a57534e00e48f4f2a302ef1ccc5"
+  },
+  {
+   "url": "https://github.com/jasontally/mac-address-lookup",
+   "sha": "35ce9ff82aed9276568d5a08c32785ad1aa3f99a"
+  },
+  {
+   "url": "https://github.com/jasonzigelbaum/zigpoll-mcp-plugin",
+   "sha": "5ed63a22456bdd1e21b6c18b33d9afb9e72c3982"
+  },
+  {
+   "url": "https://github.com/javierojan/askacharge-mcp",
+   "sha": "20bf7719a610ebd684c952d5329b2ec0ac1ef918"
+  },
+  {
+   "url": "https://github.com/jaw9c/mcp-registry-mcp",
+   "sha": "ab4df210849a8cfc08d4f369a2b33419015d38b1"
+  },
+  {
+   "url": "https://github.com/jayniebingyu-cyber/goaimoat-ai-visibility-mcp",
+   "sha": "52090f809d4ba6642a82a946c32ca609dab0074e"
+  },
+  {
+   "url": "https://github.com/jayniebingyu-cyber/goaimoat-mcp",
+   "sha": "902e3f8d355710ff56200887a4f55d5b9f92998e"
+  },
+  {
+   "url": "https://github.com/jayniebingyu-cyber/hot-topics-mcp",
+   "sha": "c6be92a0c20ae0a0991a44c119ff4623cca88394"
+  },
+  {
+   "url": "https://github.com/jayterwahl/swarm-board",
+   "sha": "cae7ed4e92906d2049571d67ef6c85433ed18b91"
+  },
+  {
+   "url": "https://github.com/jaytheskier/fedlex-connector",
+   "sha": "769108e11d40375b13a9bf3138b272260389dc53"
+  },
+  {
+   "url": "https://github.com/jdhart81/energyai-mcp",
+   "sha": "02e97597a6be4bb30a5dbbbc586633eccdffe894"
+  },
+  {
+   "url": "https://github.com/jeetsoni/ideatomotion-mcp",
+   "sha": "95e6fd2b5b5d257ee83b2c0ecf416db6c44e676f"
+  },
+  {
+   "url": "https://github.com/jekakos/mcp-user-data-enrichment",
+   "sha": "4297170ddfda2ea64bfda3763e41c826e77c2a68"
+  },
+  {
+   "url": "https://github.com/jepto/mcp",
+   "sha": "c3f0f073a47871474d081be7ca5f6a6e90de8e70"
+  },
+  {
+   "url": "https://github.com/jeremybelcher/product-pillars-agent-kit",
+   "sha": "8cb88f2e7d12db96a165e5d86e930af066d22385"
+  },
+  {
+   "url": "https://github.com/jesse-lucas1996/agentic-business",
+   "sha": "bbd5a2f284ee8062b37305081471f1f5c3ff9b59"
+  },
+  {
+   "url": "https://github.com/jessejohnsohn/negativeev-mcp",
+   "sha": "7d219a33850a4bfa0823cb62dcb343cafcb30c78"
+  },
+  {
+   "url": "https://github.com/jettydiot/jettyd-mcp",
+   "sha": "5072190bc605074d42548839b69a5decd9f73925"
+  },
+  {
+   "url": "https://github.com/jidoseal/jidoseal-mcp",
+   "sha": "04779d715e10987a94af7606096abe206c6f1077"
+  },
+  {
+   "url": "https://github.com/jimiwalters-cmyk/airfare-brain-mcp",
+   "sha": "301b4c51649395fb22a1794590c6b9c076311fb2"
+  },
+  {
+   "url": "https://github.com/jimiwalters-cmyk/stay-cost-brain-mcp",
+   "sha": "c3ed8ba53f8092630498c4de55278d9df32ea50d"
+  },
+  {
+   "url": "https://github.com/jimmylv/bibigpt-skill",
+   "sha": "30c5109c8b8f81b6b88bb6c18d0c9ed89ed06657"
+  },
+  {
+   "url": "https://github.com/jimmyplup/synap-mcp",
+   "sha": "54f8da30534f6e36dd7c080971be5960274c48f3"
+  },
+  {
+   "url": "https://github.com/jitsucom/jitsu",
+   "sha": "8910a8646881168202bcf618d99ddf00bbc6ec1b"
+  },
+  {
+   "url": "https://github.com/jmagar/tailscale-rmcp",
+   "sha": "c8859f1efe3ecc964aa9fefbd58d5cea043715c8"
+  },
+  {
+   "url": "https://github.com/jmoak/chrono-mcp",
+   "sha": "dcbdf89504cc257e9d5c630bbedc8d8e7a4844ee"
+  },
+  {
+   "url": "https://github.com/jmqcooper-ai/klarefi-mcp",
+   "sha": "84815daf9aeb711c09be2ac1804b6c944977bd75"
+  },
+  {
+   "url": "https://github.com/jmtroller/mcp-documentation",
+   "sha": "1a9c533e8634e6042bb149039918419c02995b2b"
+  },
+  {
+   "url": "https://github.com/joelklabo/maximumsats-mcp",
+   "sha": "b97419500a6bf16fa3f09bdfe39263d2707c68ac"
+  },
+  {
+   "url": "https://github.com/johndaka/domainscout-mcp",
+   "sha": "4da8c196319d98427a0ff8b3aa6ab7be9ca28391"
+  },
+  {
+   "url": "https://github.com/jonhersh/cost-seg-smart-mcp",
+   "sha": "ac673c84df4b50040feb6b0ab3c4e844eaaed410"
+  },
+  {
+   "url": "https://github.com/ju-li/automata-mcp",
+   "sha": "2aed921d5de8d6122e249b130d1f219b7326bd50"
+  },
+  {
+   "url": "https://github.com/jukkablomberg/coinbucha-mcp",
+   "sha": "347700ea514f9428cd1bbbb5546d8710da5be222"
+  },
+  {
+   "url": "https://github.com/jupiterspins/starsinger-mcp",
+   "sha": "49f173350ee4edcd5a2e43e3761524dc4debe839"
+  },
+  {
+   "url": "https://github.com/just-done/just-domain-mcp",
+   "sha": "5fddb20db8f6c207c0242a20f9e17b03214034c7"
+  },
+  {
+   "url": "https://github.com/justdukkan/invoice-intake-mcp",
+   "sha": "aa9a9cdbfb1fa9082b8309a68840704342b7363d"
+  },
+  {
+   "url": "https://github.com/justinsmithphd/provenpaid-mcp",
+   "sha": "e76e9b91f300a668645b9d720546ec34412dfdc5"
+  },
+  {
+   "url": "https://github.com/jyharju-code/verifi",
+   "sha": "648aa30c7313b83ea3b7297f89f66fbc63f996f0"
+  },
+  {
+   "url": "https://github.com/kari-it/kari-mcp",
+   "sha": "52c5d6db7e4d505b0ad2fddaef68a07c76fcd4f2"
+  },
+  {
+   "url": "https://github.com/kawacode-ai/kawa.mcp",
+   "sha": "1f17a33c58fbdb3c88b2ea9a0a52b24a9a54a88c"
+  },
+  {
+   "url": "https://github.com/kdan-pdf/kdan-pdf-mcp",
+   "sha": "e38f8899c72a294cba4fc01b770f0cac286be03f"
+  },
+  {
+   "url": "https://github.com/keenan-ux/boothcheck-mcp",
+   "sha": "49d9d662a6d86137829725f1640ffc0260add1e2"
+  },
+  {
+   "url": "https://github.com/keithah/hostex-mcp",
+   "sha": "9e0e6838aa16a0c68a1670387fbf3ba20bc3c62f"
+  },
+  {
+   "url": "https://github.com/keithah/tessie-mcp",
+   "sha": "3ef4da4f2355e3b5503f529eab16870e1a0bf077"
+  },
+  {
+   "url": "https://github.com/kellyiq/kellyiq-examples",
+   "sha": "27fb178650e71312398d607db90a5bd845dbe018"
+  },
+  {
+   "url": "https://github.com/kenwea-protocol/kenwea",
+   "sha": "b1b98d404dfef1023d87f9765b37623d967c8b28"
+  },
+  {
+   "url": "https://github.com/key-arg/statable-mcp",
+   "sha": "376d9c53a0e3b5bdf39489d1e30c996480e774e7"
+  },
+  {
+   "url": "https://github.com/keyline-icons/keyline-icons",
+   "sha": "6c14434e73e836a9704448bf5dd5210e9fa69170"
+  },
+  {
+   "url": "https://github.com/khanjer496-alt/postdelegate-app",
+   "sha": "92335bb0c6bbdcfc4b442ceb152f7be6a446e246"
+  },
+  {
+   "url": "https://github.com/kinlab-ai/kin-plugin",
+   "sha": "99318434f196cb6f6bb425fd56278b9b65a92ada"
+  },
+  {
+   "url": "https://github.com/kinsy-ai/kinsy-agents",
+   "sha": "ce4d50bc9d3c52ea2cfff33a448bd4e345777dd2"
+  },
+  {
+   "url": "https://github.com/klavis-ai/klavis",
+   "sha": "45c9f7da83d1cf43f7429b96f9c8e8153542ea1e"
+  },
+  {
+   "url": "https://github.com/knitli/codeweaver",
+   "sha": "1ed1720d595b14ade747fdea887121c537be2054"
+  },
+  {
+   "url": "https://github.com/knot-repo/knot-sdk",
+   "sha": "ddbb5e4e0667499511a3be6be17e5e0d4c206a08"
+  },
+  {
+   "url": "https://github.com/knowall-ai/mcp-reverie",
+   "sha": "01acb098682222b93815fd209d441ba059ecf058"
+  },
+  {
+   "url": "https://github.com/kolourr/midpoint-mcp",
+   "sha": "edb4c91c41210b9953551bef625f13dd34ac1fb9"
+  },
+  {
+   "url": "https://github.com/kossik/mographr-mcp-docs",
+   "sha": "f42ee6bf5545032344de9f9b62ee6f621e29e0b9"
+  },
+  {
+   "url": "https://github.com/kossik/texasratedpros-mcp",
+   "sha": "e16935ce7ec6deb4383b9c3b141fb544702588a5"
+  },
+  {
+   "url": "https://github.com/kroqdotdev/ouicu-js",
+   "sha": "b7f925cc549d6d266d91e6512c1d48938fe10528"
+  },
+  {
+   "url": "https://github.com/krusmaster/fabric-backend",
+   "sha": "253e6d03b3166c04ec92fd01a52736eea06f2940"
+  },
+  {
+   "url": "https://github.com/kubis010/linkedin-mcp-server-salesbot",
+   "sha": "e5ecf101162ea473d588f889afe0e38b767015af"
+  },
+  {
+   "url": "https://github.com/kudosity/mcp",
+   "sha": "bac8bfce5cc5db407440e6b2251a33d029972deb"
+  },
+  {
+   "url": "https://github.com/kumbuka-ai/kumbuka",
+   "sha": "9aef7917111f57dce406308d6d1f40f389eba8ef"
+  },
+  {
+   "url": "https://github.com/kvlkstudio/postia-ai-plugins",
+   "sha": "e7d2dc675440c1b15b55a88cd3181f2066622488"
+  },
+  {
+   "url": "https://github.com/kychee-com/run402",
+   "sha": "69b23d65391f344ed2b55f60943fdb1523925b36"
+  },
+  {
+   "url": "https://github.com/kyma-api/kyma-mcp-plugin",
+   "sha": "ace8e758596c4e72dee5d6af99e75db47bac2f78"
+  },
+  {
+   "url": "https://github.com/labelixa/labelixa-mcp",
+   "sha": "0abce4f4dd6cf9bd849bdce05c8a1cd1746267e5"
+  },
+  {
+   "url": "https://github.com/lacryptorina/vedetta-mcp",
+   "sha": "3f4067b0c5ec7c7862a76a29027e83a22d72a8ac"
+  },
+  {
+   "url": "https://github.com/lanerouter/lanerouter-sdk",
+   "sha": "5da5cd05b8ce5a3ee7b504fef0930161cef77c41"
+  },
+  {
+   "url": "https://github.com/laraue/laraue.apps.boards",
+   "sha": "378a0fe60a8f90e823d59ebe00222eb6bec6e214"
+  },
+  {
+   "url": "https://github.com/lascade-co/travelanimator-mcp",
+   "sha": "8b243fe0ca834e3ee4491c831626d596b9316143"
+  },
+  {
+   "url": "https://github.com/lead788/apick-mcp",
+   "sha": "3878108a2330abd72d9a7743f0d55992ab4a2f92"
+  },
+  {
+   "url": "https://github.com/leandrodaf/3d-new-era-ai",
+   "sha": "81711b4dde957b9f4f73877a814c84e56b0ef06d"
+  },
+  {
+   "url": "https://github.com/leandrogavidia/vechain-mcp-server",
+   "sha": "18c588cee6cec6c4a202ac779281b86e5f486297"
+  },
+  {
+   "url": "https://github.com/leifdai/mackorn-hydraulic-cone-crusher",
+   "sha": "b24778f2df539ae7c5ab41e2cdd872edc555bc10"
+  },
+  {
+   "url": "https://github.com/letkite/letkite-router",
+   "sha": "4059727978fdb385dcafec16e6fa5ab7760a7f96"
+  },
+  {
+   "url": "https://github.com/lewismvaughan/tablejourney-mcp",
+   "sha": "64df96451c1aeef882ce228b9e027b127eaa93e0"
+  },
+  {
+   "url": "https://github.com/liasoft/covdbg-mcp",
+   "sha": "e388676a0c3cc8e85a7cd31481c36e0e4de03785"
+  },
+  {
+   "url": "https://github.com/ligea-gmbh/aiactradar-examples",
+   "sha": "9997ed135b3a565f467f568ccf977cecb44d672f"
+  },
+  {
+   "url": "https://github.com/lightbringer-patents/mcp-connector",
+   "sha": "b8cf9bab7945f03894220928439078ba05f58b2d"
+  },
+  {
+   "url": "https://github.com/lilycip/obra-cto",
+   "sha": "9fbe5d4c98c24f0fd6fc2e107d2cf170eed42005"
+  },
+  {
+   "url": "https://github.com/linkbreakers-com/agent-skills",
+   "sha": "285e3b46589427843f03c41b3ebf2b04318b21f1"
+  },
+  {
+   "url": "https://github.com/linkdeal/mcp",
+   "sha": "016a1f8f6552335ad860b805468e855fef4afab5"
+  },
+  {
+   "url": "https://github.com/livecrm/livecrm-mcp",
+   "sha": "edd66bb202694cf7226f882f8494713205963dc0"
+  },
+  {
+   "url": "https://github.com/livereacting/livereacting-mcp",
+   "sha": "f73736d8a4e1d4de1a4fbec5043e4ec35900c945"
+  },
+  {
+   "url": "https://github.com/liyupi/memecub",
+   "sha": "93157eef25e6ee58b371e0f6c24f5526312050af"
+  },
+  {
+   "url": "https://github.com/lksrz/cnvs-whiteboard-skills",
+   "sha": "dde85bff2619cb564889cdbd00a497da67af2f82"
+  },
+  {
+   "url": "https://github.com/llm-preneur/skills",
+   "sha": "e783fef20a60c5a6f2ff514073e13c695983a6a9"
+  },
+  {
+   "url": "https://github.com/localgcloud/localcloud-cli",
+   "sha": "4f425b0fd6cd0daef33ef02cd19745529d7ef5d3"
+  },
+  {
+   "url": "https://github.com/logbrewco/mcp",
+   "sha": "10a3a7ca152c974ec7badefac8e5619af577e372"
+  },
+  {
+   "url": "https://github.com/loosedays/vibsync-mcp",
+   "sha": "35c33022517d3dfb053bbd35e77ca3edc2d0c367"
+  },
+  {
+   "url": "https://github.com/loppee-ai/loppee-mcp",
+   "sha": "dd714af8bb85985a69e9553048b0cc337e71409c"
+  },
+  {
+   "url": "https://github.com/lpsignals/lpsignal-mcp",
+   "sha": "f291ece5325f0945e92e9f03f610a11f24efeca7"
+  },
+  {
+   "url": "https://github.com/lttxzmj/proofstack-mcp",
+   "sha": "76bd77de8e101a146f36ac5cdaee96e29feff80a"
+  },
+  {
+   "url": "https://github.com/ltv-so/essentras-mcp",
+   "sha": "785dfa7f86f655898a368840e82549c78c85e491"
+  },
+  {
+   "url": "https://github.com/luvi-io/luw-mcp",
+   "sha": "ccb44864ed164116d35c85c9f3f17686db8be052"
+  },
+  {
+   "url": "https://github.com/lv-analytics/liquidvision-mcp",
+   "sha": "e086e53f6a6d02429b45eb79ba25fab5674e75af"
+  },
+  {
+   "url": "https://github.com/madaburns/bv-mcp",
+   "sha": "043f50670b9f0a5ad16ed860be55c6148b2e43d1"
+  },
+  {
+   "url": "https://github.com/magnemo-ai/magnemo",
+   "sha": "30d7e55ce89ca954855b2d6237e36c9ccb0f9821"
+  },
+  {
+   "url": "https://github.com/maguyva/mcp",
+   "sha": "6e20e49d6eaa3bda2fb32d1e399ae653907ce6de"
+  },
+  {
+   "url": "https://github.com/mahechadeffaud/stochastly-mcp",
+   "sha": "a1cbe915429c5d0e4b4d77c0a07712ff77aadeb9"
+  },
+  {
+   "url": "https://github.com/mailbuttons/mcp-server",
+   "sha": "83b7f0fba0243527cb36898514c2a1226d4b08b4"
+  },
+  {
+   "url": "https://github.com/mailsenpai/mailsenpai-mcp",
+   "sha": "a9fdecb322ecbfc5867515b948ef86afcc8052f3"
+  },
+  {
+   "url": "https://github.com/mailtester-com/mailtester-mcp",
+   "sha": "3bc86f2cf3131b8616cc597d74bf3358bbc3a8a8"
+  },
+  {
+   "url": "https://github.com/mairwunnx/minecraft-mcp",
+   "sha": "98e6ed740eca8c5990f9f4b6248ad7234fd5487d"
+  },
+  {
+   "url": "https://github.com/makeaivideo-ai/mcp",
+   "sha": "90f6163bcac18aad5018b60132b8d41db1e124a6"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-account-hiring-watch",
+   "sha": "d96cb7c4c13b5d688158fe02afb2a03719a1584c"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-agent-brokerage-resolver",
+   "sha": "41fe4c499661e1346c83d5bc9a740606aab36427"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-ats-jobs-feed",
+   "sha": "b9e5c7b98cba2ec0154a37b5ca7a9f470c7b6c04"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-clay-to-instantly-smartlead-push",
+   "sha": "a7b7ddb36b6d41e959a6e6d5f8fea8f75bde7227"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-company-identity-resolver",
+   "sha": "38d9d0183b5f5eb8ab3e4d5f1d9a38c13b9de156"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-contact-classifier",
+   "sha": "00237c6bfb940f2fc6b15709a66ef32636213041"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-creator-lead-list-all-in-one",
+   "sha": "2c93e9bc7e8d04ea70030663122c8a2b6ca54c18"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-ecommerce-platform-profiler",
+   "sha": "fa4c928b001364085fb15c05931d9e86296b619d"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-email-verifier",
+   "sha": "77e811e6435e016bd5c110b609fdac8ef2be9249"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-event-presence-index",
+   "sha": "be889c39248f5773a852239b811bd753f32aebc2"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-expert-witness-directory",
+   "sha": "d00f9bb9bdd43537c906e307987a476aaf5074de"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-funding-investor-record",
+   "sha": "8f265a078843807deb9109ab6bafed7b0a5bd92a"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-google-ads-transparency-monitor",
+   "sha": "5c7ab9a144c10ba94b7fb27d6766c27f7cb4c7a7"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-gtm-hiring-signal-scraper",
+   "sha": "10aa16cc580601861286b5499cebd1de24d69db8"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-gtm-signals-aggregator",
+   "sha": "f1d6084c27bb4b44bfe0a76e5371618a2baea98b"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-gtm-suite",
+   "sha": "306af54b7cb1bf3135c24839e88286e06acabc82"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-icp-fit-scorer",
+   "sha": "68951c83de1ce4328d936bebc6e0392a04fe3507"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-job-board-keyword-signal-scanner",
+   "sha": "6317481d53b202509f09108ef71f8722bf32a216"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-launch-directory-list-builder",
+   "sha": "3122b4af714cd3a714852307ada6e0a64f8894a1"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-linkedin-company-presence-mapper",
+   "sha": "571e7a40f5f09657af269ea0a06d1cb3fcba0900"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-linkedin-jobs-feed",
+   "sha": "6c5941e7e1ebb5b38abacb5bf147aac0aff0a97d"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-local-business-lead-builder",
+   "sha": "2c53b63d41a0fb731242f902e0e792fceb4416c7"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-meta-ad-library-monitor",
+   "sha": "4faa954cb471afc6ae8608a646ead40c55589f58"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-new-hire-finder",
+   "sha": "94d11cf41608bcda820aef6b004d7633a7fdfcd4"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-outbound-infrastructure-fingerprint",
+   "sha": "302dacebf9c02eec4452adbe8314deb004b119ef"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-partner-member-directory-extractor",
+   "sha": "6b5f8a05ed8ac5a5a19c999271097540266b1a45"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-personal-email-to-company-resolver",
+   "sha": "dcad3c66f53373c414ffe5ea561e6d4fba26eb7b"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-podcast-guest-host-finder",
+   "sha": "ad77817a324ba398db8389d223d415583f7e68c7"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-product-hunt-launches-feed",
+   "sha": "37b03037d95324dbbbfb5cda521b6d056c05d607"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-publication-cadence-tracker",
+   "sha": "831a1f4b3a8b6475725abaf9444816e2e47a122a"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-recent-funding-rounds-feed",
+   "sha": "14426ab1f421f4df2fd6bcba268b89c3c515657a"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-reddit-search-thread-scraper",
+   "sha": "4b4cc4ada6d979d9abae14ce5dd3ec33def3d909"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-shopify-app-store-chrome-web-store-listings",
+   "sha": "d231bdf33f7d40895290830af517eb84f8d877b1"
+  },
+  {
+   "url": "https://github.com/mambalabsdev/mcp-whois-domain-lookup",
+   "sha": "1a59df9e56296f8893c9d903baea29ccfda98266"
+  },
+  {
+   "url": "https://github.com/mandateoffice/mandate-mcp",
+   "sha": "fb44e9f27e3c30182d35a1615bfe71c2d7822c29"
+  },
+  {
+   "url": "https://github.com/maniprabhamca-star/dailydesk",
+   "sha": "9ce86643a418504c0c2618459b87047fc11b79b9"
+  },
+  {
+   "url": "https://github.com/mantacodedevs/mcp-mynextadventure",
+   "sha": "343f2ef30611802fcd8fc990a22d5781ac003a03"
+  },
+  {
+   "url": "https://github.com/marchward/marchward",
+   "sha": "c34cb0dd8a38a216f9ad49b9f40748de3fa000c9"
+  },
+  {
+   "url": "https://github.com/marian-kamenistak/eng-leadership-toolkit",
+   "sha": "4c0da1d741bdcaf463603edc1a2e823920c0d32a"
+  },
+  {
+   "url": "https://github.com/marino129/creationloop-mcp",
+   "sha": "84d3ac8f22a61a2e6571f49bab0788caf60e9d55"
+  },
+  {
+   "url": "https://github.com/mariusmmmmm/car-specs-api",
+   "sha": "889ca1ef91568df770600b65fbfd594f3270511f"
+  },
+  {
+   "url": "https://github.com/markac007/mcp-server-scf",
+   "sha": "a397be70c2e1b562e922ecc8165a3fab6639ec19"
+  },
+  {
+   "url": "https://github.com/markaestro/markaestro-agents",
+   "sha": "f5169790521c9712e9bcc6ac0b9a6b26c661d953"
+  },
+  {
+   "url": "https://github.com/marketboomer/purchaseplus-mcp",
+   "sha": "d68849e2174c4dc13b0c8e63a5d0dcf870243be6"
+  },
+  {
+   "url": "https://github.com/markettrace/markettrace-agent-feed",
+   "sha": "8d785eb1c1a3a7e8693c9621f548b0eba94fccba"
+  },
+  {
+   "url": "https://github.com/markifact/google-ads-mcp",
+   "sha": "20c159e07b8e771297a698f143737da174262458"
+  },
+  {
+   "url": "https://github.com/markifact/meta-ads-mcp",
+   "sha": "a6a1dcd1be35acfd48cd09dcb4cb68b1e7ea5b25"
+  },
+  {
+   "url": "https://github.com/markolati85/agpc-domain-check",
+   "sha": "0ee3345e134880a406b5cae6f6852b057da0d877"
+  },
+  {
+   "url": "https://github.com/markomatic507/deckodex-mcp",
+   "sha": "80c91f7c6b4b228147dd2f3828572b51945c7dfc"
+  },
+  {
+   "url": "https://github.com/martini-studio/everway-mcp-server",
+   "sha": "f916eb2a3d082fd2708243c8852dd2f05b9937b4"
+  },
+  {
+   "url": "https://github.com/mathandmagic/bridgeapp-plugin",
+   "sha": "6990a3aa8be3fe806fda4d75ec80df715c160632"
+  },
+  {
+   "url": "https://github.com/matharrismma/concordance-2",
+   "sha": "06d0f2255985bbe291762bf48356008e7a512086"
+  },
+  {
+   "url": "https://github.com/matthewdavisaiarchitect/ontoramp-graph-query",
+   "sha": "09efc17285005779b08b9076278cdf60b5cd21cf"
+  },
+  {
+   "url": "https://github.com/maxcarriere/humanuscrit",
+   "sha": "16f779cd7bd14c89a52d2f5d2e610111ac25347a"
+  },
+  {
+   "url": "https://github.com/maximem-ai/maximem_synap_sdk",
+   "sha": "e05030422af9b5c225166ae9a113642ee3ff60a7"
+  },
+  {
+   "url": "https://github.com/maximmaximovwork2018-gif/carrepaircostestimator-mcp",
+   "sha": "2dc4ca30d525685b16aa8c94892140d7927fe1c1"
+  },
+  {
+   "url": "https://github.com/mcparmory/registry",
+   "sha": "04af6ce3ff58fb74017a715ad66d987d4bef45c8"
+  },
+  {
+   "url": "https://github.com/mcpmux/mcp-mux",
+   "sha": "2e6a5b925eb4b2df1ffb292b1216101aef872f0c"
+  },
+  {
+   "url": "https://github.com/mcpqueen/mcpqueen",
+   "sha": "51168b733355908f637c4e384dce216e062b6463"
+  },
+  {
+   "url": "https://github.com/md-log/md-log-mcp",
+   "sha": "579b5e04eb028bbc69fb335ef1528e621845c6fe"
+  },
+  {
+   "url": "https://github.com/mediazione/awraiter",
+   "sha": "f091717ae1a8a00ca368ae66107b49a75dca08e1"
+  },
+  {
+   "url": "https://github.com/meetergo/meetergo-mcp-server",
+   "sha": "c65818f86f53e4dafd417c54a649aefb510c013f"
+  },
+  {
+   "url": "https://github.com/mehdi-bh/chessigma-mcp",
+   "sha": "d1d55e6ad3c5e917b82dd36d15d6048417232b6f"
+  },
+  {
+   "url": "https://github.com/memcell-ai/cli",
+   "sha": "ca14b2a8ecf5f26d33ddecbd9c0286cc17420533"
+  },
+  {
+   "url": "https://github.com/menaker/adtest-mcp",
+   "sha": "2d5b9c0faf6b0f30ac0d33950cf4d32905a4ae2e"
+  },
+  {
+   "url": "https://github.com/menaker/mobopinions-survey-mcp",
+   "sha": "53059e40446d27e51c555ceb13e7b3184aba7ccc"
+  },
+  {
+   "url": "https://github.com/mergetai/merget-plugin",
+   "sha": "ac38eee8f021a704b79399f134195e3fea06e638"
+  },
+  {
+   "url": "https://github.com/metaweardigital/veto-mcp",
+   "sha": "91b3e06a898d2dfe072e4667418551b1e9d5abe2"
+  },
+  {
+   "url": "https://github.com/metisfoundry/metis-plugins",
+   "sha": "b36a71a7f4515b9ad00ac6a6312c41d53d9b08a0"
+  },
+  {
+   "url": "https://github.com/metricprovenance/odgs-mcp-server",
+   "sha": "fa2cad959ae181f395e35505606a9b64677cb097"
+  },
+  {
+   "url": "https://github.com/metricspot/mcp-server",
+   "sha": "dc8fa99e2df7a4bbdff733b138446bf4da49aec7"
+  },
+  {
+   "url": "https://github.com/mettakin/mettakin",
+   "sha": "9f8e0b5c9037aff7575e44137623ce09b3f249d4"
+  },
+  {
+   "url": "https://github.com/midplaneai/midplane",
+   "sha": "ee8c40ca6d63e6484d7c2eb1f478180ebcef10a3"
+  },
+  {
+   "url": "https://github.com/mightymikereid/mightyautomation-plugin",
+   "sha": "d1d4b014fd0e70122bdba0fa42d9109c70f9292b"
+  },
+  {
+   "url": "https://github.com/miguelgarzons/mcp-cun",
+   "sha": "df0b8f6cb7a9b6aaa6277a32b8d2edfe7004973d"
+  },
+  {
+   "url": "https://github.com/mil0s2/botgathering-recipes",
+   "sha": "a2925c3b64786be5d7858ea46c4291dc3ca4817f"
+  },
+  {
+   "url": "https://github.com/mimeticinc/mim-cli",
+   "sha": "a1aad04d960d9943944f20a7b7bff108ba0ff31e"
+  },
+  {
+   "url": "https://github.com/mindola-ai/mcp-server",
+   "sha": "a2f737c6c23f01082f12206e1e8e3cdb8f95c4da"
+  },
+  {
+   "url": "https://github.com/minds-ai-co/minds-mcp",
+   "sha": "f0e9b78b2e190bd68d96c2c400bc3c7e08e81881"
+  },
+  {
+   "url": "https://github.com/mindtheproduct/mcp",
+   "sha": "78da14c89b3c517415a71d979819dbf222dee6ce"
+  },
+  {
+   "url": "https://github.com/miniaccountant/mcp-setup",
+   "sha": "ef8ec28a7152b71781891a91410f2b708bc4e607"
+  },
+  {
+   "url": "https://github.com/minionszyw/bazi",
+   "sha": "9428a6c359c1ce108b6c9c3c63f075a7f7a976fa"
+  },
+  {
+   "url": "https://github.com/mirabello-consultancy/mcp-server",
+   "sha": "eb38793d7a874acfb1f389f8e22df908c90ea3a1"
+  },
+  {
+   "url": "https://github.com/mistersandfr/supabase-mcp-selfhosted",
+   "sha": "3461d3c90ebe236dadd4f851736d517da82aa31f"
+  },
+  {
+   "url": "https://github.com/mmiani/mcp-server",
+   "sha": "3c21a066929d6e073401dde2f16ba5cf9f3f30de"
+  },
+  {
+   "url": "https://github.com/modelcontextprotocol/servers",
+   "sha": "194cc86e3ae6400958555bd4116849d822d69263"
+  },
+  {
+   "url": "https://github.com/modelcontextprotocol/servers-archived",
+   "sha": "9be4674d1ddf8c469e6461a27a337eeb65f76c2e"
+  },
+  {
+   "url": "https://github.com/mohamedyameen/tiniest-cloud-plugin",
+   "sha": "571401cfaabdab9fccd980d206bac07e95f15d33"
+  },
+  {
+   "url": "https://github.com/mondaycom/mcp",
+   "sha": "11e67e456e0fed58f375ebd60dd7ce9adebe7b8f"
+  },
+  {
+   "url": "https://github.com/moshpit-labs/idiolect-mcp",
+   "sha": "8c8799cc8efb65536c9d74004f582a83eafbd805"
+  },
+  {
+   "url": "https://github.com/mothership/agent-plugins",
+   "sha": "323e409e7f7d1e0f48544ba0ea00b777eddd243a"
+  },
+  {
+   "url": "https://github.com/mploschiavo/mcp-kettlelogic",
+   "sha": "4384b5fe7ca123561d8d53200271e64b2db90334"
+  },
+  {
+   "url": "https://github.com/mrohith29/makemebetter-mcp",
+   "sha": "cff655970f9f76aab26fe6935ed049f95f83913b"
+  },
+  {
+   "url": "https://github.com/mrugankpednekar/mcp-optimizer",
+   "sha": "c655b1669513d660cb8e19485f810618400fa757"
+  },
+  {
+   "url": "https://github.com/mukund1158/noonlaunch-mcp",
+   "sha": "d536fcfee72df5e2e7fb9982d29f028f4062e661"
+  },
+  {
+   "url": "https://github.com/mumo-chat/mumo-mcp",
+   "sha": "aecb0cdd7cbe996009fa537ef6ce507f182d6fb1"
+  },
+  {
+   "url": "https://github.com/mvtk1978/boxerbook-mcp",
+   "sha": "0f6b88e5cd3a3db57bfc6e50395d7433b09ba25d"
+  },
+  {
+   "url": "https://github.com/n0edlg/bidsparq-mcp-server",
+   "sha": "554d7e9ef9b04a01b608be369151ea412ebc41eb"
+  },
+  {
+   "url": "https://github.com/n747ai/clearedindex-mcp",
+   "sha": "b1c850cda5d5e2466eb28ceb89f1951c0a3649fe"
+  },
+  {
+   "url": "https://github.com/nahuelsoria/llmaudit-mcp",
+   "sha": "0c5e67c7eae1b98050b2a23d7aa992af15b1710e"
+  },
+  {
+   "url": "https://github.com/naief9961-tech/ai-growth-engine",
+   "sha": "cae8299d4d1cc13776c6fa75519afdf6dd7861f7"
+  },
+  {
+   "url": "https://github.com/nandarona-inc/rootpublish-ai-facts",
+   "sha": "5ce3bee731b2f166d061e2161b9f4010fad737eb"
+  },
+  {
+   "url": "https://github.com/natalabs/plexarm-plugin",
+   "sha": "d61f028a49cc914ef31ba52bc55c0bd07ba96264"
+  },
+  {
+   "url": "https://github.com/nauro-ai/nauro",
+   "sha": "374581ef359c299186d130ce6e0845057dac0d7a"
+  },
+  {
+   "url": "https://github.com/navifare/moltravel-mcp",
+   "sha": "2a0046d09539de7fbe41ac617f3e300b92e1389a"
+  },
+  {
+   "url": "https://github.com/neatlisting/neatlisting",
+   "sha": "9306cca389961fe0d7800a3b81e23039a6686171"
+  },
+  {
+   "url": "https://github.com/negmus/narva-mcp",
+   "sha": "2ae81b62860720684305c275bb174901c039f1e1"
+  },
+  {
+   "url": "https://github.com/nengjianglunpi/astockevent-mcp",
+   "sha": "c8a550c463b32630a7367284babf85103f7bc77c"
+  },
+  {
+   "url": "https://github.com/nessflow/mcp",
+   "sha": "b3c64270afa1ac5790752c4c597dbaa761c87ae7"
+  },
+  {
+   "url": "https://github.com/nessgate/nessgate",
+   "sha": "3ca08fb1be7dedd7b42fd6efb5dc8998c3634b85"
+  },
+  {
+   "url": "https://github.com/netrodev/dmca-cases-public-mcp",
+   "sha": "9f0b7864395667e9abf92ea36154f0fa2cf6b140"
+  },
+  {
+   "url": "https://github.com/neuronsearchlab/mcp",
+   "sha": "109b5514478ddff011c3da13a3d3eea939de4d03"
+  },
+  {
+   "url": "https://github.com/newscatcher/catchall-mcp",
+   "sha": "e7ea7651272d9c2420f1fa1b3223ac06beec273f"
+  },
+  {
+   "url": "https://github.com/newtalaria/talaria-agent-plugin",
+   "sha": "1a35fcc24e1844ba3672afcc6c3340a5956791fe"
+  },
+  {
+   "url": "https://github.com/nickpanagios/estimaite-mcp",
+   "sha": "ad124523d111ba5a7e659f30b7c50308b7d03387"
+  },
+  {
+   "url": "https://github.com/nikbibamon/tvijocode",
+   "sha": "9b3fd9b916ab63436e297416755f8a21a383dfbd"
+  },
+  {
+   "url": "https://github.com/nikhils4/ui-beats",
+   "sha": "e1c367ac0a62f179f881fcdeab1ff1449bb792eb"
+  },
+  {
+   "url": "https://github.com/nikoismaster/adrecast-mcp",
+   "sha": "225ac1cd115623838d0905c6b1e8a5679ec9ff27"
+  },
+  {
+   "url": "https://github.com/nobleblocks/nobleblocks-mcp",
+   "sha": "c54a6386306708cbc4029e9da9bf39e602165484"
+  },
+  {
+   "url": "https://github.com/node-man/dechonet-mcp",
+   "sha": "65bb6c210da8c40430c292c34752b177f34f17bf"
+  },
+  {
+   "url": "https://github.com/nodegenie/awesome-agent-skills",
+   "sha": "1a5a352277603d1490e72223e4e2f6ab3ad83926"
+  },
+  {
+   "url": "https://github.com/noju-io/joinable-kit",
+   "sha": "40150c261788915bd6ecb0e395a8b1dc48e5fd23"
+  },
+  {
+   "url": "https://github.com/nomac-app/simulator-use",
+   "sha": "6e98b31b063183e655bf5e039a94cf562580bb85"
+  },
+  {
+   "url": "https://github.com/none298-dotcom/mylinedchart-mcp-chart-context",
+   "sha": "126220dc66e63787efa19eea6b8fdee9e0cc81bd"
+  },
+  {
+   "url": "https://github.com/norbertlevente/postemi-agent",
+   "sha": "3f9ab6abcc6398124512c0d9cc18a3d55412dbad"
+  },
+  {
+   "url": "https://github.com/noteboxd/mcp",
+   "sha": "18200d262fed87765c7e309d01882f800533d27b"
+  },
+  {
+   "url": "https://github.com/novence-ai/mcp",
+   "sha": "5f253a326ecb55afe0f917e51f91b9e03b495d9b"
+  },
+  {
+   "url": "https://github.com/nudgehost/nudgehost-mcp",
+   "sha": "762dc326b666bd984b765358dc453488689b9ed9"
+  },
+  {
+   "url": "https://github.com/number1101/tillpad-mcp",
+   "sha": "6ddc031110cf802eb4d5910132327be319c7893b"
+  },
+  {
+   "url": "https://github.com/nutstrut/default-settlement-verifier",
+   "sha": "8efd6528be234e66ff976c0a01dddabbf05671e7"
+  },
+  {
+   "url": "https://github.com/obligationsign/agts-mcp",
+   "sha": "b6906551987f77db533ee434613c8ddd3f5b1f47"
+  },
+  {
+   "url": "https://github.com/oceantokenai/oceantoken-plugins",
+   "sha": "04957d151f314d546bcc99d65bc488fc0bff0c07"
+  },
+  {
+   "url": "https://github.com/oconsole/odoo-mcp-server",
+   "sha": "898089db918fd00f4634bb0d53da7b79035455bf"
+  },
+  {
+   "url": "https://github.com/octoparse/octoparse-mcp",
+   "sha": "3906b5edb3a7b638f0772cae6b911bf3a6d47bb9"
+  },
+  {
+   "url": "https://github.com/odd-innocent/den_archi_mcp",
+   "sha": "c75ddd5533b6d5864da2b29dd2c744cb4745e333"
+  },
+  {
+   "url": "https://github.com/offlinecreatorstudio/offlinecreator-mcp",
+   "sha": "c29bc9a91204ae04c7ce124a756b79730e9b2838"
+  },
+  {
+   "url": "https://github.com/ogave-co/sms-mcp",
+   "sha": "b1ede9dcf744daa9178b3d329dd9f97093bf54bd"
+  },
+  {
+   "url": "https://github.com/ogenalabs/gate402-mcp",
+   "sha": "06536a2f107842821efb69633050eae8c7600305"
+  },
+  {
+   "url": "https://github.com/ogenalabs/token-risk-mcp",
+   "sha": "f607d0963238019c1b4b073f22c59ddd4e942343"
+  },
+  {
+   "url": "https://github.com/oksigeniasl/checker-mcp",
+   "sha": "2b065af8c18a371ec5b517f6727a4fb2745bfcb6"
+  },
+  {
+   "url": "https://github.com/olevasyliev/canton-venues-sdk",
+   "sha": "8c36a4c27b01ac14b9d9a415c0c5db2d463bf1a9"
+  },
+  {
+   "url": "https://github.com/omnisignal-ai/omnisignal-mcp",
+   "sha": "729f1c635874f74098a437bfca5c8d012c53f5b6"
+  },
+  {
+   "url": "https://github.com/oneappsworld/callchatsyn-mcp",
+   "sha": "45f68ec12682a5a29fb92ab9c3ac2b9a293ba6db"
+  },
+  {
+   "url": "https://github.com/onlinealarmkur/date-calculator-mcp",
+   "sha": "1929c5216f2f21a61739ac32a41f8b438bc96597"
+  },
+  {
+   "url": "https://github.com/onstartups/youspot-agent-tools",
+   "sha": "bb6c06ec894c431cd773ca12924bc39272673679"
+  },
+  {
+   "url": "https://github.com/onvaou-app/onvaou-itineraires-mcp",
+   "sha": "3238016d8e24994bbd030ce8b09d8bdc19914785"
+  },
+  {
+   "url": "https://github.com/opedd/opedd-mcp",
+   "sha": "b2c2f0532c02562557c73552cf4899679a852c01"
+  },
+  {
+   "url": "https://github.com/open-and-async/mcp",
+   "sha": "66c777d04554bd6e9268d7e73481a2e15e3373f8"
+  },
+  {
+   "url": "https://github.com/openephemeris/openephemeris-mcp",
+   "sha": "718c24717cf094a115705a04db1a942e7c0e29c5"
+  },
+  {
+   "url": "https://github.com/opensealai/agent-skills",
+   "sha": "00025eb66631107f772f99d8e71fcd18115c3a2c"
+  },
+  {
+   "url": "https://github.com/operatornest/mcp-tools",
+   "sha": "f707d1a1ccd72e04324e2f1c009deda1b4011635"
+  },
+  {
+   "url": "https://github.com/opointohq/opointo-mcp",
+   "sha": "59b419c3eb43a3514dd2b5ac5f9b13bc1c6ba8b3"
+  },
+  {
+   "url": "https://github.com/opspot-ai/betslipdoctor-mcp",
+   "sha": "e38b21f524564d7eca7d37d100a54fdd2383ffe8"
+  },
+  {
+   "url": "https://github.com/orangeproai/orangepro-mcp",
+   "sha": "98fbdb3149d8f3c6de31ccd58bae2e8c9f6cc386"
+  },
+  {
+   "url": "https://github.com/orchynx/mcp",
+   "sha": "8742d4b06f15f5c8ac461679e63ff9a9e319d4d4"
+  },
+  {
+   "url": "https://github.com/orioninfra/orion-agent-kit",
+   "sha": "57e69a773a4f805e46af3bcc5c65e9e9b4ae8c59"
+  },
+  {
+   "url": "https://github.com/otha-labs/persuasion-mcp",
+   "sha": "c07fc22352c3fe61fb742a9e96f966a24af6d9dc"
+  },
+  {
+   "url": "https://github.com/otisbase/otis-mcp",
+   "sha": "32570dd3570803449b282440b560d9c0aac1cc50"
+  },
+  {
+   "url": "https://github.com/outerframe-studio/screenweaver-mcp",
+   "sha": "e202d74235166eb8151b2160e0d715942d7febe6"
+  },
+  {
+   "url": "https://github.com/outset-ai/outset-mcp",
+   "sha": "e0f0ac718e31e8390a74b5a46c8b968527da6512"
+  },
+  {
+   "url": "https://github.com/overlayqa/mcp",
+   "sha": "9470d4f56910f50d10d3291b6920d54a0dd67241"
+  },
+  {
+   "url": "https://github.com/ownerspec-com/mcp-server",
+   "sha": "8a6b8fe15db750342b50d56daa32d48438ba4ba4"
+  },
+  {
+   "url": "https://github.com/oxylabs/oxylabs-mcp",
+   "sha": "556f3da133231597289579254c48b573643af9e1"
+  },
+  {
+   "url": "https://github.com/ozumin-dev/irkumo-mcp",
+   "sha": "796c4237b0300a9f32bfdbf2587cc4b523a89a8a"
+  },
+  {
+   "url": "https://github.com/padlet/padlet-mcp",
+   "sha": "69181f2fa1c3d62945d2df200cc0e5a194876672"
+  },
+  {
+   "url": "https://github.com/paichart/paichart",
+   "sha": "632ebe9b0c87319aa4d359c7e2069a3396d7a61c"
+  },
+  {
+   "url": "https://github.com/paperandbeyond23-gif/restosignals-mcp",
+   "sha": "f9d6928a796972ea6787f89f8aac8995db4f2dd8"
+  },
+  {
+   "url": "https://github.com/parsestream/parsestream-mcp",
+   "sha": "85620ed497ccafbfb2e9224c596790d980c7ff78"
+  },
+  {
+   "url": "https://github.com/patentreply/patentreply-mcp",
+   "sha": "7b1b5769ebd2ebeb7e7b126f403077a2c3f7cf02"
+  },
+  {
+   "url": "https://github.com/peach420fuzz/objekts-production-desk",
+   "sha": "49369e5372340fcaf0f55cf5e78ceafe71ef364f"
+  },
+  {
+   "url": "https://github.com/pensados/sentinelx-cloud-core",
+   "sha": "af4ea00167505f60b0c1261000d4f0d91b5ece2c"
+  },
+  {
+   "url": "https://github.com/pentesttoolscom/pentesttools-pypi",
+   "sha": "52361b71422d45d42e43aecc70dd5e17d6ea6a92"
+  },
+  {
+   "url": "https://github.com/pexafy/pexafy-mcp",
+   "sha": "62d6a4785493c1b644917d7b38acf2969ba33daa"
+  },
+  {
+   "url": "https://github.com/pinecreeklabs/oldcarsdata-mcp",
+   "sha": "e8f9db9e5338293568da86f9e2982aedf032bd57"
+  },
+  {
+   "url": "https://github.com/pixdataorg/coderide-mcp",
+   "sha": "901a005d4a7d13c3f8f49bbe11c1e65b996c26d6"
+  },
+  {
+   "url": "https://github.com/plainrouter/sdk",
+   "sha": "dbc72e7cd10f00e094c6e61c8032524b25da7f27"
+  },
+  {
+   "url": "https://github.com/playdrop-ai/playdrop-plugin",
+   "sha": "a439609a52dd5242e668cd3c0311ca19d49b87dc"
+  },
+  {
+   "url": "https://github.com/playgama/developer-cabinet-mcp",
+   "sha": "82433d083e7070f44da6f9e754ddf061c2ab6697"
+  },
+  {
+   "url": "https://github.com/policyforge/mcp",
+   "sha": "a161b9893fd2847c48333fc66fd5a6f382372a0d"
+  },
+  {
+   "url": "https://github.com/pooriaarab/benchmark-core",
+   "sha": "d5ab5329a5f83b7c91c7c550ac72a8a8f27f6738"
+  },
+  {
+   "url": "https://github.com/postmanlabs/postman-mcp-server",
+   "sha": "f6999e9d8ea7bda9515106eaafdd6222edf7e1df"
+  },
+  {
+   "url": "https://github.com/postoaklabs/ainumbers-mcp-apps",
+   "sha": "ecaf306349fb70d29ab2fc4aa3e3e8e2b5def0f1"
+  },
+  {
+   "url": "https://github.com/prax-labs-com/mcp-data-services",
+   "sha": "74d2b25bcfaefef8dec0f8cb59c4ea3b72285c86"
+  },
+  {
+   "url": "https://github.com/predictionmarketspicks/mcp",
+   "sha": "3b7fbeb09dc6b223c5580caaf629e5f0dc78ad8e"
+  },
+  {
+   "url": "https://github.com/prereason/mcp",
+   "sha": "416e1f234eb86b08da67ae774a41111d55a87eb3"
+  },
+  {
+   "url": "https://github.com/primate-intelligence/primate-intelligence-mcp",
+   "sha": "0cfd58d3bcbf5fa243300f467a6160a3e6b5b9fa"
+  },
+  {
+   "url": "https://github.com/printfriendly/printfriendly-mcp",
+   "sha": "391ad24697317f63ddbea9112eaa6eca039ba4bf"
+  },
+  {
+   "url": "https://github.com/printhive/print-hive-plugins",
+   "sha": "82a9bb81f4800f98b80eabdb31f2c9e11d809b9c"
+  },
+  {
+   "url": "https://github.com/project-feldspar-resources/feldspar-scan",
+   "sha": "a8a6eda13ed8724923a27be9d84faf6434cee250"
+  },
+  {
+   "url": "https://github.com/promptibus/mcp",
+   "sha": "14f86ec6bf31f40473553940273fc05c23498d0b"
+  },
+  {
+   "url": "https://github.com/propampai/propamp.ai-for-amazon-sellers-mcp-",
+   "sha": "bb660b9e349a1aab6302b6124c7c78eda64c9691"
+  },
+  {
+   "url": "https://github.com/propfirmdiscounts/prop-firm-discount-codes",
+   "sha": "b3f999be390b01273c19c8969365cbebe2dfae09"
+  },
+  {
+   "url": "https://github.com/prospectapis/prospectapis-mcp",
+   "sha": "6e548c5ad2b0f088aee09be3ca49c59bb1857e62"
+  },
+  {
+   "url": "https://github.com/proxygate-official/proxygate",
+   "sha": "e09ea93e47cf1c1148dcb891ccd26857735d14ae"
+  },
+  {
+   "url": "https://github.com/pschlieker/getbacklane",
+   "sha": "ee253b4d046f250a3da042b9dc9d22d019f460a8"
+  },
+  {
+   "url": "https://github.com/psykepro/shotanvil-examples",
+   "sha": "30362bbc8e47fc7472572344962f44f64a664d7e"
+  },
+  {
+   "url": "https://github.com/pyunto/tm-integrations",
+   "sha": "6add94baf0314a1b88081b5ed791bb31f615f227"
+  },
+  {
+   "url": "https://github.com/pyxmark/pyxmark",
+   "sha": "6cd5b436bd79a56a0f0742babaa149f00e54a8b6"
+  },
+  {
+   "url": "https://github.com/qianqiuwanzi/th-recut-free",
+   "sha": "19b3b3c3facbbbca49ad2241e595bf8ffe8fa69f"
+  },
+  {
+   "url": "https://github.com/qlaneai/agent-plugin",
+   "sha": "fb5d16ac2d45369ca29d2f507531552fe5a45405"
+  },
+  {
+   "url": "https://github.com/qodflow/qodflow-mcp",
+   "sha": "93652a1674baef69f84f4c71bed113bfb713cf70"
+  },
+  {
+   "url": "https://github.com/qompassai/fathom",
+   "sha": "83f0d2cc83024aace7435f2df9d14f18ebfbc678"
+  },
+  {
+   "url": "https://github.com/qompassai/lupin",
+   "sha": "ecf93b416e68e211142ad645de7b17e9fa5f180f"
+  },
+  {
+   "url": "https://github.com/qompassai/slipway",
+   "sha": "6224ab6a33ffe3aebb3ec06672469b2661991fb9"
+  },
+  {
+   "url": "https://github.com/quantgptco/quantgpt-mcp",
+   "sha": "a3e0c58809b46c570513cac608bc6390f06af272"
+  },
+  {
+   "url": "https://github.com/quelvio/quelvio-mcp-server",
+   "sha": "cae23edfb83f107861add3ca5c5c52d65a9fb76e"
+  },
+  {
+   "url": "https://github.com/quietdiff/quietdiff",
+   "sha": "a397c39c0f82b3e69eb86bd62506aae633a3f73c"
+  },
+  {
+   "url": "https://github.com/racharmi/-ohgiftplease-mcp",
+   "sha": "92f9ba9fd87f0b808bf408e05703859ec7a7038f"
+  },
+  {
+   "url": "https://github.com/radixia/blog-mcp",
+   "sha": "7cc0c787e09afc2c5e4a50b944f28d5850262240"
+  },
+  {
+   "url": "https://github.com/radmail-ai/radmail-mcp",
+   "sha": "8741661b937c425c7e60f6534c71c6c49224308e"
+  },
+  {
+   "url": "https://github.com/radres/call-me",
+   "sha": "134c695a4acb76fc1a9e639abcd23690a48587d0"
+  },
+  {
+   "url": "https://github.com/ramadasmr/networkcalc-mcp",
+   "sha": "ba70a42fea4015991ce35a9b5efa7aeb3bf6d6f0"
+  },
+  {
+   "url": "https://github.com/ravidorr/murphys-laws",
+   "sha": "180523365d474d4cc0ef2d92b7cf6447f2d4d2a0"
+  },
+  {
+   "url": "https://github.com/raymond-raymond/asianrecs-claude",
+   "sha": "cd370c9ed8df39ca170b74c2c0a33fa567d5fa74"
+  },
+  {
+   "url": "https://github.com/realeyes/verifeye-mcp-server",
+   "sha": "40792e524dc10d9d4e4947d7d70b12b45018e66f"
+  },
+  {
+   "url": "https://github.com/recued/recued",
+   "sha": "240dbf4d4a42a1c4a19ee2d52272d433006f2381"
+  },
+  {
+   "url": "https://github.com/redbark-co/redbark-mcp",
+   "sha": "fc27208f00cd88b757bbc2f2669ee9a3e25680e9"
+  },
+  {
+   "url": "https://github.com/relaticle/relaticle",
+   "sha": "8544a555b28e162ef12752897f5340d13c39333c"
+  },
+  {
+   "url": "https://github.com/relaymcp/relaymcp",
+   "sha": "7db4309faa3e8961d83ddf64c5d5d77529e09857"
+  },
+  {
+   "url": "https://github.com/remoas/caribbean-jobs-mcp",
+   "sha": "264ce96a058b4a592508e240f0a7a0103448ef14"
+  },
+  {
+   "url": "https://github.com/rencosta2025/context7fork",
+   "sha": "a170272c20a8da8295611af49993993973477d76"
+  },
+  {
+   "url": "https://github.com/reputemap-com/mcp",
+   "sha": "69cbc319a58f4e1f38e0b16daf0c3e9450ae880a"
+  },
+  {
+   "url": "https://github.com/reputemap/mcp",
+   "sha": "10de405b3f27d8568fad281cc32c741f51634c95"
+  },
+  {
+   "url": "https://github.com/retrogradelabs/lune-mcp-server",
+   "sha": "dfa176feb17daf8f7a72b7fd33196e8fee637c33"
+  },
+  {
+   "url": "https://github.com/revanbcn/promptingcraft-skill",
+   "sha": "7c57520a952567194416e6b398ba0a782a99dbfb"
+  },
+  {
+   "url": "https://github.com/revelara-ai/revelara-plugin",
+   "sha": "45aba8f6ee58e2ae392fa05697e83eff1d100deb"
+  },
+  {
+   "url": "https://github.com/riceharvest/air-bandenservice-mcp",
+   "sha": "cebec36f09bee27869874c1b6b2f0fe464be60c7"
+  },
+  {
+   "url": "https://github.com/richardreeze/mrb-api",
+   "sha": "0ee13a1a137eb87d696b2796987de082fad5b421"
+  },
+  {
+   "url": "https://github.com/rightcard/rightcard-mcp",
+   "sha": "01147b8c986be470a0a86ad894e3a89f0e55119c"
+  },
+  {
+   "url": "https://github.com/rillsoft/rillsoft-project-mcp",
+   "sha": "f45bd03f046718efe5244c38d9e84f5bdc018d77"
+  },
+  {
+   "url": "https://github.com/rippermercs/tensorfeed-mcp",
+   "sha": "3bf384a203a585e4f28e99799c08a354390b7f76"
+  },
+  {
+   "url": "https://github.com/riskstate/mcp",
+   "sha": "d4773c8945d3bbde6dc78bdc882299ad20d44d25"
+  },
+  {
+   "url": "https://github.com/rithmo-inc/rithmo-mcp-examples",
+   "sha": "c141954cefebdfa4894e1e25d32f07b37babcd3e"
+  },
+  {
+   "url": "https://github.com/robinhill85/file2markdown-mcp",
+   "sha": "272b030e7c74a47c35b56be11196cf131095c579"
+  },
+  {
+   "url": "https://github.com/roboadapp/robowrite-plugin",
+   "sha": "cb62931a47234bb32dbf1f0d94f69989a766aaba"
+  },
+  {
+   "url": "https://github.com/rocketlist-ai/startup-jobs",
+   "sha": "e4b1cc52150347effdf9907c61fa7ed430cfdeca"
+  },
+  {
+   "url": "https://github.com/rollounden/rapid-indexer-mcp",
+   "sha": "c314719ca7d7a7ce9af820145fb04f90995c031c"
+  },
+  {
+   "url": "https://github.com/rowsend/mcp",
+   "sha": "8a6d8571b3999b9d3d2adbaff9db10b28239b464"
+  },
+  {
+   "url": "https://github.com/ruimluis/tend-mcp",
+   "sha": "7201c40a51c1aec917f7fce993414c16639dc78c"
+  },
+  {
+   "url": "https://github.com/rustfreeone/trailweights-mcp",
+   "sha": "1c9da88d3d1c73719128ddc5455e372ae8478c62"
+  },
+  {
+   "url": "https://github.com/ryankiley/mahonia",
+   "sha": "56c6c84e3964cb2a0c12d4ca1541c8046bfdc13c"
+  },
+  {
+   "url": "https://github.com/sabhahith-works/skeletiq-mcp",
+   "sha": "86b5fb20ccbbe2e0f83aa53b8d36db3c5ba2541e"
+  },
+  {
+   "url": "https://github.com/saezbaldo/deploytoagents",
+   "sha": "52d35c284a94bd8cb790cc6bbdac520fb2eff970"
+  },
+  {
+   "url": "https://github.com/safe4ai/safe4-mcp",
+   "sha": "21c05427b8065ef06573060fa1bc2b5e6493c38c"
+  },
+  {
+   "url": "https://github.com/sambel/catchdoms-mcp",
+   "sha": "4841a4c55a77587559dca8574f5c74a038f6d86c"
+  },
+  {
+   "url": "https://github.com/sambel/localscreenshot-mcp",
+   "sha": "a11b7c8bf44d880ec9b2c36b882c05289b4a4567"
+  },
+  {
+   "url": "https://github.com/samebase/plugin",
+   "sha": "9c00818d4acdb2d7d2bb5f76d97757a4e19e30c2"
+  },
+  {
+   "url": "https://github.com/samerdwykat-cmyk/upshift-mcp",
+   "sha": "111ad9d6b9826bab1b88a6504b9bf156dc36adb9"
+  },
+  {
+   "url": "https://github.com/sanjaybhagia/kumbaa-mcp",
+   "sha": "ed4895e7834c18fef5e8b08e804c20faa91ac02d"
+  },
+  {
+   "url": "https://github.com/sanjaybhagia/trvlrr-mcp",
+   "sha": "7a408669faaf13b3d75cbb4fc8443624267bbd7a"
+  },
+  {
+   "url": "https://github.com/sanjaybhagia/worthbase-mcp",
+   "sha": "ad6c5c51b2c03a50f6ed47aa40f54d1cbe23bfb4"
+  },
+  {
+   "url": "https://github.com/sathish27/didyouseo-mcp",
+   "sha": "8f638594b1aba90dae218429ae596df8d22289b4"
+  },
+  {
+   "url": "https://github.com/satohubai/onchain-agents",
+   "sha": "49440262ba22631ff709556ceed9b761e711dcba"
+  },
+  {
+   "url": "https://github.com/satohubai/sato-hub-integrations",
+   "sha": "1a4c6c905ffef57d53042387bf9dbc18bbee3972"
+  },
+  {
+   "url": "https://github.com/savantcat/mcp-geo-cn",
+   "sha": "77d7f49de73535b5fe7c3a6713002e8e7e17e5c9"
+  },
+  {
+   "url": "https://github.com/savantcat/memory-dream-engine",
+   "sha": "8122761aa331e783ee2f27b09bcb42fe9b1d3a86"
+  },
+  {
+   "url": "https://github.com/savantcat/pattern-radar",
+   "sha": "319c8dc1840de2dcc06cd099b42ac260d78bf26b"
+  },
+  {
+   "url": "https://github.com/savantcat/savantcat-answers-mcp",
+   "sha": "0d4abfb7feb75f3152232576b04071bb03dea14c"
+  },
+  {
+   "url": "https://github.com/saveeit/savee-mcp-server",
+   "sha": "02413bbc7e333945faad60021a1c933dcdae6360"
+  },
+  {
+   "url": "https://github.com/savvly/savvly-mcp",
+   "sha": "e5276a821c403f7ee5630acf6b5f603b39f3bf5a"
+  },
+  {
+   "url": "https://github.com/sawftware-apps/docimprint-sdk",
+   "sha": "d287fb1b6aa9d0d7d0013681a82de39cc030f613"
+  },
+  {
+   "url": "https://github.com/saxonnicholls/super-log",
+   "sha": "ed9686c5ed809fc5a14e9f4c17132380f90d4e5f"
+  },
+  {
+   "url": "https://github.com/saypage-ai/saypage-plugin",
+   "sha": "e403f8a644407a6ce4391be17fc4a60fddf4a2f8"
+  },
+  {
+   "url": "https://github.com/scanbim-labs/scanbim-mcp",
+   "sha": "509ff592b59560ec50a01e94765955738f54a41b"
+  },
+  {
+   "url": "https://github.com/scanmalware/mcp-server",
+   "sha": "527d7a307e69f6d60232f4af8b27b3423581cf2f"
+  },
+  {
+   "url": "https://github.com/sclaytonmyosin/graviti-engine",
+   "sha": "643ee4dd823d180fdef6932c8a41ee66cdb4466d"
+  },
+  {
+   "url": "https://github.com/scoutapp/scout-mcp-local",
+   "sha": "a805cc04c936eb2b4dfc8395a3da9ac5fcbfdd01"
+  },
+  {
+   "url": "https://github.com/scrapeer/scrapeer-mcp-server",
+   "sha": "cf666784e60696115bf2814b36a94a7186399b57"
+  },
+  {
+   "url": "https://github.com/scrapefield/scrapefield",
+   "sha": "8b598e1a48cec6c3d03a856558d7d00774173cda"
+  },
+  {
+   "url": "https://github.com/scrapingdaddy/mcp",
+   "sha": "d41999dfe3a2677408e50c479708989cf46dacd2"
+  },
+  {
+   "url": "https://github.com/screenshotscout/screenshotscout-mcp",
+   "sha": "4f9444b4660683b7075db37d3d2351c6cbe44890"
+  },
+  {
+   "url": "https://github.com/seanbabalala/bitvoya-mcp",
+   "sha": "392d545eecd19d79ee1005ac0af514b3eec6fd4e"
+  },
+  {
+   "url": "https://github.com/seanwinslow28/sw-mcp-intent-engineering",
+   "sha": "adc1b77a9d905b7ac74933b2b0b77cb9e5e93d40"
+  },
+  {
+   "url": "https://github.com/seanwinslow28/sw-mcp-vault-knowledge",
+   "sha": "fc83a1499b92a257ebf7208c6da9727bd9882c21"
+  },
+  {
+   "url": "https://github.com/searchfragments/search-fragments-mcp",
+   "sha": "11f4a6c88e61691525a00f2ad04f60e9976fff8a"
+  },
+  {
+   "url": "https://github.com/secdim/mcp",
+   "sha": "78716ed4fad6fa08499dce4c553d99b32ea3612b"
+  },
+  {
+   "url": "https://github.com/securealy/securealy",
+   "sha": "a697f93c920e95724b3459355a4721349e079940"
+  },
+  {
+   "url": "https://github.com/securenow-ai/securenow-npm",
+   "sha": "84e43ab030b48a1530e1518a29c48d6b73c03794"
+  },
+  {
+   "url": "https://github.com/seifip/kilobat-cli",
+   "sha": "520f8d11ab858b26cc806046c5feeb3c0221b723"
+  },
+  {
+   "url": "https://github.com/sellermate-ai/amazon-ads-mcp",
+   "sha": "30c4d2a0463cc2ed6a698c40f3d223b9e7b9c38c"
+  },
+  {
+   "url": "https://github.com/send-co/jetpost-plugin",
+   "sha": "22756102c530a3b1dcf5279ebf70df9996c8219b"
+  },
+  {
+   "url": "https://github.com/senderkit/senderkit-skills",
+   "sha": "b426deb09e467372fe337d5b0bca67c5f5cee148"
+  },
+  {
+   "url": "https://github.com/sendkuy/sendkuy-mcp",
+   "sha": "ca7cd3a8dfee68c75bce9ed172016d4351778ad1"
+  },
+  {
+   "url": "https://github.com/sens663/targetwise-mcp",
+   "sha": "6731df92bb9fc4ca0b82d1e56798d902c31097c9"
+  },
+  {
+   "url": "https://github.com/sentfromai/sentfromai-mcp",
+   "sha": "d64a806173a0343444f95d5d46e83dbb70fb28a2"
+  },
+  {
+   "url": "https://github.com/sentinelsup/maskbreak-mcp",
+   "sha": "01a69680e476766c3cc6aa475942ab6a8b7a20db"
+  },
+  {
+   "url": "https://github.com/senzii-app/app",
+   "sha": "85cad82c158a1a6e8f2bbcd30ae35c30f3ec090d"
+  },
+  {
+   "url": "https://github.com/senzing/mcp",
+   "sha": "c37311546c4a841145a9e029b751b80d005e0be1"
+  },
+  {
+   "url": "https://github.com/serkan-ozal/driflyte-mcp-server",
+   "sha": "fd959ffc0ebf5c1c69f169a01057a0dd3a76fe32"
+  },
+  {
+   "url": "https://github.com/serpelapp/serpel-plugin",
+   "sha": "d164ba8384f79cf233e00787bc212b1f2eaf8278"
+  },
+  {
+   "url": "https://github.com/servicialo/mcp-server",
+   "sha": "5cc669d667f650f454bfaeb9236a88a540475219"
+  },
+  {
+   "url": "https://github.com/shahbaz242630/zaaheen",
+   "sha": "d2bbf0eafd84a522a255d351b5ec84299dbc89a4"
+  },
+  {
+   "url": "https://github.com/shahhoseini/masnavi-mcp",
+   "sha": "5e12a8500738e32dcf3b1d57ae32fdf26bc7531f"
+  },
+  {
+   "url": "https://github.com/shareseer/shareseer-mcp-server",
+   "sha": "6f1addb69b21431a1f4ed5430f3cc3cb4e194776"
+  },
+  {
+   "url": "https://github.com/shawnazar/forkmate-mcp",
+   "sha": "e387fa0793ffa72105fa2ba183827c4e8391f99c"
+  },
+  {
+   "url": "https://github.com/shawnhvac/solvscore-mcp",
+   "sha": "e78fcd9326cd804633358ee0109427751f48c751"
+  },
+  {
+   "url": "https://github.com/shiftinbits/constellation-mcp",
+   "sha": "62953746345df49b6803535cdc7afef43832b1ae"
+  },
+  {
+   "url": "https://github.com/shiftyasan/mcp-server",
+   "sha": "df872881e7460466102963f43ecea9bf1a5c2519"
+  },
+  {
+   "url": "https://github.com/shipeasy-ai/shipeasy",
+   "sha": "745b8efbb05e37a82c19f1301a93a809c9d4919f"
+  },
+  {
+   "url": "https://github.com/shipfound/shipfound",
+   "sha": "5f960cb75b9481384a44aba176cfbba8710c1cc7"
+  },
+  {
+   "url": "https://github.com/sifr0-dev/djzs-ai",
+   "sha": "4c81e293f07eb03c46d11d323c5220dd514c3376"
+  },
+  {
+   "url": "https://github.com/signal8ai/signal8-mcp",
+   "sha": "6b4d047e30ad55800c5b9d8b40632372c3a23ea1"
+  },
+  {
+   "url": "https://github.com/signaltech-org/bolthub-sdk",
+   "sha": "0ed257e29c6ba76e754cdac8f149157f13b07a56"
+  },
+  {
+   "url": "https://github.com/simonmak-ascent/coso-mcp",
+   "sha": "c53905acd9f320a260cc5aec4ef50518a0fe03cd"
+  },
+  {
+   "url": "https://github.com/simonmak-ascent/esg-hub",
+   "sha": "86426a0466418a653bc5d1dc9e27c2e157cb597c"
+  },
+  {
+   "url": "https://github.com/simonmak-ascent/hkex-filing-scraper",
+   "sha": "75b7d61d4f743d159f826cf8bbe8c1e0709e43eb"
+  },
+  {
+   "url": "https://github.com/simonmak-ascent/vision-driven-design",
+   "sha": "5d800f2e98fb0da2c40946739b3a788bcdc6d92a"
+  },
+  {
+   "url": "https://github.com/simular-ai/box-plugin",
+   "sha": "0085bfadf18a6c053865e083eca0509837eaa40e"
+  },
+  {
+   "url": "https://github.com/simulsarker007/space-mushroom-mcp",
+   "sha": "0f64bafdbca1160cbc243f297393b5f11e935d06"
+  },
+  {
+   "url": "https://github.com/sitepulsar/mcp-server",
+   "sha": "dea2d7ab10ea054f61e74eb0fc202c8d338a3171"
+  },
+  {
+   "url": "https://github.com/skaidigital/brreg-mcp",
+   "sha": "5a1b255765e67c72a4c8fac2b4ded32651b42929"
+  },
+  {
+   "url": "https://github.com/skprasad-korture/korture-mcp",
+   "sha": "31a26712e366f650a7332c69a7d06a52af2b06a7"
+  },
+  {
+   "url": "https://github.com/sky-access/skyaccess-mcp",
+   "sha": "5d7d57b11b952b7d3c47acc8ad22197d486a1418"
+  },
+  {
+   "url": "https://github.com/slideless-ai/mcp",
+   "sha": "7a099b1d5aad1d6244d1e3f325db8c43e57c9579"
+  },
+  {
+   "url": "https://github.com/smartmemory/stratum",
+   "sha": "e36e3c0111d3e5b3ca78a41b66537cf5faec1c49"
+  },
+  {
+   "url": "https://github.com/smirnov-labs/hypr-computer-use-mcp",
+   "sha": "6e8c7fb2e5127253b3ba5f7e5a3b488b6cd2edaf"
+  },
+  {
+   "url": "https://github.com/snapshot-site/snapshot-site-mcp",
+   "sha": "ae94a73c85b11a9563e2de9ab860ed7fe8636662"
+  },
+  {
+   "url": "https://github.com/snipzrhq/snipzr-mcp",
+   "sha": "7ff20c48a7998c8e41900ce73a3acc30cad8f06f"
+  },
+  {
+   "url": "https://github.com/socialbitro/agentbit-mcp",
+   "sha": "e27d06ce5abe7ac3e91b3ae2743f24213f60263a"
+  },
+  {
+   "url": "https://github.com/soflutionltd/depsonar",
+   "sha": "aef948246666569c9067c2d0ba55b6812e424c8e"
+  },
+  {
+   "url": "https://github.com/soflutionltd/kilnshell",
+   "sha": "39fa27b940947273e5fb5d23fdb337cd8b984b77"
+  },
+  {
+   "url": "https://github.com/soflutionltd/mcphub",
+   "sha": "c7518723e7c0c86348ed035030f96cbad237195c"
+  },
+  {
+   "url": "https://github.com/softdevfz/voxodds-mcp",
+   "sha": "130701765fc16c0d6b7922e5c019d34ffc7c2ccb"
+  },
+  {
+   "url": "https://github.com/software-as-content/software-as-content-sdk",
+   "sha": "03d480724c56b470e72baff51b55fc550e7725f5"
+  },
+  {
+   "url": "https://github.com/sofya-co/sofya-mcp",
+   "sha": "3aa67f21441069ac0f791c247aa2472796060942"
+  },
+  {
+   "url": "https://github.com/solidinvoice/solidinvoice",
+   "sha": "54db020dc1f8981e93e222574148f38ed6549e3d"
+  },
+  {
+   "url": "https://github.com/spala-ai/spala-public-mcp",
+   "sha": "13f9ca84a3d868ed5197e2ae47e3f45ebc580dbe"
+  },
+  {
+   "url": "https://github.com/specstream/specstream-tools",
+   "sha": "f96fc585773b3d4f1ed13fc5010e4e75ce7b180c"
+  },
+  {
+   "url": "https://github.com/specstreamai/specstream-tools",
+   "sha": "f96fc585773b3d4f1ed13fc5010e4e75ce7b180c"
+  },
+  {
+   "url": "https://github.com/sprifti/chartsy-agent",
+   "sha": "125bf8b6e238caad1313bbae4ca47afa71bad2e2"
+  },
+  {
+   "url": "https://github.com/spritecook/spritecook-mcp",
+   "sha": "51183367f2281d3fbbdb6cef730823352f6dae59"
+  },
+  {
+   "url": "https://github.com/spytrend/spytrend-mcp",
+   "sha": "65037074851b788a03ccd4fe2152104389c83f04"
+  },
+  {
+   "url": "https://github.com/square-al/fiskalizimi-utils",
+   "sha": "fde27329820cf712a73bf667dd5e9a79997cb0a3"
+  },
+  {
+   "url": "https://github.com/squaredup/mcp",
+   "sha": "015743acbe6fa0c53e85778bb03b971c690d810c"
+  },
+  {
+   "url": "https://github.com/squirrelscan/skills",
+   "sha": "d1f585cdc299d5f55582b8e4d5e393ad43e5a783"
+  },
+  {
+   "url": "https://github.com/srivardhan113/srift-open_source",
+   "sha": "06db9adf75b1598ef4aca259f74f055633652a7f"
+  },
+  {
+   "url": "https://github.com/stackhawk/stackhawk-mcp",
+   "sha": "28755aa34af52e120a069d18a1150e773e3f2707"
+  },
+  {
+   "url": "https://github.com/stat-api/mcp",
+   "sha": "494d3c6fab46c0ffce63b45988b3e602afd92776"
+  },
+  {
+   "url": "https://github.com/stockmarketscan/optionsbell-mcp",
+   "sha": "4e59ecac7650e6e61619b9b77a9de9d9d142fc53"
+  },
+  {
+   "url": "https://github.com/stovbuilds/scriptgrain-mcp",
+   "sha": "0b91d11c406494c7a509cbd25292a50b2e059c70"
+  },
+  {
+   "url": "https://github.com/stripe/agent-toolkit",
+   "sha": "8f4c6295246b771bdfbffd4a50171f75a03507c8"
+  },
+  {
+   "url": "https://github.com/substrate-memory/substrate-memory-plugins",
+   "sha": "0f13e36ea80b44a67eaadcac0c8444fe14e3c020"
+  },
+  {
+   "url": "https://github.com/sugra-systems/prod-sugra-ai-mcp",
+   "sha": "a83c16b8822a578f072d1aa2dfe2f99b00e540c1"
+  },
+  {
+   "url": "https://github.com/sunex-ai/optics-mcp",
+   "sha": "0ea5fed26dd48e243acd011aa58ed532c732aa7d"
+  },
+  {
+   "url": "https://github.com/surfacedby/ai-visibility-mcp",
+   "sha": "e756c3359672f428f40f5fb36ef9fe36bbb81b33"
+  },
+  {
+   "url": "https://github.com/svgicons-com/mcp",
+   "sha": "9a52593f1abdaef6ca1c95066edfb57f126469e9"
+  },
+  {
+   "url": "https://github.com/swiftcodesapi/fincodesapi-mcp",
+   "sha": "5390bf781c45c8b6c6bfaf8f66f61cdfdc0a8568"
+  },
+  {
+   "url": "https://github.com/sydlawrencedev/vibresia",
+   "sha": "8571bb81bc0aad79310229302d146089c4e43286"
+  },
+  {
+   "url": "https://github.com/synorb/hanging-context",
+   "sha": "e530277c1935f3329ada3fb13e31c95339ed4a35"
+  },
+  {
+   "url": "https://github.com/szge/lolwiki-mcp",
+   "sha": "5dfe00c173c5f0a751f010a67915bdc5f2d2b6cf"
+  },
+  {
+   "url": "https://github.com/taaft/mcp",
+   "sha": "0420670ab3fbda0db0cb3d13e9919eb34d1b9df7"
+  },
+  {
+   "url": "https://github.com/taasky/taasky",
+   "sha": "fb75ab9242f9be12d42a7ae62e7ceda91fc18f67"
+  },
+  {
+   "url": "https://github.com/takara-ai/miru-code",
+   "sha": "392c4bae49e2d6130911e3fb3158da960eac80ad"
+  },
+  {
+   "url": "https://github.com/talent-summoner/agent-skills",
+   "sha": "666a1d2cfa542ce05692fad2659b81dbbe262c09"
+  },
+  {
+   "url": "https://github.com/tdnupe3/mcp-server-coinrailz",
+   "sha": "91023c5a180709ab256c7183dc69aa28c33f5054"
+  },
+  {
+   "url": "https://github.com/team0-ai/team0-plugins",
+   "sha": "9045470b6afd1cbd311c6507cb9aee3c16c2d4c1"
+  },
+  {
+   "url": "https://github.com/teamhooddev/teamhood-mcp",
+   "sha": "0921f1bbb561ca1c2f2a6b46fd68b489f4558fd9"
+  },
+  {
+   "url": "https://github.com/tengolabs/killbottleneck",
+   "sha": "e7ea4a5f3747d9f3619444282f5ac406f7e6dc06"
+  },
+  {
+   "url": "https://github.com/terahertz-inc/crosodo-mcp",
+   "sha": "b1e37d1a98b3e97be35d89b77358046510c73017"
+  },
+  {
+   "url": "https://github.com/terahertz-inc/qrblox-mcp",
+   "sha": "80147028f02b67d5f3a119a33828a4c5c701da3c"
+  },
+  {
+   "url": "https://github.com/tetiai/pixserp-mcp",
+   "sha": "ef3849255b33767f32af9fa1275a9591d122dd6a"
+  },
+  {
+   "url": "https://github.com/thatospinaguy/myhumanrep",
+   "sha": "be8c98fc5f88cd9acfd49669551b7ac80b6a4b4e"
+  },
+  {
+   "url": "https://github.com/thearchitect0x-glitch/ratchet",
+   "sha": "c0c77e9db03fdd4253615cb3bae415919fac724a"
+  },
+  {
+   "url": "https://github.com/thehealthai/clarity-mcp",
+   "sha": "1414a0963a89c9a24da2877f2e1d010a3b332187"
+  },
+  {
+   "url": "https://github.com/thehiddenpandadev/catastro_gps_mcp",
+   "sha": "a5411d38641bc7777f4e2b08a8644951524d9ce9"
+  },
+  {
+   "url": "https://github.com/thelconsulting/coghelm-mcp",
+   "sha": "783e9c25ca63a9376984233a6993a0035ae6d3d7"
+  },
+  {
+   "url": "https://github.com/theluckystrike/mcp-office-suite",
+   "sha": "f5e57dfb92e1143e28e4eb680194a4ed742c0dc6"
+  },
+  {
+   "url": "https://github.com/thenonduality/gregbenza-ai",
+   "sha": "945593a9e15101ae24b20100ee67ca95e94304e2"
+  },
+  {
+   "url": "https://github.com/theskillvault/theskillvault-mcp",
+   "sha": "adc8a681b59d727dd62aa600531895e4ffcf5043"
+  },
+  {
+   "url": "https://github.com/theusmyep/ads-editor-mcp",
+   "sha": "8d563f2ecdce879bf27fa4b7aa8897272fe4a2fd"
+  },
+  {
+   "url": "https://github.com/thomasbodri/returnolio-mcp-server",
+   "sha": "c5afe9c8da5cae08b435c55835cfd2f15b342038"
+  },
+  {
+   "url": "https://github.com/thoughtspot/mcp-server",
+   "sha": "c9a4bcfc86c96658352e5c48448623a43c827992"
+  },
+  {
+   "url": "https://github.com/timememe/woclub",
+   "sha": "cd3143be3f9d933d7fcf2f516a8d6045a7ab81a8"
+  },
+  {
+   "url": "https://github.com/timeprooflabs/truthspine-app",
+   "sha": "9abc82f6d057f79b9dcb2a78b0ed95e4ec922f6c"
+  },
+  {
+   "url": "https://github.com/timmeredith/saaskly-mcp",
+   "sha": "c255e7e8f0a50eb19649355382cb31920038bdb2"
+  },
+  {
+   "url": "https://github.com/tin-computer/tin",
+   "sha": "24b0fe8067fd86ab92a22242d762775011a0f2cc"
+  },
+  {
+   "url": "https://github.com/tokenrip/cli",
+   "sha": "f00e2f60916c0cf3307d07daa6ab9289bc3dcfb9"
+  },
+  {
+   "url": "https://github.com/tollwarden/tollwarden",
+   "sha": "9a244555fcd20ef9b2f59e9142cf3b9994dd0687"
+  },
+  {
+   "url": "https://github.com/tommasosavorana/diggercamp-mcp",
+   "sha": "371de75cb54833ae75f46a5be458ae8c1eaa26bf"
+  },
+  {
+   "url": "https://github.com/toolsnap-app/toolsnap-mcp",
+   "sha": "3df2d71c5f7d75cb99a5ceb1104d471128cc07da"
+  },
+  {
+   "url": "https://github.com/toolstackvault/pitbridge",
+   "sha": "a0086d42a9a8c9ff046e496644f48ed699942503"
+  },
+  {
+   "url": "https://github.com/top-init/shortimize-mcp-registry-listing",
+   "sha": "d61a70eb1eb9e94a76de0a2b99c53818ac6f9ad0"
+  },
+  {
+   "url": "https://github.com/topness-msft/crowdhum-plugin",
+   "sha": "98f68b81731ada52396688b68d2864755fb2dec0"
+  },
+  {
+   "url": "https://github.com/topy-ai-ltd/topy-ai-coo-skills",
+   "sha": "5e7a12cd3aa3d2b6731d77a46ccc04483ca0903f"
+  },
+  {
+   "url": "https://github.com/topy-ai-ltd/topy-ai-cro-skills",
+   "sha": "2eb43c0f54e4382e42c4825e5f7d20cae7273a20"
+  },
+  {
+   "url": "https://github.com/topy-ai-ltd/topy-ai-cto-skills",
+   "sha": "f0c0b292e1fe6327e1adceeab16c28957bee7072"
+  },
+  {
+   "url": "https://github.com/toro-guapo/trestle",
+   "sha": "d36bfbf8b5e89681744c7ae175a25d8717f10f90"
+  },
+  {
+   "url": "https://github.com/totalcms/totalcms-plugins",
+   "sha": "5689261a08d2e19b0a5a88887ad3be67ccdda084"
+  },
+  {
+   "url": "https://github.com/touchstone-cv/touchstone-mcp",
+   "sha": "09777cafd65a89621ebe824c0c79f508493daf3c"
+  },
+  {
+   "url": "https://github.com/tough-tongue/toughtongue-skills",
+   "sha": "c700f74491314dd08513dfd41bb273ab4e11dd2c"
+  },
+  {
+   "url": "https://github.com/tracklution/tracklution-cli",
+   "sha": "47ac0149ead369114b9b0bcac014c6870e1829b0"
+  },
+  {
+   "url": "https://github.com/tradallo/reputation",
+   "sha": "e084002786c8845acab2bf900437dc4b31044d7b"
+  },
+  {
+   "url": "https://github.com/trags-garden/poppy",
+   "sha": "3f1c8950a10d567c239122e9dd63b98007fd5bd5"
+  },
+  {
+   "url": "https://github.com/transcenduk/agentdataco-site",
+   "sha": "2e0e243cebb6998031fdfa32e06355c2904a795e"
+  },
+  {
+   "url": "https://github.com/transcriptfetch/mcp-server",
+   "sha": "d771efd9b31fdfaf52834b3c70e6e2dda4bd9dae"
+  },
+  {
+   "url": "https://github.com/transcriptfetch/python-sdk",
+   "sha": "77169a7627dd36717a51c37e87f3adb2f01ee92e"
+  },
+  {
+   "url": "https://github.com/transcriptfetch/youtube-tiktok-instagram-transcript-mcp",
+   "sha": "d771efd9b31fdfaf52834b3c70e6e2dda4bd9dae"
+  },
+  {
+   "url": "https://github.com/transcriptmagic/mcp-server",
+   "sha": "1869a17488c04f2d83458a71e5a1c8849dacb4eb"
+  },
+  {
+   "url": "https://github.com/translatize/integrations",
+   "sha": "1516a7b5bf349b5c6fa2794d1882d59236212a21"
+  },
+  {
+   "url": "https://github.com/trendsapi-ai/news-sentiment-api",
+   "sha": "f2e7d01f41d6ca9719e552f2ebe06c72feb93b01"
+  },
+  {
+   "url": "https://github.com/trendsapi-ai/wikipedia-trends-api",
+   "sha": "bf44eeae69b0f7c707173bb0051732b126e00fe1"
+  },
+  {
+   "url": "https://github.com/trendsmcp-ai/app-store-trends-mcp",
+   "sha": "8e073d9407c416186b52b04d62bdea9eeef1d188"
+  },
+  {
+   "url": "https://github.com/trendsmcp-ai/google-trends-mcp",
+   "sha": "a136fa9d5a2552dc0f67a8e6b6297f027eacb7d2"
+  },
+  {
+   "url": "https://github.com/trendsmcp-ai/tiktok-trends-mcp",
+   "sha": "160dfc6a47503b499cb9c42e34e4616e06e4cbae"
+  },
+  {
+   "url": "https://github.com/trendsmcp-ai/wikipedia-trends-mcp",
+   "sha": "3c8caa81540c32fd85b297e8871e3377ee2ff25f"
+  },
+  {
+   "url": "https://github.com/trendsmcp/app-store-trends-mcp",
+   "sha": "8e073d9407c416186b52b04d62bdea9eeef1d188"
+  },
+  {
+   "url": "https://github.com/trendsmcp/npm-trends-mcp",
+   "sha": "09946ee65af841818cb92b271603d4c08db1a47e"
+  },
+  {
+   "url": "https://github.com/trendsmcp/reddit-trends-mcp",
+   "sha": "07e232f943f983a7c731f45aeb0d686cded843f9"
+  },
+  {
+   "url": "https://github.com/trendsmcp/steam-trends-mcp",
+   "sha": "2d09124a3714230ccae5eeefdbca62d24481a94b"
+  },
+  {
+   "url": "https://github.com/trendsmcp/tiktok-trends-mcp",
+   "sha": "160dfc6a47503b499cb9c42e34e4616e06e4cbae"
+  },
+  {
+   "url": "https://github.com/trendsmcp/wikipedia-trends-mcp",
+   "sha": "3c8caa81540c32fd85b297e8871e3377ee2ff25f"
+  },
+  {
+   "url": "https://github.com/trivial-corp/agents",
+   "sha": "fd94ec336139f0010aa45a7a1f3fd118ac9ef802"
+  },
+  {
+   "url": "https://github.com/troulin-a11y/beachfinder-mcp",
+   "sha": "14d79738293d3ec5cbfad25d07294222c514e20f"
+  },
+  {
+   "url": "https://github.com/trusty-squire/trusty-squire",
+   "sha": "053469228b7f1a4843cb62b9af4e054fe17c538a"
+  },
+  {
+   "url": "https://github.com/truthifi/truthifi-mcp",
+   "sha": "17bc2157531228ae012b223142fddf4bb3d73a42"
+  },
+  {
+   "url": "https://github.com/try-dock-ai/mcp",
+   "sha": "c83f6c1174c56ecfec696ec148b856cd7b14fd9f"
+  },
+  {
+   "url": "https://github.com/trysonar/mcp",
+   "sha": "fa7da3287bf0701a3b7d2cb559bef6112b136bec"
+  },
+  {
+   "url": "https://github.com/tsharpe2282-web/twelve-permissions",
+   "sha": "20ce551e2f3a5c36d8aee1b33c6168853e141a25"
+  },
+  {
+   "url": "https://github.com/tunnelmind/scry-mcp",
+   "sha": "e15f950c89acc064ebdb0b23e94c658514c37320"
+  },
+  {
+   "url": "https://github.com/tuqui-ai/tuqui-mcp",
+   "sha": "f8571739673ae2d170a3fda57b5c7f51d54f6a98"
+  },
+  {
+   "url": "https://github.com/turnono/datacommons-mcp-server",
+   "sha": "5bac899e0316ac930673f7a6d251756a70798aa2"
+  },
+  {
+   "url": "https://github.com/twelvedata/mcp",
+   "sha": "d139a77ea0f7d40995e6979cd09c22dd142fbfe8"
+  },
+  {
+   "url": "https://github.com/u17g/timothe-ai-plugins",
+   "sha": "afde17c96121b83e39867eda1904a4358970ed66"
+  },
+  {
+   "url": "https://github.com/ultimaps/mcp-server",
+   "sha": "880457912ef0ea043804fc23d8f31f4452d7df45"
+  },
+  {
+   "url": "https://github.com/unblocked/skills",
+   "sha": "654ef15c4a9a93b6a6cea4747790d4b2ada35b26"
+  },
+  {
+   "url": "https://github.com/undercurrentai/aegis-mcp",
+   "sha": "38e8228878658062a32f90eeec9a97adc37266c9"
+  },
+  {
+   "url": "https://github.com/unibaseio/membase",
+   "sha": "0d64de669443c8bebb643f3cff5addaacf566d84"
+  },
+  {
+   "url": "https://github.com/unifapi-agent/unifapi-mcp-server",
+   "sha": "54884dbba9fd4be01bdb5a061357664da6ced36e"
+  },
+  {
+   "url": "https://github.com/unitedideas/nothumansearch-mcp",
+   "sha": "3d761c88715ee70106a0b32f1421a2e632fa1832"
+  },
+  {
+   "url": "https://github.com/unlikefraction/silicon-friendly",
+   "sha": "089221c57ded488bf749b2b928097eb644a1e6b5"
+  },
+  {
+   "url": "https://github.com/upinar/contrastapi",
+   "sha": "8c5bbd6f62aaddbebdbc63571c012d3ed95992d4"
+  },
+  {
+   "url": "https://github.com/uplink-code/mcp",
+   "sha": "3c6589453a8d5613b8ff5fb0baf9d8a7f13c805e"
+  },
+  {
+   "url": "https://github.com/uptimemonitoring/examples",
+   "sha": "23dc4815cb01448780b3aecb84c77021607c3f14"
+  },
+  {
+   "url": "https://github.com/useallowance/allowance-mcp-public",
+   "sha": "62e8bfbf17b6d18a8a39cedc0660bdda7e185a2d"
+  },
+  {
+   "url": "https://github.com/useorgx/orgx-mcp",
+   "sha": "f174812fbaf5a5b4ba3e18a46b3daffa19a435b4"
+  },
+  {
+   "url": "https://github.com/user0856/snaprender-integrations",
+   "sha": "8296e58e69805669b56bfc716134cd0d9e4d9c44"
+  },
+  {
+   "url": "https://github.com/usestring/string-ai-mcp",
+   "sha": "8ced0ed258f785b36259185410b7e15a51157ae0"
+  },
+  {
+   "url": "https://github.com/usr-bin-roygbiv/applystead-mcp",
+   "sha": "e1ee30c32b4fc11e2a55daf2d30930584286a0c9"
+  },
+  {
+   "url": "https://github.com/utagoeinc/pyunto-agent",
+   "sha": "342c9162b58d7b6121f6c8746e45611d3b790495"
+  },
+  {
+   "url": "https://github.com/vaaya-ai/vaaya-mcp",
+   "sha": "7718f1a30e47d4a39d86c6ca3497bd6504a0bf53"
+  },
+  {
+   "url": "https://github.com/vannet/anotepad-mcp",
+   "sha": "408bec209d1d5be9e5c0c3a0b007da719b6cb46d"
+  },
+  {
+   "url": "https://github.com/vdineshk/dominion-observatory",
+   "sha": "afb4ab3fd46f733e0c33610c6e72e46ecd15bf07"
+  },
+  {
+   "url": "https://github.com/veecle/chiplab",
+   "sha": "85a9842739b42ccbfec315d6b5de8c1d7e7d5b1f"
+  },
+  {
+   "url": "https://github.com/vegvisai/vegvisai",
+   "sha": "449d298283e3f7fc7ec9f74f1176f21d8d9fd639"
+  },
+  {
+   "url": "https://github.com/velkyvenik/missingmcp",
+   "sha": "7b38b9516e62aee5d8afc2328753e6c5a5d88806"
+  },
+  {
+   "url": "https://github.com/verificate-dev/verificate-mcp-quickstart",
+   "sha": "62880eb2e1f7ec6b4495c744be9adbc68861ae0d"
+  },
+  {
+   "url": "https://github.com/viberooster/viberooster.github.io",
+   "sha": "9be2c7507c9c918f89d5509d1f6558256de3b611"
+  },
+  {
+   "url": "https://github.com/vinenastudio/angaria-mcp",
+   "sha": "0b8698f11febd02c20a5d9e9ac3ff96865b0cd3a"
+  },
+  {
+   "url": "https://github.com/vlsky2603/thedailyworkflow-mcp",
+   "sha": "03f0db6194755cc7f98ac754a89d1cf74465360f"
+  },
+  {
+   "url": "https://github.com/voxellinc/forge-mcp",
+   "sha": "633c9ee71c680c70caf6a2374cd420337169a452"
+  },
+  {
+   "url": "https://github.com/voyagehacks-com/mcp-server",
+   "sha": "5ebeb34baddca51069e28a3410b5e9e0bc0c8a52"
+  },
+  {
+   "url": "https://github.com/wakizara/val-action",
+   "sha": "7095ac3b0aab066ce217d69b0c2c1f00bdc82297"
+  },
+  {
+   "url": "https://github.com/walkover-mcp/viasocket",
+   "sha": "5fdaa70e93cc34155d7bb1576be324266a81f417"
+  },
+  {
+   "url": "https://github.com/warmthengine/warmth-engine-observatory",
+   "sha": "50767fdf938d90ebe4bb8e375a4e4c2ebdb7c95c"
+  },
+  {
+   "url": "https://github.com/warreandvavasour/workspacealberta",
+   "sha": "61426f3c9eb88040d741e9c738c13e6508cd129f"
+  },
+  {
+   "url": "https://github.com/wavespeedai/mcp-server",
+   "sha": "9578099ad47cb6a3e79d49e5c3d6466dfd1b32b3"
+  },
+  {
+   "url": "https://github.com/webalys-hq/streamline-mcp-server",
+   "sha": "9b8f5a390b85fb2c3b09995020750e70273dd02d"
+  },
+  {
+   "url": "https://github.com/webrating/formpaste-mcp",
+   "sha": "f7ba697b34cc4661af94f7e19fc5320f494c565a"
+  },
+  {
+   "url": "https://github.com/wei/mymlh-mcp-server",
+   "sha": "1a02398a05242209f0265ddbec15168509e50c2f"
+  },
+  {
+   "url": "https://github.com/weioai/site-check-mcp",
+   "sha": "cfea85970ce74f4a2347dae0c9ae8f54ce685853"
+  },
+  {
+   "url": "https://github.com/wejob-it/wejob-mcp",
+   "sha": "256ac36e9312c7d79973bc5457ce9f112186ed2d"
+  },
+  {
+   "url": "https://github.com/wenbu-app/wenbu",
+   "sha": "58f26f0d19a532fc6c5b9427197c36bbed2a24ab"
+  },
+  {
+   "url": "https://github.com/wgjsg/agilex-docs-mcp",
+   "sha": "dda2a20c0d2d32b42e9b0601f7b4e981dd7d0bff"
+  },
+  {
+   "url": "https://github.com/whimbrelresearch/whimbrel-mcp",
+   "sha": "5445dcf00f97e734c06f2315ad30bafc60c8729c"
+  },
+  {
+   "url": "https://github.com/win7user10/laraue.apps.boards",
+   "sha": "378a0fe60a8f90e823d59ebe00222eb6bec6e214"
+  },
+  {
+   "url": "https://github.com/winnr-app/winnr-mcp",
+   "sha": "3e31d73d74979de79ea35f282016c0b0f3f4c013"
+  },
+  {
+   "url": "https://github.com/withhumanai/withhuman",
+   "sha": "b966a44ab53118135ce3a8fe3719a5c329cad590"
+  },
+  {
+   "url": "https://github.com/withoneai/mcp",
+   "sha": "b4b4a1a1e85d9e3483f2c9c6ac208915c17967cd"
+  },
+  {
+   "url": "https://github.com/withruntime/runtime",
+   "sha": "2439ba85a7a043140e96a90ff0450ba6d5142fd8"
+  },
+  {
+   "url": "https://github.com/workos/skills",
+   "sha": "0d52ce6c7b91c0a97fe04c745d6a72635de2c7ab"
+  },
+  {
+   "url": "https://github.com/wormaceptor/wormaceptor",
+   "sha": "af2bedff1103df1bbae322f6be06bb4a86d67dd5"
+  },
+  {
+   "url": "https://github.com/wrpbr/agentalog",
+   "sha": "e2d58f4df711446cf161c75385dc12ae60583ee6"
+  },
+  {
+   "url": "https://github.com/wrpbr/commsharbor",
+   "sha": "1e7c04be6eb7f03dd8f8d910dc31550872c34f69"
+  },
+  {
+   "url": "https://github.com/wujieshengzhang/aisub-mcp",
+   "sha": "191805fd07ea456c894baac7eeea3b3e835bd6ec"
+  },
+  {
+   "url": "https://github.com/www-joyautomart-com/mcp-server",
+   "sha": "ec4cdb93f2d8b7e5804f394b0582fbab009b8b09"
+  },
+  {
+   "url": "https://github.com/x3clv/promtpress-mcp",
+   "sha": "f9e5268e08981bf4c98e08007ee46b587fbbdd36"
+  },
+  {
+   "url": "https://github.com/xiaoanran0602-pixel/narracore-mcp-public",
+   "sha": "3ce2e6dbda8e27fa28266cb626d4020e18e71f8c"
+  },
+  {
+   "url": "https://github.com/xixi048/feeling-search-mcp",
+   "sha": "7a6aedf83d0aa4d674253ddddc324828980646c0"
+  },
+  {
+   "url": "https://github.com/xjokerabab/ipforai",
+   "sha": "d2acfe2dc528acd383fbadf00c7e8e47b2ab1a9c"
+  },
+  {
+   "url": "https://github.com/yaakovtzedek/balmas-mcp",
+   "sha": "29e7c36027bdb50b070a85cf44ed8d3a38a1c20c"
+  },
+  {
+   "url": "https://github.com/yairl/xhost-sdk",
+   "sha": "9e4c832dd666199e764ea7e8b4fdd3273cc22359"
+  },
+  {
+   "url": "https://github.com/yaniv-fink/wpwriter-mcp",
+   "sha": "725c344476049e18c4f16a76cd04e11b87b8551e"
+  },
+  {
+   "url": "https://github.com/yankevych/somiya-mcp",
+   "sha": "12086ba23b66baca75b4b0c3327eb7dd23218966"
+  },
+  {
+   "url": "https://github.com/yasinozen35/free-etf-flows-mcp",
+   "sha": "18f125b638f4d84abd98b0c91c62710ecb4baf03"
+  },
+  {
+   "url": "https://github.com/yellowkode-academy/suno-mcp",
+   "sha": "0983846ec939404b7f056796a5045ff820639282"
+  },
+  {
+   "url": "https://github.com/yenchieh/diagramzu-mcp",
+   "sha": "364b1c4128b8b80ccb736e3ee7f6195335a7efd3"
+  },
+  {
+   "url": "https://github.com/ykarmouta/faireplace-public-mcp",
+   "sha": "0f7c131763c2d45ec60802e9617348d1d21d2bce"
+  },
+  {
+   "url": "https://github.com/youcited/cited-cli",
+   "sha": "97f7ffd22065cd8c2d96c38e740a5ac50985c152"
+  },
+  {
+   "url": "https://github.com/yuna0x0/hackmd-mcp",
+   "sha": "38f6a4b67e2f3274f75f648eb1fe16af5334c978"
+  },
+  {
+   "url": "https://github.com/zafety-vibin/grimoire-mcp",
+   "sha": "afa6d9aa030130581c58b1c47b0615b4848394f6"
+  },
+  {
+   "url": "https://github.com/zendiq/zendiq-agent-api",
+   "sha": "95ecd14c85e4960e53e19172a6ff282353045286"
+  },
+  {
+   "url": "https://github.com/zeropointrepo/zillow-mcp",
+   "sha": "80a8f1d293ec7b817d89b5c43c48e76c009ae1b2"
+  },
+  {
+   "url": "https://github.com/znxltd/scanforai-mcp",
+   "sha": "539710f6414b567781fe89124bc234c6a8b0ecf9"
+  },
+  {
+   "url": "https://github.com/zontak-llc/usehourly",
+   "sha": "881050b3f1ffe61ea9f54a54eb4fc4db20239810"
+  },
+  {
+   "url": "https://github.com/zooza-dev/zooza-mcp-server",
+   "sha": "888135de0cdccef09496bf3c44ba3a6496e65b42"
+  },
+  {
+   "url": "https://github.com/zr2021dc/homesage-mcp",
+   "sha": "3c417280f8d946df2b49b8c3a85d351dbe571a41"
+  }
+ ]
+}

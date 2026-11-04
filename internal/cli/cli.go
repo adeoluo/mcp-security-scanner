@@ -240,6 +240,8 @@ func cmdScan(args []string, stdout, stderr io.Writer) (int, error) {
 		stats["files"] += int64(res.Stats.Files)
 		stats["tool_handlers"] += int64(res.Stats.Handlers)
 		stats["tool_definitions"] += int64(res.Stats.Tools)
+		stats["bytes"] += res.Stats.Bytes
+		stats["lines"] += int64(res.Stats.Lines)
 	}
 	r.Stats = stats
 	r.Duration = time.Since(r.Started)
@@ -369,11 +371,13 @@ func cmdProbe(ctx context.Context, args []string, stdout, stderr io.Writer) (int
 	if err := out.validate(); err != nil {
 		return 2, err
 	}
+	start := time.Now()
 	ms, findingsT, names, err := tf.collect(ctx, cmd, stderr)
 	if err != nil {
 		return 2, err
 	}
 	r := newReport("probe", names)
+	r.Started = start.UTC()
 	r.Findings = append(findingsT, analyzeManifests(ms)...)
 	if *lock != "" {
 		if _, statErr := os.Stat(*lock); statErr == nil {
@@ -488,11 +492,13 @@ func cmdVerify(ctx context.Context, args []string, stdout, stderr io.Writer) (in
 	if err != nil {
 		return 2, err
 	}
+	start := time.Now()
 	ms, _, names, err := tf.collect(ctx, cmd, stderr)
 	if err != nil {
 		return 2, err
 	}
 	r := newReport("verify", names)
+	r.Started = start.UTC()
 	r.Findings = manifest.Verify(l, ms)
 	r.Duration = time.Since(r.Started)
 	return out.emit(r, stdout)
@@ -510,15 +516,30 @@ func cmdServe(ctx context.Context, args []string, stderr io.Writer) (int, error)
 
 func cmdRules(args []string, stdout io.Writer) (int, error) {
 	fs := flag.NewFlagSet("rules", flag.ContinueOnError)
-	format := fs.String("format", "text", "text or json")
+	format := fs.String("format", "text", "text, json or markdown")
 	if err := fs.Parse(args); err != nil {
 		return 2, err
 	}
 	rules := findings.SortedRules()
-	if *format == "json" {
+	switch *format {
+	case "json":
 		enc := json.NewEncoder(stdout)
 		enc.SetIndent("", "  ")
 		return 0, enc.Encode(rules)
+	case "markdown":
+		fmt.Fprint(stdout, "# Rules\n\nWritten by `mcpscan rules --format markdown`. SARIF results link to the entries below.\n\n")
+		fmt.Fprint(stdout, "| ID | Name | Category | Severity | CWE |\n|---|---|---|---|---|\n")
+		for _, r := range rules {
+			fmt.Fprintf(stdout, "| [%s](#%s) | %s | %s | %s | %s |\n", r.ID, strings.ToLower(r.ID), r.Name, r.Category, r.Severity, r.CWE)
+		}
+		for _, r := range rules {
+			fmt.Fprintf(stdout, "\n<a id=\"%s\"></a>\n\n## %s %s\n\n**%s.** %s\n\nCategory: %s. Default severity: %s.", strings.ToLower(r.ID), r.ID, r.Name, r.Short, r.Help, r.Category, r.Severity)
+			if r.CWE != "" {
+				fmt.Fprintf(stdout, " %s.", r.CWE)
+			}
+			fmt.Fprintln(stdout)
+		}
+		return 0, nil
 	}
 	for _, r := range rules {
 		fmt.Fprintf(stdout, "%s  %-9s %-17s %-34s %s\n", r.ID, r.Severity, r.Category, r.Name, r.Short)

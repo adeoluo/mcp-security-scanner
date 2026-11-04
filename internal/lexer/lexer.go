@@ -12,6 +12,7 @@ import (
 	"strings"
 	"unicode"
 	"unicode/utf8"
+	"unsafe"
 )
 
 // Lang selects the lexical grammar.
@@ -52,6 +53,7 @@ type Token struct {
 
 type lexer struct {
 	src   []byte
+	str   string // src viewed as a string; token texts are slices of it, not separate allocations
 	pos   int
 	line  int32
 	col   int32
@@ -73,10 +75,16 @@ type tmplFrame struct {
 }
 
 // Tokenize lexes src. It never fails: malformed input yields a best-effort token stream.
+// Token texts share memory with src, so src must not be modified while the tokens are in use.
 func Tokenize(src []byte, lang Lang) []Token {
-	lx := &lexer{src: src, line: 1, col: 1, lang: lang, nl: true}
+	lx := &lexer{src: src, str: unsafe.String(unsafe.SliceData(src), len(src)), line: 1, col: 1, lang: lang, nl: true}
 	lx.toks = make([]Token, 0, len(src)/4+8)
 	lx.run()
+	// The estimate above is generous; files keep their tokens for the whole scan, so return an
+	// exact-size slice when the estimate overshoots by more than a quarter.
+	if n := len(lx.toks); cap(lx.toks) > n+n/4 {
+		return append(make([]Token, 0, n), lx.toks...)
+	}
 	return lx.toks
 }
 
@@ -239,7 +247,7 @@ func (lx *lexer) regex() {
 		}
 		lx.advance(1)
 	}
-	text := string(lx.src[start:lx.pos])
+	text := lx.str[start:lx.pos]
 	lx.emit(Punct, "/regex/", text, line, col)
 }
 
@@ -268,7 +276,7 @@ func (lx *lexer) identOrPrefixedString() {
 		}
 		break
 	}
-	word := string(lx.src[start:lx.pos])
+	word := lx.str[start:lx.pos]
 	if lx.lang == Python && len(word) <= 3 && (lx.peek(0) == '"' || lx.peek(0) == '\'') && isStringPrefix(word) {
 		lx.pos, lx.line, lx.col = start, line, col
 		lx.pythonString(strings.ToLower(word))
@@ -299,7 +307,7 @@ func (lx *lexer) number() {
 		}
 		break
 	}
-	lx.emit(Number, string(lx.src[start:lx.pos]), "", line, col)
+	lx.emit(Number, lx.str[start:lx.pos], "", line, col)
 }
 
 var puncts3 = []string{">>>=", "...", "===", "!==", "**=", "<<=", ">>=", ">>>", "&&=", "||=", "??="}
@@ -386,7 +394,7 @@ func (lx *lexer) jsString(q byte) {
 		b.WriteByte(c)
 		lx.advance(1)
 	}
-	lx.emit(String, string(lx.src[start:lx.pos]), b.String(), line, col)
+	lx.emit(String, lx.str[start:lx.pos], b.String(), line, col)
 }
 
 // escape decodes one backslash escape at lx.pos into b.
@@ -493,7 +501,7 @@ func (lx *lexer) continueTemplate(quote string, raw bool) {
 	qb := []byte(quote)
 	flush := func() {
 		if lx.pos > start {
-			lx.emit(String, string(lx.src[start:lx.pos]), b.String(), line, col)
+			lx.emit(String, lx.str[start:lx.pos], b.String(), line, col)
 		}
 	}
 	for lx.pos < len(lx.src) {
@@ -598,5 +606,5 @@ func (lx *lexer) pythonString(prefix string) {
 		b.WriteByte(c)
 		lx.advance(1)
 	}
-	lx.emit(String, string(lx.src[start:lx.pos]), b.String(), line, col)
+	lx.emit(String, lx.str[start:lx.pos], b.String(), line, col)
 }

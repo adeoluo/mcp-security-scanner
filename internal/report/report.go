@@ -124,12 +124,20 @@ func WriteText(w io.Writer, r *Report, color bool) error {
 	}
 	sort.Strings(keys)
 	for _, k := range keys {
-		stats = append(stats, fmt.Sprintf("%d %s", r.Stats[k], strings.ReplaceAll(k, "_", " ")))
+		name := strings.ReplaceAll(k, "_", " ")
+		if r.Stats[k] == 1 {
+			name = strings.TrimSuffix(name, "s")
+		}
+		stats = append(stats, fmt.Sprintf("%d %s", r.Stats[k], name))
 	}
 	if len(stats) > 0 {
 		detail += "; " + strings.Join(stats, ", ")
 	}
-	_, err := fmt.Fprintf(w, "%d findings%s in %s\n", r.Summary.Total, detail, r.Duration.Round(time.Millisecond))
+	noun := "findings"
+	if r.Summary.Total == 1 {
+		noun = "finding"
+	}
+	_, err := fmt.Fprintf(w, "%d %s%s in %s\n", r.Summary.Total, noun, detail, r.Duration.Round(time.Millisecond))
 	return err
 }
 
@@ -144,7 +152,7 @@ func location(f findings.Finding) string {
 	} else if f.Tool != "" && f.File == "" {
 		parts = append(parts, "tool "+f.Tool)
 	}
-	if f.File != "" {
+	if f.File != "" && !(f.Server != "" && f.Line == 0) { // probe findings: the source is the server command or URL
 		loc := f.File
 		if f.Line > 0 {
 			loc += fmt.Sprintf(":%d", f.Line)

@@ -426,6 +426,9 @@ func Generate(seed uint64) []Case {
 			}
 			for k, sp := range safePatterns(lang, cat) {
 				for j, style := range styles {
+					if sp.pattern && (style == "request-handler" || style == "call_tool") {
+						continue // these styles declare no schema to carry the pattern
+					}
 					s := sinks[(k+j)%len(sinks)]
 					if sp.sink != nil {
 						s = *sp.sink
@@ -437,6 +440,9 @@ func Generate(seed uint64) []Case {
 					if sp.numeric {
 						src = numericize(lang, style, p, src)
 					}
+					if sp.pattern {
+						src = patternize(lang, p, src)
+					}
 					g.add(Case{Lang: lang, Category: cat, Vulnerable: false, Tier: sp.tier, Pattern: sp.name, Style: style, Sink: s.name, Files: map[string]string{name: src}})
 				}
 			}
@@ -445,6 +451,17 @@ func Generate(seed uint64) []Case {
 	}
 	g.hard()
 	return g.cases
+}
+
+// patternize restricts the tool input with a schema pattern.
+func patternize(lang, p, src string) string {
+	if lang == "ts" {
+		src = strings.Replace(src, p+": z.string()", p+": z.string().regex(/^[a-z0-9_-]{1,32}$/)", 1)
+		return strings.Replace(src, p+": { type: \"string\" }", p+": { type: \"string\", pattern: \"^[a-z0-9_-]{1,32}$\" }", 1)
+	}
+	src = strings.Replace(src, "from mcp.server.fastmcp import", "from typing import Annotated\nfrom pydantic import Field\nfrom mcp.server.fastmcp import", 1)
+	src = strings.Replace(src, p+": str) ->", p+": Annotated[str, Field(pattern=r\"^[a-z0-9_-]{1,32}$\")]) ->", 1)
+	return strings.Replace(src, p+": str = Field(description=\"input\")", p+": str = Field(description=\"input\", pattern=r\"^[a-z0-9_-]{1,32}$\")", 1)
 }
 
 // numericize changes the tool input type to a number in the registration and schema.

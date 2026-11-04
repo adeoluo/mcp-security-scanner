@@ -1,38 +1,49 @@
----
-title: System Architecture - Mcp Security Scanner
-config:
-  theme: base
-  themeVariables:
-    fontFamily: "Inter, system-ui, sans-serif"
-    primaryColor: "#F8FAFC"
-    primaryBorderColor: "#1E293B"
-    primaryTextColor: "#1E293B"
-    lineColor: "#64748B"
-    clusterBkg: "#E2E8F0"
-    clusterBorder: "#94A3B8"
----
 flowchart LR
+    classDef edge     fill:#F59E0B,stroke:#1E293B,color:#1E293B,stroke-width:1px;
     classDef core     fill:#6366F1,stroke:#1E293B,color:#ffffff,stroke-width:1px;
     classDef data     fill:#10B981,stroke:#1E293B,color:#ffffff,stroke-width:1px;
-    classDef external fill:#F59E0B,stroke:#1E293B,color:#1E293B,stroke-width:1px;
-    classDef danger   fill:#EF4444,stroke:#1E293B,color:#ffffff,stroke-width:1px;
+    classDef control  fill:#0EA5E9,stroke:#1E293B,color:#ffffff,stroke-width:1px;
+    classDef obs      fill:#CBD5E1,stroke:#1E293B,color:#1E293B,stroke-width:1px;
 
-    User([User]):::external
-
-    subgraph Application["Application Service"]
-        API[API Layer]:::core
-        Core[Core Engine]:::core
-        Evaluation[Evaluation Harness]:::core
+    subgraph Interfaces["Interfaces"]
+        direction TB
+        User([Developer or CI]):::edge
+        CLI["mcpscan CLI<br/>scan, probe, verify"]:::edge
+        Action["GitHub Action<br/>SARIF report"]:::edge
+        Service["HTTP service<br/>/v1/scan"]:::core
+        User --> CLI ~~~ Action ~~~ Service
     end
 
-    Cache[(Semantic Cache)]:::data
-    Store[(Datastore / Index)]:::data
-    LLM{{LLM Provider}}:::external
+    subgraph Inputs["Inputs and state"]
+        direction TB
+        Source[("Server source<br/>JS, TS, Python")]:::data
+        Walker["File walker<br/>skips tests, bundles"]:::control
+        Client["MCP client<br/>stdio and HTTP"]:::core
+        Lock[("mcp-lock.json<br/>SHA-256 pins")]:::data
+        Source --> Walker ~~~ Client ~~~ Lock
+    end
 
-    User -->|request| API
-    API --> Core
-    Core -->|lookup| Cache
-    Core -->|retrieve| Store
-    Core -->|completion| LLM
-    Core -.->|traces/metrics| Evaluation
-    Core -->|response| User
+    subgraph Analysis["Analyzers"]
+        direction TB
+        Lexer["Lexer<br/>tokens, brackets"]:::core
+        Handlers["Handler discovery<br/>tool inputs"]:::control
+        Taint["Taint engine<br/>call summaries"]:::core
+        Patterns["Secrets, config<br/>token rules"]:::core
+        Poison["Tool text checks<br/>poisoning"]:::core
+        Pin["Pin and verify<br/>rug pull diff"]:::control
+        Lexer --> Handlers --> Taint
+        Taint ~~~ Patterns ~~~ Poison ~~~ Pin
+    end
+
+    subgraph Out["Outputs and evaluation"]
+        direction TB
+        Reports["Reports<br/>text, JSON, SARIF"]:::obs
+        Metrics["Metrics<br/>Prometheus text"]:::obs
+        Bench["Planted cases<br/>recall, FPR"]:::obs
+        Corpus["Corpus harness<br/>rates"]:::obs
+        Reports ~~~ Metrics ~~~ Bench ~~~ Corpus
+    end
+
+    Interfaces -->|targets| Inputs
+    Inputs -->|code, tools| Analysis
+    Analysis -->|findings| Out

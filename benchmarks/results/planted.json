@@ -1,14 +1,14 @@
 {
  "seed": 20261103,
- "cases": 417,
+ "cases": 432,
  "vulnerable": 219,
- "safe": 198,
+ "safe": 213,
  "machine": "arm64 Darwin 27.0.0",
  "python": "3.14.7",
  "tools": {
   "mcpscan": {
-   "seconds_per_case_total": 23.869377420982346,
-   "seconds_whole_tree": 0.27779604200623,
+   "seconds_per_case_total": 6.9120649538963335,
+   "seconds_whole_tree": 0.04846462499699555,
    "groups": {
     "command-injection|ts|standard": {
      "tp": 36,
@@ -29,33 +29,33 @@
     "overall": {
      "tp": 212,
      "fn": 7,
-     "fp": 45,
-     "tn": 153,
+     "fp": 18,
+     "tn": 195,
      "recall": 0.9680365296803652,
      "recall_ci95": [
       0.9355042528523979,
       0.9844322842226
      ],
-     "fpr": 0.22727272727272727,
+     "fpr": 0.08450704225352113,
      "fpr_ci95": [
-      0.1744171931448777,
-      0.2905093853757653
+      0.0541218379701148,
+      0.12961359291492702
      ]
     },
     "command-injection|ts|hard": {
      "tp": 0,
      "fn": 2,
-     "fp": 8,
-     "tn": 0,
+     "fp": 3,
+     "tn": 8,
      "recall": 0.0,
      "recall_ci95": [
       0.0,
       0.6576197760453506
      ],
-     "fpr": 1.0,
+     "fpr": 0.2727272727272727,
      "fpr_ci95": [
-      0.6755924316585924,
-      1.0
+      0.09746059213308628,
+      0.5656453033189257
      ]
     },
     "path-traversal|ts|standard": {
@@ -77,17 +77,17 @@
     "path-traversal|ts|hard": {
      "tp": 0,
      "fn": 2,
-     "fp": 8,
-     "tn": 0,
+     "fp": 3,
+     "tn": 8,
      "recall": 0.0,
      "recall_ci95": [
       0.0,
       0.6576197760453506
      ],
-     "fpr": 1.0,
+     "fpr": 0.2727272727272727,
      "fpr_ci95": [
-      0.6755924316585924,
-      1.0
+      0.09746059213308628,
+      0.5656453033189257
      ]
     },
     "ssrf|ts|standard": {
@@ -109,17 +109,17 @@
     "ssrf|ts|hard": {
      "tp": 1,
      "fn": 0,
-     "fp": 8,
-     "tn": 0,
+     "fp": 3,
+     "tn": 8,
      "recall": 1.0,
      "recall_ci95": [
       0.2065493117918027,
       1.0
      ],
-     "fpr": 1.0,
+     "fpr": 0.2727272727272727,
      "fpr_ci95": [
-      0.6755924316585924,
-      1.0
+      0.09746059213308628,
+      0.5656453033189257
      ]
     },
     "secrets|ts|standard": {
@@ -157,17 +157,17 @@
     "command-injection|py|hard": {
      "tp": 0,
      "fn": 2,
-     "fp": 6,
-     "tn": 0,
+     "fp": 2,
+     "tn": 6,
      "recall": 0.0,
      "recall_ci95": [
       0.0,
       0.6576197760453506
      ],
-     "fpr": 1.0,
+     "fpr": 0.25,
      "fpr_ci95": [
-      0.6096657083436265,
-      1.0
+      0.07147921209795555,
+      0.5907245720727483
      ]
     },
     "path-traversal|py|standard": {
@@ -189,17 +189,17 @@
     "path-traversal|py|hard": {
      "tp": 1,
      "fn": 1,
-     "fp": 6,
-     "tn": 0,
+     "fp": 2,
+     "tn": 6,
      "recall": 0.5,
      "recall_ci95": [
       0.09453120463920084,
       0.9054687953607992
      ],
-     "fpr": 1.0,
+     "fpr": 0.25,
      "fpr_ci95": [
-      0.6096657083436265,
-      1.0
+      0.07147921209795555,
+      0.5907245720727483
      ]
     },
     "ssrf|py|standard": {
@@ -221,17 +221,17 @@
     "ssrf|py|hard": {
      "tp": 1,
      "fn": 0,
-     "fp": 6,
-     "tn": 0,
+     "fp": 2,
+     "tn": 6,
      "recall": 1.0,
      "recall_ci95": [
       0.2065493117918027,
       1.0
      ],
-     "fpr": 1.0,
+     "fpr": 0.25,
      "fpr_ci95": [
-      0.6096657083436265,
-      1.0
+      0.07147921209795555,
+      0.5907245720727483
      ]
     },
     "secrets|py|standard": {
@@ -253,7 +253,7 @@
    }
   },
   "semgrep 1.183.0": {
-   "seconds_whole_tree": 74.78855699999258,
+   "seconds_whole_tree": 11.354392082997947,
    "configs": [
     "p/default",
     "p/security-audit",
@@ -267,7 +267,7 @@
     "p/command-injection"
    ],
    "rules_counted": {
-    "javascript.lang.security.detect-child-process.detect-child-process": 22,
+    "javascript.lang.security.detect-child-process.detect-child-process": 23,
     "javascript.lang.security.audit.spawn-shell-true.spawn-shell-true": 7,
     "javascript.browser.security.eval-detected.eval-detected": 7,
     "generic.secrets.gitleaks.generic-api-key.generic-api-key": 15,
@@ -275,17 +275,17 @@
     "generic.secrets.gitleaks.aws-access-token.aws-access-token": 4,
     "generic.secrets.security.detected-aws-access-key-id-value.detected-aws-access-key-id-value": 2,
     "generic.secrets.gitleaks.slack-legacy-bot-token.slack-legacy-bot-token": 2,
-    "generic.secrets.gitleaks.gcp-api-key.gcp-api-key": 2,
+    "generic.secrets.gitleaks.gcp-api-key.gcp-api-key": 1,
     "generic.secrets.security.detected-stripe-api-key.detected-stripe-api-key": 4,
     "generic.secrets.gitleaks.stripe-access-token.stripe-access-token": 4,
     "generic.secrets.gitleaks.huggingface-access-token.huggingface-access-token": 2,
     "generic.secrets.gitleaks.gitlab-pat.gitlab-pat": 2,
     "generic.secrets.gitleaks.npm-access-token.npm-access-token": 2,
     "generic.secrets.security.detected-generic-api-key.detected-generic-api-key": 2,
-    "python.lang.security.audit.subprocess-shell-true.subprocess-shell-true": 19,
+    "python.lang.security.audit.subprocess-shell-true.subprocess-shell-true": 20,
     "python.lang.security.audit.eval-detected.eval-detected": 6,
     "python.lang.security.audit.exec-detected.exec-detected": 5,
-    "python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected": 12
+    "python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected": 13
    },
    "groups": {
     "command-injection|ts|standard": {
@@ -305,35 +305,35 @@
      ]
     },
     "overall": {
-     "tp": 65,
-     "fn": 154,
-     "fp": 29,
-     "tn": 169,
-     "recall": 0.2968036529680365,
+     "tp": 66,
+     "fn": 153,
+     "fp": 32,
+     "tn": 181,
+     "recall": 0.3013698630136986,
      "recall_ci95": [
-      0.24022198160768582,
-      0.36039093644268094
+      0.24445135870970958,
+      0.365136549946267
      ],
-     "fpr": 0.14646464646464646,
+     "fpr": 0.15023474178403756,
      "fpr_ci95": [
-      0.10395370610380893,
-      0.20243259938591346
+      0.10847236131345199,
+      0.204389668075651
      ]
     },
     "command-injection|ts|hard": {
      "tp": 1,
      "fn": 1,
-     "fp": 1,
-     "tn": 7,
+     "fp": 2,
+     "tn": 9,
      "recall": 0.5,
      "recall_ci95": [
       0.09453120463920084,
       0.9054687953607992
      ],
-     "fpr": 0.125,
+     "fpr": 0.18181818181818182,
      "fpr_ci95": [
-      0.022417491199971912,
-      0.47088818505608376
+      0.051367689278583956,
+      0.47698056435423286
      ]
     },
     "path-traversal|ts|standard": {
@@ -356,7 +356,7 @@
      "tp": 0,
      "fn": 2,
      "fp": 0,
-     "tn": 8,
+     "tn": 11,
      "recall": 0.0,
      "recall_ci95": [
       0.0,
@@ -365,7 +365,7 @@
      "fpr": 0.0,
      "fpr_ci95": [
       0.0,
-      0.3244075683414076
+      0.25883296999442634
      ]
     },
     "ssrf|ts|standard": {
@@ -388,7 +388,7 @@
      "tp": 0,
      "fn": 1,
      "fp": 0,
-     "tn": 8,
+     "tn": 11,
      "recall": 0.0,
      "recall_ci95": [
       0.0,
@@ -397,18 +397,18 @@
      "fpr": 0.0,
      "fpr_ci95": [
       0.0,
-      0.3244075683414076
+      0.25883296999442634
      ]
     },
     "secrets|ts|standard": {
-     "tp": 9,
-     "fn": 1,
+     "tp": 10,
+     "fn": 0,
      "fp": 2,
      "tn": 6,
-     "recall": 0.9,
+     "recall": 1.0,
      "recall_ci95": [
-      0.5958499704752279,
-      0.982123787103926
+      0.7224671969739421,
+      1.0
      ],
      "fpr": 0.25,
      "fpr_ci95": [
@@ -435,17 +435,17 @@
     "command-injection|py|hard": {
      "tp": 1,
      "fn": 1,
-     "fp": 2,
-     "tn": 4,
+     "fp": 3,
+     "tn": 5,
      "recall": 0.5,
      "recall_ci95": [
       0.09453120463920084,
       0.9054687953607992
      ],
-     "fpr": 0.3333333333333333,
+     "fpr": 0.375,
      "fpr_ci95": [
-      0.09677141021353453,
-      0.7000066870052566
+      0.13684428473912286,
+      0.694257607346229
      ]
     },
     "path-traversal|py|standard": {
@@ -468,7 +468,7 @@
      "tp": 0,
      "fn": 2,
      "fp": 0,
-     "tn": 6,
+     "tn": 8,
      "recall": 0.0,
      "recall_ci95": [
       0.0,
@@ -477,7 +477,7 @@
      "fpr": 0.0,
      "fpr_ci95": [
       0.0,
-      0.39033429165637346
+      0.3244075683414076
      ]
     },
     "ssrf|py|standard": {
@@ -499,17 +499,17 @@
     "ssrf|py|hard": {
      "tp": 0,
      "fn": 1,
-     "fp": 0,
-     "tn": 6,
+     "fp": 1,
+     "tn": 7,
      "recall": 0.0,
      "recall_ci95": [
       0.0,
       0.7934506882081973
      ],
-     "fpr": 0.0,
+     "fpr": 0.125,
      "fpr_ci95": [
-      0.0,
-      0.39033429165637346
+      0.022417491199971912,
+      0.47088818505608376
      ]
     },
     "secrets|py|standard": {
@@ -531,7 +531,7 @@
    }
   },
   "bandit 1.9.4": {
-   "seconds_whole_tree": 4.346921541000484,
+   "seconds_whole_tree": 0.6423281659954228,
    "rule_map": {
     "B602": "command-injection",
     "B604": "command-injection",
@@ -566,23 +566,23 @@
     "overall": {
      "tp": 44,
      "fn": 52,
-     "fp": 33,
-     "tn": 53,
+     "fp": 36,
+     "tn": 56,
      "recall": 0.4583333333333333,
      "recall_ci95": [
       0.3621884941148445,
       0.5576844715885974
      ],
-     "fpr": 0.38372093023255816,
+     "fpr": 0.391304347826087,
      "fpr_ci95": [
-      0.28801439933276357,
-      0.4893712280931533
+      0.297856232013925,
+      0.4934658092670731
      ]
     },
     "command-injection|py|hard": {
      "tp": 1,
      "fn": 1,
-     "fp": 6,
+     "fp": 8,
      "tn": 0,
      "recall": 0.5,
      "recall_ci95": [
@@ -591,7 +591,7 @@
      ],
      "fpr": 1.0,
      "fpr_ci95": [
-      0.6096657083436265,
+      0.6755924316585924,
       1.0
      ]
     },
@@ -615,7 +615,7 @@
      "tp": 0,
      "fn": 2,
      "fp": 0,
-     "tn": 6,
+     "tn": 8,
      "recall": 0.0,
      "recall_ci95": [
       0.0,
@@ -624,7 +624,7 @@
      "fpr": 0.0,
      "fpr_ci95": [
       0.0,
-      0.39033429165637346
+      0.3244075683414076
      ]
     },
     "ssrf|py|standard": {
@@ -646,17 +646,17 @@
     "ssrf|py|hard": {
      "tp": 0,
      "fn": 1,
-     "fp": 1,
-     "tn": 5,
+     "fp": 2,
+     "tn": 6,
      "recall": 0.0,
      "recall_ci95": [
       0.0,
       0.7934506882081973
      ],
-     "fpr": 0.16666666666666666,
+     "fpr": 0.25,
      "fpr_ci95": [
-      0.030053369411815023,
-      0.5635028250257673
+      0.07147921209795555,
+      0.5907245720727483
      ]
     },
     "secrets|py|standard": {
@@ -680,22 +680,22 @@
  },
  "mcpscan_bench_output": {
   "seed": 20261103,
-  "version": "b7bc6ba-dirty",
-  "source_cases": 417,
+  "version": "75081d1-dirty",
+  "source_cases": 432,
   "source_score": {
    "tool": "mcpscan",
    "overall": {
     "tp": 212,
     "fn": 7,
-    "fp": 45,
-    "tn": 153
+    "fp": 18,
+    "tn": 195
    },
    "groups": {
     "command-injection|py|hard": {
      "tp": 0,
      "fn": 2,
-     "fp": 6,
-     "tn": 0
+     "fp": 2,
+     "tn": 6
     },
     "command-injection|py|standard": {
      "tp": 27,
@@ -706,8 +706,8 @@
     "command-injection|ts|hard": {
      "tp": 0,
      "fn": 2,
-     "fp": 8,
-     "tn": 0
+     "fp": 3,
+     "tn": 8
     },
     "command-injection|ts|standard": {
      "tp": 36,
@@ -718,8 +718,8 @@
     "path-traversal|py|hard": {
      "tp": 1,
      "fn": 1,
-     "fp": 6,
-     "tn": 0
+     "fp": 2,
+     "tn": 6
     },
     "path-traversal|py|standard": {
      "tp": 27,
@@ -730,8 +730,8 @@
     "path-traversal|ts|hard": {
      "tp": 0,
      "fn": 2,
-     "fp": 8,
-     "tn": 0
+     "fp": 3,
+     "tn": 8
     },
     "path-traversal|ts|standard": {
      "tp": 36,
@@ -754,8 +754,8 @@
     "ssrf|py|hard": {
      "tp": 1,
      "fn": 0,
-     "fp": 6,
-     "tn": 0
+     "fp": 2,
+     "tn": 6
     },
     "ssrf|py|standard": {
      "tp": 27,
@@ -766,8 +766,8 @@
     "ssrf|ts|hard": {
      "tp": 1,
      "fn": 0,
-     "fp": 8,
-     "tn": 0
+     "fp": 3,
+     "tn": 8
     },
     "ssrf|ts|standard": {
      "tp": 36,
@@ -777,63 +777,36 @@
     }
    },
    "misses": [
-    "c0408",
-    "c0409",
-    "c0410",
-    "c0412",
-    "c0413",
-    "c0414",
-    "c0416"
+    "c0423",
+    "c0424",
+    "c0425",
+    "c0427",
+    "c0428",
+    "c0429",
+    "c0431"
    ],
    "false_positives": [
     "c0043",
     "c0061",
     "c0062",
     "c0063",
-    "c0064",
-    "c0065",
-    "c0066",
-    "c0067",
-    "c0068",
-    "c0111",
-    "c0133",
-    "c0134",
-    "c0135",
+    "c0114",
     "c0136",
     "c0137",
     "c0138",
-    "c0139",
-    "c0140",
-    "c0183",
-    "c0205",
-    "c0206",
-    "c0207",
-    "c0208",
-    "c0209",
-    "c0210",
+    "c0189",
     "c0211",
     "c0212",
-    "c0276",
-    "c0277",
-    "c0278",
-    "c0279",
-    "c0280",
-    "c0281",
-    "c0330",
-    "c0331",
-    "c0332",
-    "c0333",
-    "c0334",
-    "c0335",
-    "c0384",
-    "c0385",
-    "c0386",
-    "c0387",
-    "c0388",
-    "c0389"
+    "c0213",
+    "c0285",
+    "c0286",
+    "c0341",
+    "c0342",
+    "c0397",
+    "c0398"
    ]
   },
-  "source_seconds": 0.31776925,
+  "source_seconds": 0.04773175,
   "description_cases": 400,
   "by_technique": {
    "base64|standard": {

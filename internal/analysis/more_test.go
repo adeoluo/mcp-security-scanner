@@ -210,3 +210,74 @@ func TestEntropyAndRedact(t *testing.T) {
 		t.Fatal("redact")
 	}
 }
+
+func TestWrappedHandler(t *testing.T) {
+	runCases(t, []tcase{
+		{"wrapper call around handler", map[string]string{"t.ts": `
+import { exec } from "child_process";
+server.registerTool("run", { description: "r", inputSchema: input }, guarded("run", async ({ cmd }) => {
+  const rows = items.filter((r) => r.ok);
+  exec(cmd);
+}));`}, []string{"MCP101"}},
+		{"callback inside handler is not a handler", map[string]string{"t.ts": `
+import { exec } from "child_process";
+server.tool("x", "x", {}, async () => { [1, 2].forEach((n) => exec("ls " + n)); });`}, nil},
+	})
+}
+
+func TestFieldSensitiveReturns(t *testing.T) {
+	runCases(t, []tcase{
+		{"constant field of returned object is clean", map[string]string{"t.ts": `
+import { execSync } from "child_process";
+function getInfo(dir: string) {
+  const pm = detect(dir);
+  return { path: dir, packageManager: pm === "x" ? "pnpm" : "npm" };
+}
+function detect(d: string) { return "npm"; }
+server.tool("check", "c", { project: z.string() }, async ({ project }) => {
+  const info = getInfo(project);
+  execSync(` + "`${info.packageManager} outdated`" + `, { cwd: info.path });
+});`}, nil},
+		{"tainted field of returned object still flows", map[string]string{"t.ts": `
+import { execSync } from "child_process";
+function getInfo(dir: string) { return { path: dir, kind: "x" }; }
+server.tool("check", "c", { project: z.string() }, async ({ project }) => {
+  const info = getInfo(project);
+  execSync("ls " + info.path);
+});`}, []string{"MCP101"}},
+		{"non-object return keeps whole-value taint", map[string]string{"t.py": `
+import os
+def norm(p):
+    return p.strip()
+
+@mcp.tool()
+def run(c: str):
+    x = norm(c)
+    os.system(x)
+`}, []string{"MCP101"}},
+	})
+}
+
+func TestRequestObjectBodyIsNotDestination(t *testing.T) {
+	runCases(t, []tcase{
+		{"python Request with tainted body", map[string]string{"s.py": `
+import json, urllib.request
+BASE = "https://api.example.com"
+def _post(path, payload):
+    req = urllib.request.Request(BASE + path, data=json.dumps(payload).encode())
+    with urllib.request.urlopen(req) as r:
+        return r.read()
+
+@mcp.tool()
+def audit(url: str):
+    return _post("/api/audit", {"url": url})
+`}, nil},
+		{"python Request with tainted url", map[string]string{"s.py": `
+import urllib.request
+@mcp.tool()
+def get(url: str):
+    req = urllib.request.Request(url)
+    return urllib.request.urlopen(req).read()
+`}, []string{"MCP121"}},
+	})
+}
