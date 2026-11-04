@@ -32,3 +32,52 @@ jobs:
 
       - name: go test -race with coverage gate
         run: make coverage
+
+      - name: Build
+        run: make build
+
+      - name: Self-scan of the vulnerable fixture
+        run: |
+          set +e
+          ./bin/mcpscan scan testdata/vulnerable-server
+          test $? -eq 1 || { echo "expected exit 1 with findings"; exit 1; }
+
+      - name: Probe the demo server over stdio
+        run: |
+          go build -o bin/mcp-demo-server ./cmd/mcp-demo-server
+          ./bin/mcpscan probe --fail-on none -- ./bin/mcp-demo-server --variant poisoned
+
+  action:
+    name: GitHub Action self-test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - id: scan
+        uses: ./
+        with:
+          path: testdata/vulnerable-server
+          fail-on: none
+
+      - name: Check the SARIF report
+        env:
+          REPORT: ${{ steps.scan.outputs.report }}
+        run: |
+          n=$(jq '.runs[0].results | length' "$REPORT")
+          echo "results: $n"
+          test "$n" -ge 4
+
+  docker:
+    name: Docker image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Build image
+        run: docker build -t mcpscan:ci .
+      - name: Run and probe the HTTP service
+        run: |
+          docker run -d --name mcpscan -p 8080:8080 mcpscan:ci
+          for i in $(seq 1 30); do curl -fsS localhost:8080/health && break; sleep 1; done
+          curl -fsS -X POST localhost:8080/v1/scan/manifest --data-binary @testdata/manifests/poisoned.json | jq -e '.summary.total > 0'
+          curl -fsS localhost:8080/metrics | grep mcpscan_http_requests_total
+          docker stop mcpscan

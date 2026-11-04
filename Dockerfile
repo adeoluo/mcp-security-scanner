@@ -1,24 +1,17 @@
 # syntax=docker/dockerfile:1
 
-# ---- builder ----
-FROM python:3.12-slim AS builder
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
-WORKDIR /application
-ENV UV_COMPILE_BYTECODE=1 UV_LINK_MODE=copy
-COPY pyproject.toml uv.lock* ./
-RUN --mount=type=cache,target=/root/.cache/uv \
-    uv sync --frozen --no-dev --no-install-project || uv sync --no-dev --no-install-project
+FROM golang:1.24-alpine AS build
+WORKDIR /src
+COPY go.mod ./
 COPY . .
-RUN --mount=type=cache,target=/root/.cache/uv uv sync --frozen --no-dev || uv sync --no-dev
+ARG VERSION=dev
+RUN CGO_ENABLED=0 go build -trimpath \
+      -ldflags "-s -w -X github.com/adeoluo/mcp-security-scanner/internal/cli.Version=${VERSION}" \
+      -o /out/mcpscan ./cmd/mcpscan
 
-# ---- runtime ----
-FROM python:3.12-slim AS runtime
-RUN useradd --create-home --uid 1000 application
-WORKDIR /application
-COPY --from=builder --chown=application:application /application /application
-ENV PATH="/application/.venv/bin:$PATH" PYTHONUNBUFFERED=1
-USER application
-EXPOSE 8000
-HEALTHCHECK --interval=30s --timeout=3s --retries=3 \
-    CMD python -c "import mcp_security_scanner" || exit 1
-CMD ["python", "-m", "mcp_security_scanner"]
+FROM gcr.io/distroless/static-debian12:nonroot
+COPY --from=build /out/mcpscan /usr/local/bin/mcpscan
+USER nonroot
+EXPOSE 8080
+ENTRYPOINT ["mcpscan"]
+CMD ["serve", "--addr", ":8080"]
