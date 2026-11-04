@@ -1,49 +1,44 @@
-.PHONY: help setup lint format type test coverage evaluation run diagram docker-build docker-up clean all
+VERSION ?= $(shell git describe --tags --always --dirty 2>/dev/null || echo dev)
+LDFLAGS := -s -w -X github.com/adeoluo/mcp-security-scanner/internal/cli.Version=$(VERSION)
+COVER_MIN ?= 80
+
+.PHONY: help all build test race vet fmt fmt-check coverage fuzz bench clean
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
 	  awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-14s\033[0m %s\n", $$1, $$2}'
 
-setup: ## Install dependencies and pre-commit hooks
-	uv sync --all-extras --dev
-	uv run pre-commit install
+all: fmt-check vet coverage build ## Full local gate (mirror of continuous integration)
 
-format: ## Format automatically
-	uv run ruff format .
-	uv run ruff check --fix .
+build: ## Build bin/mcpscan
+	go build -trimpath -ldflags "$(LDFLAGS)" -o bin/mcpscan ./cmd/mcpscan
 
-lint: ## Lint (no fixes)
-	uv run ruff format --check .
-	uv run ruff check .
+test: ## Run the tests
+	go test ./...
 
-type: ## Type-check
-	uv run mypy src
+race: ## Tests with the race detector
+	go test -race ./...
 
-test: ## Run tests
-	uv run pytest
+vet: ## go vet
+	go vet ./...
 
-coverage: ## Tests with coverage gate
-	uv run pytest --cov=src --cov-report=term-missing --cov-fail-under=80
+fmt: ## Format the code
+	gofmt -w .
 
-evaluation: ## Reproduce the results table
-	uv run python -m mcp_security_scanner.evaluation
+fmt-check: ## Fail if gofmt would change anything
+	@test -z "$$(gofmt -l .)" || (gofmt -l . && echo "run make fmt" && exit 1)
 
-run: ## Run the application entrypoint
-	uv run python -m mcp_security_scanner
+coverage: ## Tests with the race detector and the coverage gate used in CI
+	go test -race -count=1 -coverprofile=coverage.out -covermode=atomic ./...
+	@go tool cover -func=coverage.out | tail -1
+	@go tool cover -func=coverage.out | tail -1 | awk -v min=$(COVER_MIN) '{sub("%","",$$3); if ($$3+0 < min) {print "coverage " $$3 "% is below " min "%"; exit 1}}'
 
-diagram: ## Render architecture diagram to SVG
-	mmdc -i docs/architecture/architecture.mmd \
-	     -o docs/architecture/architecture.svg \
-	     -c mermaid.config.json -b transparent
+fuzz: ## Run each fuzz target for 30 seconds
+	go test -run '^$$' -fuzz FuzzTokenize -fuzztime 30s ./internal/lexer
+	go test -run '^$$' -fuzz FuzzCheckTool -fuzztime 30s ./internal/poison
 
-docker-build: ## Build the image
-	docker build -t mcp-security-scanner .
+bench: ## Go microbenchmarks
+	go test -run '^$$' -bench . -benchmem ./internal/...
 
-docker-up: ## Run via docker compose
-	docker compose up --build
-
-clean: ## Remove caches and artifacts
-	rm -rf .pytest_cache .mypy_cache .ruff_cache dist build *.egg-info coverage.xml
-	find . -type d -name __pycache__ -exec rm -rf {} +
-
-all: lint type coverage ## Full local gate (mirror of continuous integration)
+clean: ## Remove build artifacts
+	rm -rf bin dist coverage.out
