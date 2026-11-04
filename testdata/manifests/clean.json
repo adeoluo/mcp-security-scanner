@@ -1,0 +1,12 @@
+{
+  "server": "mail",
+  "serverInfo": {"name": "mail-demo", "version": "2.0.0"},
+  "tools": [
+    {
+      "name": "send_email",
+      "description": "Send an email to one recipient.",
+      "inputSchema": {"type": "object", "properties": {"to": {"type": "string", "format": "email"}, "body": {"type": "string"}}, "required": ["to", "body"]},
+      "annotations": {"destructiveHint": false, "openWorldHint": true}
+    }
+  ]
+}
