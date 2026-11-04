@@ -143,7 +143,7 @@ func init() {
 		"HTTP transport accepts requests from a foreign Origin",
 		"The Streamable HTTP transport answered a request carrying an Origin header from another site. The MCP specification requires servers to validate Origin to prevent DNS rebinding attacks against local servers.",
 		"CWE-346"})
-	add(Rule{"MCP502", "unauthenticated-remote", Transport, Medium,
+	add(Rule{"MCP502", "unauthenticated-remote", Transport, Low,
 		"Remote HTTP transport answers without authentication",
 		"A server on a non-loopback address completed initialize and tools/list without any credentials.",
 		"CWE-306"})

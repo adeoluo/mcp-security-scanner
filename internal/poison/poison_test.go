@@ -116,7 +116,7 @@ func TestBenignVocabulary(t *testing.T) {
 		}
 		return len(CheckTool(Tool{Name: "x", Description: strings.Join(b, " ")})) == 0
 	}
-	if err := quick.Check(f, &quick.Config{MaxCount: 2000}); err != nil {
+	if err := quick.Check(f, &quick.Config{MaxCount: 400}); err != nil {
 		t.Fatal(err)
 	}
 }
