@@ -1,0 +1,135 @@
+{
+ "labeled": 158,
+ "set_aside_no_longer_reported": 25,
+ "by_type": {
+  "command-injection": {
+   "labeled": 7,
+   "repositories": 2,
+   "seen_in_development": 7,
+   "correct": 2,
+   "precision": 0.2857142857142857,
+   "precision_ci95": [
+    0.08221892324928332,
+    0.6410655504689458
+   ],
+   "actionable": 2,
+   "actionable_share": 0.2857142857142857,
+   "actionable_ci95": [
+    0.08221892324928332,
+    0.6410655504689458
+   ]
+  },
+  "path-traversal": {
+   "labeled": 24,
+   "repositories": 15,
+   "seen_in_development": 0,
+   "correct": 22,
+   "precision": 0.9166666666666666,
+   "precision_ci95": [
+    0.7415119762950233,
+    0.9768411849122034
+   ],
+   "actionable": 2,
+   "actionable_share": 0.08333333333333333,
+   "actionable_ci95": [
+    0.023158815087796644,
+    0.2584880237049766
+   ]
+  },
+  "ssrf": {
+   "labeled": 11,
+   "repositories": 8,
+   "seen_in_development": 11,
+   "correct": 2,
+   "precision": 0.18181818181818182,
+   "precision_ci95": [
+    0.051367689278583956,
+    0.47698056435423286
+   ],
+   "actionable": 2,
+   "actionable_share": 0.18181818181818182,
+   "actionable_ci95": [
+    0.051367689278583956,
+    0.47698056435423286
+   ]
+  },
+  "secrets": {
+   "labeled": 22,
+   "repositories": 12,
+   "seen_in_development": 22,
+   "correct": 11,
+   "precision": 0.5,
+   "precision_ci95": [
+    0.30722106144268146,
+    0.6927789385573185
+   ],
+   "actionable": 11,
+   "actionable_share": 0.5,
+   "actionable_ci95": [
+    0.30722106144268146,
+    0.6927789385573185
+   ]
+  },
+  "cors": {
+   "labeled": 15,
+   "repositories": 12,
+   "seen_in_development": 0,
+   "correct": 14,
+   "precision": 0.9333333333333333,
+   "precision_ci95": [
+    0.7018346989112435,
+    0.9881331046384677
+   ]
+  },
+  "bind-all": {
+   "labeled": 15,
+   "repositories": 8,
+   "seen_in_development": 0,
+   "correct": 13,
+   "precision": 0.8666666666666667,
+   "precision_ci95": [
+    0.6211801694601944,
+    0.9626387412357151
+   ]
+  },
+  "tls": {
+   "labeled": 15,
+   "repositories": 12,
+   "seen_in_development": 15,
+   "correct": 15,
+   "precision": 1.0,
+   "precision_ci95": [
+    0.7961166964035129,
+    1.0
+   ]
+  },
+  "oauth-scope": {
+   "labeled": 15,
+   "repositories": 4,
+   "seen_in_development": 15,
+   "correct": 12,
+   "precision": 0.8,
+   "precision_ci95": [
+    0.5481455107594471,
+    0.9295245070826608
+   ]
+  },
+  "tool-poisoning": {
+   "labeled": 34,
+   "repositories": 24,
+   "seen_in_development": 34,
+   "correct": 0,
+   "precision": 0.0,
+   "precision_ci95": [
+    0.0,
+    0.10151455559221921
+   ],
+   "actionable": 0,
+   "actionable_share": 0.0,
+   "actionable_ci95": [
+    0.0,
+    0.10151455559221921
+   ]
+  }
+ }
+}

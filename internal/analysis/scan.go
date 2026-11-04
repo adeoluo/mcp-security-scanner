@@ -305,6 +305,7 @@ func markDispatchHandlers(files []*File, tools []poison.Tool) {
 			for _, cand := range []string{n, strings.TrimPrefix(n, "handle"), strings.TrimSuffix(n, "handler"), strings.TrimSuffix(n, "tool"), strings.TrimPrefix(n, "tool")} {
 				if tool, ok := names[cand]; ok {
 					fn.Handler = true
+					fn.Inferred = true
 					fn.Tool = tool
 					if fn.nonString == nil {
 						fn.nonString = map[string]bool{}

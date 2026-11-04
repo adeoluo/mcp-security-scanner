@@ -232,6 +232,10 @@ func TestRules(t *testing.T) {
 	if code != 0 || !strings.Contains(out, "MCP401") {
 		t.Fatal(out)
 	}
+	code, out, _ = run(t, "rules", "--format", "markdown")
+	if code != 0 || !strings.Contains(out, `<a id="mcp101"></a>`) || !strings.Contains(out, "| [MCP401](#mcp401)") {
+		t.Fatal(out)
+	}
 	code, out, _ = run(t, "rules", "--format", "json")
 	var rules []map[string]any
 	if code != 0 || json.Unmarshal([]byte(out), &rules) != nil || len(rules) < 30 {

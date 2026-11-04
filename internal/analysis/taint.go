@@ -21,6 +21,9 @@ type summary struct {
 	hits [][]hit   // per parameter
 	bits [][]uint8 // per parameter, per hit: the taint bits that must be present for the hit
 	ret  []uint8   // per parameter
+	// per parameter: taint of each key when every return statement returns an object literal
+	// (nil when some return is not an object literal)
+	fields []map[string]uint8
 }
 
 // Engine runs taint analysis across all files of one repository.
@@ -56,6 +59,8 @@ type state struct {
 	hits      []hit
 	hitBits   []uint8
 	ret       uint8
+	retFields map[string]uint8 // keys of object-literal returns
+	retOther  bool             // some return is not an object literal
 	depth     int
 	nested    map[int]*Func // nested function declarations by Decl token
 }
@@ -78,6 +83,9 @@ func (e *Engine) AnalyzeHandler(fn *Func) []hit {
 		if p.Skip {
 			continue
 		}
+		if fn.Inferred && len(p.Names) == 1 && !inputLike[strings.ToLower(p.Names[0])] {
+			continue // inferred handler: env, config, client and similar parameters are not tool input
+		}
 		for _, n := range p.Names {
 			if p.NonString || fn.nonString[n] {
 				continue
@@ -88,6 +96,13 @@ func (e *Engine) AnalyzeHandler(fn *Func) []hit {
 	}
 	s.run(fn.Start, fn.End)
 	return s.hits
+}
+
+// inputLike are parameter names that carry the tool arguments in inferred handlers.
+var inputLike = map[string]bool{
+	"args": true, "arguments": true, "input": true, "inputs": true, "params": true, "parameters": true,
+	"request": true, "req": true, "payload": true, "body": true, "toolargs": true, "tool_args": true,
+	"rawargs": true, "raw_args": true, "toolinput": true, "tool_input": true,
 }
 
 func (e *Engine) summarize(fn *Func, depth int) *summary {
@@ -114,6 +129,11 @@ func (e *Engine) summarize(fn *Func, depth int) *summary {
 		sm.hits = append(sm.hits, s.hits)
 		sm.bits = append(sm.bits, s.hitBits)
 		sm.ret = append(sm.ret, s.ret)
+		if s.retOther || s.retFields == nil {
+			sm.fields = append(sm.fields, nil)
+		} else {
+			sm.fields = append(sm.fields, s.retFields)
+		}
 	}
 	e.summaries[fn] = sm
 	return sm
@@ -286,9 +306,22 @@ var skipIdents = map[string]bool{
 // expr computes the taint of tokens [a, b).
 func (s *state) expr(a, b int) uint8 {
 	f := s.f
+	if a < b {
+		// The condition of a conditional expression selects a value but does not flow into it.
+		if q, colon, ok := s.ternary(a, b); ok {
+			if f.Lang == lexer.Python {
+				return s.expr(a, q) | s.expr(colon+1, b) // x if cond else y
+			}
+			return s.expr(q+1, colon) | s.expr(colon+1, b) // cond ? x : y
+		}
+	}
 	var bits uint8
 	for j := a; j < b; j++ {
 		tk := f.Toks[j]
+		if f.is(j, "[") && f.match[j] > j && j > a && (f.ident(j-1) && !skipIdents[f.Toks[j-1].Text] || f.is(j-1, ")") || f.is(j-1, "]")) {
+			j = f.match[j] // an index selects an element; the key itself is not the value
+			continue
+		}
 		if tk.Kind != lexer.Ident || skipIdents[tk.Text] {
 			if g, ok := s.nested[j]; ok && g.End > j {
 				j = g.End - 1 // function literal values are not data
@@ -324,6 +357,139 @@ func (s *state) expr(a, b int) uint8 {
 	return bits
 }
 
+var requestCtors = map[string]bool{
+	"urllib.request.Request": true, "Request": true, "URL": true, "httpx.Request": true, "requests.Request": true,
+	"undici.Request": true, "node-fetch.Request": true,
+}
+
+// ternary finds a top-level conditional expression in [a, b): the "?" and ":" of cond ? x : y,
+// or the "if" and "else" of Python's x if cond else y.
+func (s *state) ternary(a, b int) (int, int, bool) {
+	f := s.f
+	level := f.opener[a]
+	q := -1
+	depth := 0
+	for j := a; j < b; j++ {
+		tk := f.Toks[j]
+		if isOpen(tk) && f.match[j] > j {
+			j = f.match[j]
+			continue
+		}
+		if g, ok := s.nested[j]; ok && g.End > j {
+			j = g.End - 1
+			continue
+		}
+		if f.opener[j] != level {
+			continue
+		}
+		if f.Lang == lexer.Python {
+			if tk.Kind == lexer.Ident && tk.Text == "if" && j > a && q < 0 {
+				q = j
+			} else if tk.Kind == lexer.Ident && tk.Text == "else" && q >= 0 {
+				return q, j, true
+			}
+			continue
+		}
+		if tk.Kind == lexer.Punct && tk.Text == "?" {
+			if q < 0 {
+				q = j
+			} else {
+				depth++
+			}
+		} else if tk.Kind == lexer.Punct && tk.Text == ":" && q >= 0 {
+			if depth == 0 {
+				return q, j, true
+			}
+			depth--
+		}
+	}
+	return 0, 0, false
+}
+
+// recordReturnFields notes the per-key taint of "return { key: value, ... }" so callers can
+// keep fields apart (info.path tainted, info.language not).
+func (s *state) recordReturnFields(a, b int) {
+	f := s.f
+	if f.is(a, "(") && f.match[a] == b-1 {
+		a, b = a+1, b-1
+	}
+	if !(f.is(a, "{") && f.match[a] == b-1) {
+		if a < b {
+			s.retOther = true
+		}
+		return
+	}
+	if s.retFields == nil {
+		s.retFields = map[string]uint8{}
+	}
+	for _, r := range f.splitArgs(a) {
+		x, y := r[0], r[1]
+		var key string
+		switch {
+		case f.is(x, "..."):
+			s.retOther = true // spread: fields unknown
+			return
+		case (f.ident(x) || f.tok(x).Kind == lexer.String) && f.is(x+1, ":"):
+			key = f.Toks[x].Text
+			if f.tok(x).Kind == lexer.String {
+				key = f.Toks[x].Value
+			}
+			s.retFields[key] |= s.expr(x+2, y)
+		case f.ident(x) && x+1 == y:
+			key = f.Toks[x].Text // shorthand { dir }
+			s.retFields[key] |= s.lookup([]string{key})
+		default:
+			s.retOther = true
+			return
+		}
+	}
+}
+
+// callFields returns per-key taint when [a, b) is a call ("await" optional) to repository
+// functions whose every return is an object literal.
+func (s *state) callFields(a, b int) (map[string]uint8, bool) {
+	f := s.f
+	if f.is(a, "await") {
+		a++
+	}
+	if !f.ident(a) {
+		return nil, false
+	}
+	segs, end := f.chainForward(a)
+	if !f.is(end, "(") || f.match[end] != b-1 {
+		return nil, false
+	}
+	fns := s.e.callees(f, segs)
+	if len(fns) == 0 || s.depth >= s.e.maxDepth {
+		return nil, false
+	}
+	out := map[string]uint8{}
+	args := f.splitArgs(end)
+	for _, g := range fns {
+		sm := s.e.summarize(g, s.depth+1)
+		if sm == nil {
+			return nil, false
+		}
+		for i, r := range args {
+			pi := s.paramIndex(g, i)
+			if pi < 0 || pi >= len(sm.fields) {
+				continue
+			}
+			if sm.fields[pi] == nil {
+				return nil, false
+			}
+			bits := s.expr(r[0], r[1])
+			for k, v := range sm.fields[pi] {
+				out[k] |= v & bits
+			}
+		}
+		if len(g.Params) == 0 || len(sm.fields) == 0 {
+			return nil, false
+		}
+	}
+	return out, true
+}
+
 // callResult is the taint of the value returned by a call whose "(" is at o.
 func (s *state) callResult(segs []string, start, o int) uint8 {
 	f := s.f
@@ -339,6 +505,15 @@ func (s *state) callResult(segs []string, start, o int) uint8 {
 	}
 	if f.Lang == lexer.Python && len(segs) == 1 && (segs[0] == "int" || segs[0] == "float" || segs[0] == "bool") {
 		return 0
+	}
+	if requestCtors[f.resolve(segs)] && len(args) > 0 {
+		// A request object's destination is its first argument; body, headers and options
+		// can carry tool input without deciding the host.
+		b := s.expr(args[0][0], args[0][1])
+		for _, r := range args[1:] {
+			b |= s.expr(r[0], r[1]) &^ tURL
+		}
+		return b
 	}
 	if fns := s.e.callees(f, segs); len(fns) > 0 && s.depth < s.e.maxDepth {
 		var b uint8
@@ -360,6 +535,9 @@ func (s *state) callResult(segs []string, start, o int) uint8 {
 	var b uint8
 	if len(segs) > 1 {
 		b |= s.lookup(segs[:len(segs)-1]) // method on a tainted receiver
+	}
+	if len(segs) > 1 && segs[len(segs)-1] == "get" && len(args) > 0 {
+		args = args[1:] // table.get(key, default): the key selects, it does not flow
 	}
 	for _, r := range args {
 		b |= s.expr(r[0], r[1])
@@ -547,6 +725,7 @@ func (s *state) run(a, b int) {
 			case "return":
 				end := s.stmtEnd(i + 1)
 				s.ret |= s.expr(i+1, end)
+				s.recordReturnFields(i+1, end)
 			}
 		}
 	}
@@ -670,6 +849,16 @@ func (s *state) assignment(i int) {
 		bits &^= tURL // appending to a string cannot change its host
 	}
 	ls := s.lhsStart(i)
+	if op == "=" && f.ident(ls) && ls+1 == i || op == "=" && f.ident(ls) && f.is(ls+1, ":") && f.Lang == lexer.JS {
+		if fields, ok := s.callFields(i+1, end); ok {
+			name := f.Toks[ls].Text
+			s.vars[name] = 0
+			for k, v := range fields {
+				s.vars[name+"."+k] = v
+			}
+			return
+		}
+	}
 	s.bindTargets(ls, i, bits, op != "=" && op != ":=")
 }
 
