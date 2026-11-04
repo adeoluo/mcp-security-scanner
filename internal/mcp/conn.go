@@ -75,6 +75,8 @@ type StdioConn struct {
 	done    chan struct{}
 	readErr error
 	stderr  *ringBuffer
+	// closed when the child's stderr reaches EOF; nil for connections without a child process
+	stderrDone chan struct{}
 }
 
 // StartStdio launches command with args and env (added to the current environment).
@@ -92,12 +94,19 @@ func StartStdio(ctx context.Context, command string, args []string, env map[stri
 	if err != nil {
 		return nil, err
 	}
-	rb := &ringBuffer{max: 8192}
-	cmd.Stderr = rb
+	stderr, err := cmd.StderrPipe()
+	if err != nil {
+		return nil, err
+	}
 	if err := cmd.Start(); err != nil {
 		return nil, fmt.Errorf("start %s: %w", command, err)
 	}
-	c := &StdioConn{cmd: cmd, stdin: stdin, pending: map[int64]chan message{}, done: make(chan struct{}), stderr: rb}
+	c := &StdioConn{cmd: cmd, stdin: stdin, pending: map[int64]chan message{}, done: make(chan struct{}),
+		stderr: &ringBuffer{max: 8192}, stderrDone: make(chan struct{})}
+	go func() {
+		_, _ = io.Copy(c.stderr, stderr)
+		close(c.stderrDone)
+	}()
 	go c.readLoop(stdout)
 	return c, nil
 }
@@ -189,6 +198,7 @@ func (c *StdioConn) Call(ctx context.Context, method string, params any) (json.R
 	select {
 	case err := <-wrote:
 		if err != nil {
+			c.settleStderr()
 			return nil, c.wrap(fmt.Errorf("write %s: %w", method, err))
 		}
 	case <-ctx.Done():
@@ -201,12 +211,25 @@ func (c *StdioConn) Call(ctx context.Context, method string, params any) (json.R
 		}
 		return m.Result, nil
 	case <-c.done:
+		c.settleStderr()
 		return nil, c.wrap(fmt.Errorf("%s: server closed the connection: %v", method, c.readErr))
 	case <-ctx.Done():
 		c.mu.Lock()
 		delete(c.pending, id)
 		c.mu.Unlock()
 		return nil, c.wrap(fmt.Errorf("%s: %w", method, ctx.Err()))
+	}
+}
+
+// settleStderr waits briefly for the rest of a failed server's stderr, so the error that
+// reports the failure can include it.
+func (c *StdioConn) settleStderr() {
+	if c.stderrDone == nil {
+		return
+	}
+	select {
+	case <-c.stderrDone:
+	case <-time.After(time.Second):
 	}
 }
 
