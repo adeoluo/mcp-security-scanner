@@ -238,3 +238,28 @@ func TestRules(t *testing.T) {
 		t.Fatal(out)
 	}
 }
+
+func TestBench(t *testing.T) {
+	dir := t.TempDir()
+	code, out, _ := run(t, "bench", "--out", dir, "--per-technique", "3")
+	if code != 0 || !strings.Contains(out, "Planted source benchmark") || !strings.Contains(out, "| unicode-tags | standard | 3 / 3 | 1.000 |") {
+		t.Fatalf("%d\n%s", code, out)
+	}
+	if _, err := os.Stat(filepath.Join(dir, "source", "truth.json")); err != nil {
+		t.Fatal(err)
+	}
+	if _, err := os.Stat(filepath.Join(dir, "descriptions", "truth.json")); err != nil {
+		t.Fatal(err)
+	}
+	code, out, _ = run(t, "bench", "--format", "json", "--per-technique", "2")
+	var r BenchResult
+	if code != 0 || json.Unmarshal([]byte(out), &r) != nil || r.SourceScore.Overall.TP == 0 {
+		t.Fatalf("%d %s", code, out[:100])
+	}
+	// The standard tier is a regression gate: every planted standard vulnerability must be found.
+	for k, g := range r.SourceScore.Groups {
+		if strings.HasSuffix(k, "|standard") && g.FN > 0 {
+			t.Errorf("%s: %d standard cases missed", k, g.FN)
+		}
+	}
+}

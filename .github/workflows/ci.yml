@@ -47,6 +47,32 @@ jobs:
           go build -o bin/mcp-demo-server ./cmd/mcp-demo-server
           ./bin/mcpscan probe --fail-on none -- ./bin/mcp-demo-server --variant poisoned
 
+  python:
+    name: Benchmark harness (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+
+      - name: Install
+        run: uv sync --project benchmarks --python ${{ matrix.python-version }}
+
+      - name: Lint and format check
+        run: |
+          uv run --project benchmarks ruff check benchmarks
+          uv run --project benchmarks ruff format --check benchmarks
+
+      - name: Tests with coverage gate
+        working-directory: benchmarks
+        run: uv run pytest --cov --cov-report=term-missing --cov-fail-under=80
+
   action:
     name: GitHub Action self-test
     runs-on: ubuntu-latest

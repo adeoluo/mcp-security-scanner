@@ -37,6 +37,7 @@ Usage:
   mcpscan pin [flags] TARGET              record tool definition hashes in a lock file
   mcpscan verify [flags] TARGET           compare a server against the lock file (rug pulls)
   mcpscan serve [--addr 127.0.0.1:8080]   HTTP service: /v1/scan/source, /v1/scan/manifest, /metrics
+  mcpscan bench [flags]                   generate and score the planted-vulnerability benchmark
   mcpscan rules [--format json]           list the rules
   mcpscan version
 
@@ -69,6 +70,8 @@ func Run(args []string, stdout, stderr io.Writer) int {
 		code, err = cmdVerify(ctx, args[1:], stdout, stderr)
 	case "serve":
 		code, err = cmdServe(ctx, args[1:], stderr)
+	case "bench":
+		code, err = cmdBench(args[1:], stdout, stderr)
 	case "rules":
 		code, err = cmdRules(args[1:], stdout)
 	case "version", "--version", "-v":
