@@ -32,3 +32,9 @@ checkpoints/
 .DS_Store
 .idea/
 .vscode/
+_scratch/
+
+# Go
+bin/
+coverage.out
+mcp-lock.json
