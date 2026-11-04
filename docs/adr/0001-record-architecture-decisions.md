@@ -1,16 +1,20 @@
-# ADR-0001: Record architecture decisions
+# ADR 0001: Record architecture decisions
 
-- **Status:** Accepted
-- **Date:** 2026-01-01
+## Status
+
+Accepted.
 
 ## Context
-We need a lightweight, durable record of non-obvious engineering decisions so reviewers
-understand the *why*, not just the *what*.
+
+The scanner makes several trade-offs between precision, recall, speed and portability that are
+not obvious from the code. Reviewers need the reasoning, not only the result.
 
 ## Decision
-Use Architecture Decision Records (ADRs). One Markdown file per significant decision,
-numbered sequentially, using [`template.md`](template.md).
+
+Record each significant decision as a numbered Markdown file in `docs/adr/`, using
+[`template.md`](template.md).
 
 ## Consequences
-- Decisions are discoverable and reviewable in version control.
-- Small ongoing cost to author an ADR per significant choice.
+
+- Decisions are reviewable in version control next to the code they explain.
+- Each significant change carries a small writing cost.

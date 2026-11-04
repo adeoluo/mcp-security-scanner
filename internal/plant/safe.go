@@ -12,6 +12,7 @@ type safePattern struct {
 	name    string
 	tier    string // standard, or hard for look-alikes the analyzer is not expected to clear
 	numeric bool
+	pattern bool // the schema restricts the input with a regular expression
 	sink    *sinkDef
 	build   func(lang string, s sinkDef) (helpers string, body []string, imports []string)
 }
@@ -106,6 +107,9 @@ func safePatterns(lang, cat string) []safePattern {
 		}})
 	}
 	// Hard negatives: safe in fact, but the analyzer does not model the reason.
+	out = append(out, safePattern{name: "schema-pattern", tier: "hard", pattern: true, build: func(lang string, s sinkDef) (string, []string, []string) {
+		return "", []string{call(lang, s, shape(lang, cat, "template", "{{IN}}"))}, nil
+	}})
 	out = append(out, safePattern{name: "lookup-table", tier: "hard", build: func(lang string, s sinkDef) (string, []string, []string) {
 		vals := map[string]string{"command-injection": `"ls -la"`, "path-traversal": `"/srv/data/a.txt"`, "ssrf": `"https://api.example.com/a"`}[cat]
 		if ts {

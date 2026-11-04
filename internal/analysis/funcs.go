@@ -16,13 +16,16 @@ type Param struct {
 
 // Func is a function, method or arrow function with a token range for its body.
 type Func struct {
-	File      *File
-	Name      string
-	Params    []Param
-	Decl      int // first token of the declaration (params or keyword)
-	Start     int // first body token
-	End       int // one past the last body token
-	Handler   bool
+	File    *File
+	Name    string
+	Params  []Param
+	Decl    int // first token of the declaration (params or keyword)
+	Start   int // first body token
+	End     int // one past the last body token
+	Handler bool
+	// Inferred handlers were found by name or by an execute/handler key rather than by a
+	// registration call or decorator; only input-like parameters are treated as tool input.
+	Inferred  bool
 	Tool      string
 	nonString map[string]bool // handler: input properties declared non-string in the schema
 }
@@ -331,9 +334,17 @@ func (f *File) patternNames(a int) []string {
 // markJSHandlers marks functions passed to tool registration calls and records the tool name
 // and the properties the input schema declares as non-string.
 func (f *File) markJSHandlers() {
+	bodies := map[int]bool{}
+	for _, fn := range f.Funcs {
+		if fn.Start > 0 && f.is(fn.Start-1, "{") {
+			bodies[fn.Start-1] = true
+		}
+	}
 	for _, fn := range f.Funcs {
 		o := f.opener[fn.Decl]
-		for depth := 0; o >= 0 && depth < 4; depth++ {
+		// Climb through object literals and wrapper calls such as guarded("x", async (a) => ...),
+		// but never out of another function's body.
+		for depth := 0; o >= 0 && depth < 5; depth++ {
 			if f.is(o, "(") {
 				segs, _ := f.chainBack(o - 1)
 				if len(segs) > 0 && handlerCallees[segs[len(segs)-1]] {
@@ -347,10 +358,12 @@ func (f *File) markJSHandlers() {
 					fn.Handler = true
 					fn.Tool = f.toolNameInCall(o, args)
 					fn.nonString = f.nonStringProps(o, fn)
+					break
 				}
-				break
+				o = f.opener[o]
+				continue
 			}
-			if f.is(o, "{") || f.is(o, "[") {
+			if (f.is(o, "{") && !bodies[o]) || f.is(o, "[") {
 				o = f.opener[o]
 				continue
 			}
@@ -516,6 +529,7 @@ func (f *File) markToolObjects() {
 			continue
 		}
 		fn.Handler = true
+		fn.Inferred = true
 		fn.Tool = f.objString(o, "name")
 		fn.nonString = f.nonStringProps(o, fn)
 	}
