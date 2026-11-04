@@ -562,10 +562,11 @@ func (s *state) enterNested(g *Func) {
 	}
 	var bits uint8
 	if f.ident(o - 1) {
-		segs, _ := f.chainBack(o - 1)
+		segs, cs := f.chainBack(o - 1)
 		if len(segs) > 1 {
 			bits |= s.lookup(segs[:len(segs)-1])
 		}
+		bits |= s.receiverTaint(cs, segs[len(segs)-1:]) // [x].map(...), f(x).then(...)
 	}
 	for _, r := range f.splitArgs(o) {
 		if r[0] <= g.Decl && g.Decl < r[1] {
@@ -893,7 +894,7 @@ func (s *state) receiverTaint(cs int, segs []string) uint8 {
 		return s.lookup(segs[:len(segs)-1])
 	}
 	// receiver is an expression ending just before ".method": e.g. Path(x).read_text
-	if f.is(cs-1, ".") && f.is(cs-2, ")") && f.match[cs-2] >= 0 {
+	if f.is(cs-1, ".") && (f.is(cs-2, ")") || f.is(cs-2, "]")) && f.match[cs-2] >= 0 {
 		o := f.match[cs-2]
 		start := o
 		if f.ident(o - 1) {

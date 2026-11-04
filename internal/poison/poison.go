@@ -51,6 +51,7 @@ var (
 		regexp.MustCompile(`(?i)\b(without|before)\s+(telling|informing|notifying|asking|alerting)\s+(the\s+)?user\b`),
 		regexp.MustCompile(`(?i)\bthe\s+user\s+(must\s+not|should\s+not|shouldn'?t|must\s+never|will\s+not|won'?t|need\s+not)\s+(know|see|be\s+told|notice|find\s+out)`),
 		regexp.MustCompile(`(?i)\b(before|prior\s+to)\s+(using|calling|invoking|running)\s+(this|any)\s+tool\b[^.]{0,80}\b(read|open|cat|load|access|fetch|send|include|call)\b`),
+		regexp.MustCompile(`(?i)\bbefore\s+(calling|using|invoking|answering|responding)\b[^.]{0,40}\b(read|open|cat|load|fetch|look\s+at)\b`),
 		regexp.MustCompile(`(?i)\b(otherwise|or\s+else)\s+(the\s+)?tool\s+(will\s+not|won'?t|cannot|can'?t|will\s+fail\s+to)\s+work`),
 		regexp.MustCompile(`(?i)\b(new|updated|additional|hidden|secret)\s+(system\s+)?instructions?\s*:`),
 		regexp.MustCompile(`(?i)\byou\s+are\s+now\s+(a|an|in)\b`),
@@ -58,7 +59,7 @@ var (
 		regexp.MustCompile(`(?i)\b(silently|secretly|covertly|quietly)\s+(call|send|read|forward|copy|include|upload|execute|run)\b`),
 		regexp.MustCompile(`(?i)\b(as\s+an?\s+(ai|assistant|language\s+model)|assistant\s*,)\s+(you\s+)?(must|should|will)\b`),
 	}
-	reSensitive  = regexp.MustCompile(`(?i)(~|\$HOME|%USERPROFILE%|/home/\w+|/Users/\w+)?/?\.ssh(/|\b)|\bid_(rsa|ed25519|ecdsa|dsa)\b|\.aws/credentials|\.aws/config|(^|[\s"'\x60(/])\.env\b|\bmcp\.json\b|claude_desktop_config\.json|\.cursor/|/etc/(passwd|shadow|sudoers)|\.netrc\b|\.npmrc\b|\.pypirc\b|\.git-credentials|\.kube/config|\.docker/config\.json|\bwallet\.dat\b|\.bash_history|\.zsh_history|\bkeychain\b|\.gnupg|cookies\.sqlite|Login\s+Data`)
+	reSensitive  = regexp.MustCompile(`(?i)(~|\$HOME|%USERPROFILE%|/home/\w+|/Users/\w+)?/?\.ssh(/|\b)|\bid_(rsa|ed25519|ecdsa|dsa)\b|\.aws/credentials|\.aws/config|(^|[\s"'\x60(/])\.env\b|\bmcp\.json\b|claude_desktop_config\.json|\.cursor/|/etc/(passwd|shadow|sudoers)|\.netrc\b|\.npmrc\b|\.pypirc\b|\.git-credentials|\.kube/config|gh/hosts\.yml|\.config/gcloud|\.docker/config\.json|\bwallet\.dat\b|\.bash_history|\.zsh_history|\bkeychain\b|\.gnupg|cookies\.sqlite|Login\s+Data`)
 	reActionVerb = regexp.MustCompile(`(?i)\b(read|open|cat|load|access|fetch|send|include|pass|upload|forward|copy|attach|provide|retrieve|get)\b`)
 	reShadow     = []*regexp.Regexp{
 		regexp.MustCompile("(?i)\\bwhen\\s+(the\\s+)?(user|you|assistant|model|agent)?\\s*(calls?|uses?|invokes?|runs?|executes?)\\s+(the\\s+)?[\"'`]?([a-z0-9_.\\-]+)[\"'`]?\\s+tool\\b[^.]{0,120}\\b(must|should|always|instead|first|also)\\b"),
