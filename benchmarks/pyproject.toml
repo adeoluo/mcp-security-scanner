@@ -2,7 +2,7 @@
 name = "mcpscan-benchmarks"
 version = "0.1.0"
 description = "Benchmark harness for mcpscan: planted-vulnerability comparison, corpus scan, precision labeling."
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 dependencies = []
 
 [dependency-groups]
@@ -21,7 +21,7 @@ omit = ["tests/*"]
 
 [tool.ruff]
 line-length = 120
-target-version = "py311"
+target-version = "py312"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM"]

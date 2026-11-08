@@ -7,8 +7,8 @@
 <p align="center">
   <a href="https://github.com/adeoluo/mcp-security-scanner/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/adeoluo/mcp-security-scanner/actions/workflows/ci.yml/badge.svg"></a>
   <a href="https://github.com/adeoluo/mcp-security-scanner/releases"><img alt="Release" src="https://img.shields.io/github/v/release/adeoluo/mcp-security-scanner"></a>
-  <img alt="Go" src="https://img.shields.io/badge/go-1.24-00ADD8">
-  <img alt="Python" src="https://img.shields.io/badge/python-3.11%20%7C%203.12-blue">
+  <img alt="Go" src="https://img.shields.io/badge/go-1.27-00ADD8">
+  <img alt="Python" src="https://img.shields.io/badge/python-3.12%20%7C%203.13%20%7C%203.14%20%7C%203.15-blue">
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-green"></a>
 </p>
 
@@ -156,7 +156,7 @@ average near 7; the largest repository (61 MB of source after skipping dependenc
 
 ```sh
 git clone https://github.com/adeoluo/mcp-security-scanner && cd mcp-security-scanner
-make build                                    # bin/mcpscan, no dependencies beyond Go 1.24
+make build                                    # bin/mcpscan, no dependencies beyond Go 1.27
 ./bin/mcpscan scan testdata/vulnerable-server # static analysis of a deliberately vulnerable server
 ```
 
@@ -284,7 +284,7 @@ cd benchmarks && uv run pytest --cov --cov-fail-under=80   # Python harness
 ```
 
 CI runs the Go suite with the race detector and an 80 percent coverage gate (90 percent at
-release), the Python harness on 3.11 and 3.12, a self-scan of `testdata/vulnerable-server`, a
+release), the Python harness on 3.12, 3.13, 3.14 and 3.15, a self-scan of `testdata/vulnerable-server`, a
 stdio probe of the demo server, the GitHub Action against the fixture (its SARIF must contain
 results), and a Docker build probed over HTTP; CodeQL runs on every push to `main` and weekly.
 

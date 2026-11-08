@@ -14,6 +14,7 @@ A Go scanner for Model Context Protocol servers: taint analysis of server source
 - `cmd/`: entry points for the binaries
 - `docs/`: documentation, architecture diagram source and render, design records
 - `internal/`: packages private to this module
+- `scripts/`: maintenance scripts (release, assets, data)
 
 Key modules:
 
