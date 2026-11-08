@@ -65,7 +65,7 @@ Each generated server holds one labeled case: a planted vulnerability or a safe 
 argument, shell quoting). All three tools are scored with one rule: a finding of the right
 category anywhere in the case. Recall / false positive rate on safe look-alikes:
 
-| Category (vulnerable + safe cases) | mcpscan | Semgrep 1.183.0 | Bandit 1.9.4 (Python only) |
+| Category (vulnerable + safe cases) | mcpscan | Semgrep 1.184.0 | Bandit 1.9.4 (Python only) |
 |---|---|---|---|
 | Command and code injection (63+42) | **1.00 / 0.02** | 0.59 / 0.40 | 1.00 / 0.83 |
 | Path traversal (63+49) | **1.00 / 0.02** | 0.00 / 0.00 | 0.00 / 0.00 |
@@ -140,11 +140,11 @@ on a workspace directory they are meant to receive.
 
 ### Speed and memory
 
-| 20 corpus repositories, one process each | mcpscan | Semgrep 1.183.0 (10 registry packs) |
+| 20 corpus repositories, one process each | mcpscan | Semgrep 1.184.0 (10 registry packs) |
 |---|---:|---:|
-| Total wall time | 2.2 s | 502 s |
-| Median per repository | 0.041 s | 9.3 s |
-| Median / largest peak memory | 20 MB / 180 MB | 304 MB / 852 MB |
+| Total wall time | 2.1 s | 490 s |
+| Median per repository | 0.067 s | 7.3 s |
+| Median / largest peak memory | 19 MB / 171 MB | 284 MB / 909 MB |
 
 Semgrep downloads and compiles about 1,300 general rules on every run and does broader work, so
 this compares the cost of running each in CI, not equivalent analyses. The full corpus (522 MB)

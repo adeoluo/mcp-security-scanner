@@ -1,7 +1,7 @@
 {
  "repositories": 20,
  "seed": 7,
- "semgrep_version": "1.183.0",
+ "semgrep_version": "1.184.0",
  "semgrep_configs": [
   "p/default",
   "p/security-audit",
@@ -14,155 +14,155 @@
   "p/nodejs",
   "p/command-injection"
  ],
- "mcpscan_seconds_total": 2.2,
- "semgrep_seconds_total": 502.29,
- "mcpscan_seconds_median": 0.041,
- "semgrep_seconds_median": 9.286,
- "mcpscan_peak_mb_median": 19.7,
- "semgrep_peak_mb_median": 304.4,
- "mcpscan_peak_mb_max": 180.4,
- "semgrep_peak_mb_max": 852.2,
+ "mcpscan_seconds_total": 2.1,
+ "semgrep_seconds_total": 490.49,
+ "mcpscan_seconds_median": 0.067,
+ "semgrep_seconds_median": 7.312,
+ "mcpscan_peak_mb_median": 19.4,
+ "semgrep_peak_mb_median": 284.3,
+ "mcpscan_peak_mb_max": 171.3,
+ "semgrep_peak_mb_max": 909.2,
  "machine": "arm64 Darwin 27.0.0",
  "note": "Semgrep fetches registry rule packs on each run; its time includes that download. Semgrep peak memory is measured for the uv wrapper process tree as reported by time(1).",
  "per_repository": [
   {
-   "mcpscan_seconds": 0.1556377499946393,
-   "mcpscan_peak_mb": 19.265625,
-   "semgrep_seconds": 17.192209708999144,
-   "semgrep_peak_mb": 297.796875,
+   "mcpscan_seconds": 0.16678304199012928,
+   "mcpscan_peak_mb": 18.671875,
+   "semgrep_seconds": 6.6319739170139655,
+   "semgrep_peak_mb": 283.65625,
    "semgrep_exit": 0
   },
   {
-   "mcpscan_seconds": 0.14869991700106766,
+   "mcpscan_seconds": 0.044322041008854285,
+   "mcpscan_peak_mb": 19.671875,
+   "semgrep_seconds": 5.559071374998894,
+   "semgrep_peak_mb": 285.421875,
+   "semgrep_exit": 0
+  },
+  {
+   "mcpscan_seconds": 0.07648670799972024,
+   "mcpscan_peak_mb": 35.21875,
+   "semgrep_seconds": 7.172515000012936,
+   "semgrep_peak_mb": 333.25,
+   "semgrep_exit": 0
+  },
+  {
+   "mcpscan_seconds": 0.021508917008759454,
+   "mcpscan_peak_mb": 16.890625,
+   "semgrep_seconds": 5.5994335419964045,
+   "semgrep_peak_mb": 290.75,
+   "semgrep_exit": 0
+  },
+  {
+   "mcpscan_seconds": 0.21736199999577366,
+   "mcpscan_peak_mb": 171.3125,
+   "semgrep_seconds": 119.21897141699446,
+   "semgrep_peak_mb": 513.109375,
+   "semgrep_exit": 0
+  },
+  {
+   "mcpscan_seconds": 0.0859320830059005,
+   "mcpscan_peak_mb": 20.75,
+   "semgrep_seconds": 19.38354325000546,
+   "semgrep_peak_mb": 226.265625,
+   "semgrep_exit": 0
+  },
+  {
+   "mcpscan_seconds": 0.5079050829954213,
+   "mcpscan_peak_mb": 99.421875,
+   "semgrep_seconds": 112.37746995899943,
+   "semgrep_peak_mb": 278.140625,
+   "semgrep_exit": 0
+  },
+  {
+   "mcpscan_seconds": 0.042834166990360245,
+   "mcpscan_peak_mb": 17.03125,
+   "semgrep_seconds": 7.208973083004821,
+   "semgrep_peak_mb": 291.5,
+   "semgrep_exit": 0
+  },
+  {
+   "mcpscan_seconds": 0.05653958300536033,
+   "mcpscan_peak_mb": 24.171875,
+   "semgrep_seconds": 7.596739375003381,
+   "semgrep_peak_mb": 282.34375,
+   "semgrep_exit": 0
+  },
+  {
+   "mcpscan_seconds": 0.041471333999652416,
+   "mcpscan_peak_mb": 18.28125,
+   "semgrep_seconds": 6.450754707999295,
+   "semgrep_peak_mb": 285.03125,
+   "semgrep_exit": 0
+  },
+  {
+   "mcpscan_seconds": 0.036366541011375375,
+   "mcpscan_peak_mb": 16.234375,
+   "semgrep_seconds": 5.883742624995648,
+   "semgrep_peak_mb": 281.765625,
+   "semgrep_exit": 0
+  },
+  {
+   "mcpscan_seconds": 0.014273291002609767,
+   "mcpscan_peak_mb": 16.578125,
+   "semgrep_seconds": 5.395265541999834,
+   "semgrep_peak_mb": 287.609375,
+   "semgrep_exit": 0
+  },
+  {
+   "mcpscan_seconds": 0.01795937499264255,
+   "mcpscan_peak_mb": 13.734375,
+   "semgrep_seconds": 5.27423350000754,
+   "semgrep_peak_mb": 276.953125,
+   "semgrep_exit": 0
+  },
+  {
+   "mcpscan_seconds": 0.033972458011703566,
+   "mcpscan_peak_mb": 13.75,
+   "semgrep_seconds": 5.4297357499890495,
+   "semgrep_peak_mb": 281.53125,
+   "semgrep_exit": 0
+  },
+  {
+   "mcpscan_seconds": 0.1201834169914946,
+   "mcpscan_peak_mb": 25.203125,
+   "semgrep_seconds": 18.254938040990965,
+   "semgrep_peak_mb": 246.484375,
+   "semgrep_exit": 0
+  },
+  {
+   "mcpscan_seconds": 0.3091063750034664,
+   "mcpscan_peak_mb": 19.1875,
+   "semgrep_seconds": 40.19245179199788,
+   "semgrep_peak_mb": 316.515625,
+   "semgrep_exit": 0
+  },
+  {
+   "mcpscan_seconds": 0.082665875001112,
+   "mcpscan_peak_mb": 21.03125,
+   "semgrep_seconds": 7.415518791996874,
+   "semgrep_peak_mb": 421.875,
+   "semgrep_exit": 0
+  },
+  {
+   "mcpscan_seconds": 0.06458016698888969,
+   "mcpscan_peak_mb": 26.1875,
+   "semgrep_seconds": 55.198738874998526,
+   "semgrep_peak_mb": 909.234375,
+   "semgrep_exit": 0
+  },
+  {
+   "mcpscan_seconds": 0.06870033300947398,
+   "mcpscan_peak_mb": 19.109375,
+   "semgrep_seconds": 24.550286166995647,
+   "semgrep_peak_mb": 270.75,
+   "semgrep_exit": 0
+  },
+  {
+   "mcpscan_seconds": 0.09078225000121165,
    "mcpscan_peak_mb": 20.171875,
-   "semgrep_seconds": 13.62755441700574,
-   "semgrep_peak_mb": 295.640625,
-   "semgrep_exit": 0
-  },
-  {
-   "mcpscan_seconds": 0.2699285409908043,
-   "mcpscan_peak_mb": 35.109375,
-   "semgrep_seconds": 25.823464624991175,
-   "semgrep_peak_mb": 337.28125,
-   "semgrep_exit": 0
-  },
-  {
-   "mcpscan_seconds": 0.11887354099599179,
-   "mcpscan_peak_mb": 16.96875,
-   "semgrep_seconds": 17.78376137500163,
-   "semgrep_peak_mb": 285.203125,
-   "semgrep_exit": 0
-  },
-  {
-   "mcpscan_seconds": 0.6712293330056127,
-   "mcpscan_peak_mb": 180.421875,
-   "semgrep_seconds": 236.79435662500327,
-   "semgrep_peak_mb": 445.734375,
-   "semgrep_exit": 0
-  },
-  {
-   "mcpscan_seconds": 0.08807170799991582,
-   "mcpscan_peak_mb": 19.765625,
-   "semgrep_seconds": 13.78960379199998,
-   "semgrep_peak_mb": 306.625,
-   "semgrep_exit": 0
-  },
-  {
-   "mcpscan_seconds": 0.2204687500052387,
-   "mcpscan_peak_mb": 97.484375,
-   "semgrep_seconds": 32.73366258300666,
-   "semgrep_peak_mb": 344.53125,
-   "semgrep_exit": 0
-  },
-  {
-   "mcpscan_seconds": 0.031122667001909576,
-   "mcpscan_peak_mb": 17.0,
-   "semgrep_seconds": 6.5444826670136536,
-   "semgrep_peak_mb": 301.1875,
-   "semgrep_exit": 0
-  },
-  {
-   "mcpscan_seconds": 0.0269684579980094,
-   "mcpscan_peak_mb": 24.078125,
-   "semgrep_seconds": 9.38482337500318,
-   "semgrep_peak_mb": 325.390625,
-   "semgrep_exit": 0
-  },
-  {
-   "mcpscan_seconds": 0.03668366700003389,
-   "mcpscan_peak_mb": 17.984375,
-   "semgrep_seconds": 7.173798916002852,
-   "semgrep_peak_mb": 293.90625,
-   "semgrep_exit": 0
-  },
-  {
-   "mcpscan_seconds": 0.019897333011613227,
-   "mcpscan_peak_mb": 16.03125,
-   "semgrep_seconds": 6.5052235839975765,
-   "semgrep_peak_mb": 296.4375,
-   "semgrep_exit": 0
-  },
-  {
-   "mcpscan_seconds": 0.02042362499923911,
-   "mcpscan_peak_mb": 16.328125,
-   "semgrep_seconds": 6.465080624999246,
-   "semgrep_peak_mb": 303.46875,
-   "semgrep_exit": 0
-  },
-  {
-   "mcpscan_seconds": 0.017904041000292636,
-   "mcpscan_peak_mb": 13.96875,
-   "semgrep_seconds": 5.878370916994754,
-   "semgrep_peak_mb": 293.40625,
-   "semgrep_exit": 0
-  },
-  {
-   "mcpscan_seconds": 0.01913108398730401,
-   "mcpscan_peak_mb": 13.921875,
-   "semgrep_seconds": 7.326088084009825,
-   "semgrep_peak_mb": 275.5,
-   "semgrep_exit": 0
-  },
-  {
-   "mcpscan_seconds": 0.14990704199590255,
-   "mcpscan_peak_mb": 24.84375,
-   "semgrep_seconds": 9.029671041993424,
-   "semgrep_peak_mb": 297.546875,
-   "semgrep_exit": 0
-  },
-  {
-   "mcpscan_seconds": 0.021981167010380886,
-   "mcpscan_peak_mb": 19.71875,
-   "semgrep_seconds": 11.124261500008288,
-   "semgrep_peak_mb": 313.21875,
-   "semgrep_exit": 0
-  },
-  {
-   "mcpscan_seconds": 0.04046829200524371,
-   "mcpscan_peak_mb": 21.4375,
-   "semgrep_seconds": 9.187167083990062,
-   "semgrep_peak_mb": 416.25,
-   "semgrep_exit": 0
-  },
-  {
-   "mcpscan_seconds": 0.06897808299981989,
-   "mcpscan_peak_mb": 27.296875,
-   "semgrep_seconds": 50.81449683399114,
-   "semgrep_peak_mb": 852.234375,
-   "semgrep_exit": 0
-  },
-  {
-   "mcpscan_seconds": 0.04152674999204464,
-   "mcpscan_peak_mb": 18.96875,
-   "semgrep_seconds": 8.217057667003246,
-   "semgrep_peak_mb": 305.234375,
-   "semgrep_exit": 0
-  },
-  {
-   "mcpscan_seconds": 0.030272124990005977,
-   "mcpscan_peak_mb": 20.15625,
-   "semgrep_seconds": 6.899042333010584,
-   "semgrep_peak_mb": 315.96875,
+   "semgrep_seconds": 25.695161167008337,
+   "semgrep_peak_mb": 264.046875,
    "semgrep_exit": 0
   }
  ]

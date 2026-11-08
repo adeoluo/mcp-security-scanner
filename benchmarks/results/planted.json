@@ -4,11 +4,15 @@
  "vulnerable": 219,
  "safe": 213,
  "machine": "arm64 Darwin 27.0.0",
- "python": "3.14.7",
+ "python": "3.12.14",
+ "load_average_1m": {
+  "start": 10.39,
+  "end": 9.22
+ },
  "tools": {
   "mcpscan": {
-   "seconds_per_case_total": 6.9120649538963335,
-   "seconds_whole_tree": 0.04846462499699555,
+   "seconds_per_case_total": 9.288951196125709,
+   "seconds_whole_tree": 0.23612545800278895,
    "groups": {
     "command-injection|ts|standard": {
      "tp": 36,
@@ -252,8 +256,8 @@
     }
    }
   },
-  "semgrep 1.183.0": {
-   "seconds_whole_tree": 11.354392082997947,
+  "semgrep 1.184.0": {
+   "seconds_whole_tree": 72.64160112499667,
    "configs": [
     "p/default",
     "p/security-audit",
@@ -531,7 +535,7 @@
    }
   },
   "bandit 1.9.4": {
-   "seconds_whole_tree": 0.6423281659954228,
+   "seconds_whole_tree": 5.23109950000071,
    "rule_map": {
     "B602": "command-injection",
     "B604": "command-injection",
@@ -680,7 +684,7 @@
  },
  "mcpscan_bench_output": {
   "seed": 20261103,
-  "version": "75081d1-dirty",
+  "version": "v0-4-g5397b0e-dirty",
   "source_cases": 432,
   "source_score": {
    "tool": "mcpscan",
@@ -806,7 +810,7 @@
     "c0398"
    ]
   },
-  "source_seconds": 0.04773175,
+  "source_seconds": 0.157254334,
   "description_cases": 400,
   "by_technique": {
    "base64|standard": {

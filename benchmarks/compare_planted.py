@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import platform
 import re
 import shutil
@@ -24,7 +25,7 @@ from pathlib import Path
 
 from stats import Counts, fmt
 
-SEMGREP_VERSION = "1.183.0"
+SEMGREP_VERSION = "1.184.0"
 BANDIT_VERSION = "1.9.4"
 SEMGREP_CONFIGS = [
     "p/default",
@@ -257,6 +258,7 @@ def main(argv: list[str] | None = None) -> int:
     cases = json.loads((src / "truth.json").read_text())["cases"]
 
     tools: dict[str, dict] = {}
+    load_start = os.getloadavg()[0]
     det, secs = mcpscan_detections(args.mcpscan, src, cases)
     whole_secs, _ = run_timed([args.mcpscan, "scan", str(src), "--format", "json", "--fail-on", "none"])
     tools["mcpscan"] = {
@@ -288,6 +290,7 @@ def main(argv: list[str] | None = None) -> int:
         "safe": sum(not c["vulnerable"] for c in cases),
         "machine": f"{platform.machine()} {platform.system()} {platform.release()}",
         "python": sys.version.split()[0],
+        "load_average_1m": {"start": round(load_start, 2), "end": round(os.getloadavg()[0], 2)},
         "tools": tools,
         "mcpscan_bench_output": bench,
     }

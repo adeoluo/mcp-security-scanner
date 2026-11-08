@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import platform
 import random
 import re
@@ -112,6 +113,7 @@ def main(argv: list[str] | None = None) -> int:
         "mcpscan_peak_mb_max": round(max(r["mcpscan_peak_mb"] or 0 for r in rows), 1),
         "semgrep_peak_mb_max": round(max(r["semgrep_peak_mb"] or 0 for r in rows), 1),
         "machine": f"{platform.machine()} {platform.system()} {platform.release()}",
+        "load_average_1m_end": round(os.getloadavg()[0], 2),
         "note": "Semgrep fetches registry rule packs on each run; its time includes that download. "
         "Semgrep peak memory is measured for the uv wrapper process tree as reported by time(1).",
         "per_repository": rows,

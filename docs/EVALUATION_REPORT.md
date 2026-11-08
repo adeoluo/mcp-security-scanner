@@ -17,7 +17,7 @@ Three questions:
 
 `mcpscan bench --out DIR` generates 432 small MCP servers (seed 20261103), each with exactly one
 labeled case; [`benchmarks/compare_planted.py`](../benchmarks/compare_planted.py) runs mcpscan,
-Semgrep 1.183.0 (registry packs `p/default`, `p/security-audit`, `p/owasp-top-ten`, `p/secrets`,
+Semgrep 1.184.0 (registry packs `p/default`, `p/security-audit`, `p/owasp-top-ten`, `p/secrets`,
 `p/gitleaks`, `p/javascript`, `p/typescript`, `p/python`, `p/nodejs`, `p/command-injection`) and
 Bandit 1.9.4 (Python cases only), and scores every tool with the same rule: a vulnerable case is
 detected when the tool reports a finding of that category anywhere in the case directory; a safe
@@ -28,7 +28,7 @@ categories is in the script and in `planted.json`.
 helpers in other files, times 4 TypeScript and 3 Python registration styles). Recall / false
 positive rate on safe look-alikes (vulnerable + safe cases):
 
-| Category | mcpscan | Semgrep 1.183.0 | Bandit 1.9.4 (Python only) |
+| Category | mcpscan | Semgrep 1.184.0 | Bandit 1.9.4 (Python only) |
 |---|---|---|---|
 | Command and code injection | **1.00 / 0.02** (63+42) | 0.59 / 0.40 (63+42) | 1.00 / 0.83 (27+18) |
 | Path traversal | **1.00 / 0.02** (63+49) | 0.00 / 0.00 (63+49) | 0.00 / 0.00 (27+21) |
@@ -40,15 +40,19 @@ object between calls, computed member access, dependency injection, `getattr`, a
 name across files; and safe cases whose safety lives in a schema regex, a lookup table or a
 ternary):
 
-| Category | mcpscan | Semgrep 1.183.0 | Bandit 1.9.4 (Python only) |
+| Category | mcpscan | Semgrep 1.184.0 | Bandit 1.9.4 (Python only) |
 |---|---|---|---|
 | Command and code injection | 0.00 / 0.26 (4+19) | 0.50 / 0.26 (4+19) | 0.50 / 1.00 (2+8) |
 | Path traversal | 0.25 / 0.26 (4+19) | 0.00 / 0.00 (4+19) | 0.00 / 0.00 (2+8) |
 | SSRF | 1.00 / 0.26 (2+19) | 0.00 / 0.05 (2+19) | 0.00 / 0.25 (1+8) |
 
 Overall over all 432 cases: mcpscan recall 0.968 and false positive rate 0.085; Semgrep 0.301
-and 0.150; Bandit (Python cases) 0.458 and 0.391. Whole-tree wall time: mcpscan 0.05 s,
-Bandit 0.64 s, Semgrep 11.35 s (registry packs fetched on each run).
+and 0.150; Bandit (Python cases) 0.458 and 0.391. Semgrep 1.184.0 finds exactly the same cases
+as 1.183.0 did. Whole-tree wall time in this run: mcpscan 0.24 s, Bandit 5.2 s, Semgrep 72.6 s
+(registry packs fetched on each run), with the machine shared with other jobs (1-minute load
+average 10.4 at the start and 9.2 at the end, on 8 cores, recorded in `planted.json`); the
+earlier run on a quieter machine took 0.05 s, 0.64 s and 11.35 s, so read these as an order of
+magnitude. Section 4 measures speed on real repositories.
 
 How to read this:
 
@@ -187,17 +191,17 @@ the true uncertainty is wider. Labels: [`benchmarks/precision/labels.jsonl`](../
 
 [`benchmarks/corpus/speed.py`](../benchmarks/corpus/speed.py) ran each tool on the same 20 corpus
 repositories (random, seed 7, at least five source files each), one process per repository,
-under `/usr/bin/time`:
+under `/usr/bin/time`, with Semgrep 1.184.0 and while other jobs shared the machine:
 
-| Measure | mcpscan | Semgrep 1.183.0 (10 registry packs) |
+| Measure | mcpscan | Semgrep 1.184.0 (10 registry packs) |
 |---|---:|---:|
-| Total wall time, 20 repositories | 2.2 s | 502 s |
-| Median per repository | 0.041 s | 9.3 s |
-| Median peak memory | 20 MB | 304 MB |
-| Largest peak memory | 180 MB | 852 MB |
+| Total wall time, 20 repositories | 2.1 s | 490 s |
+| Median per repository | 0.067 s | 7.3 s |
+| Median peak memory | 19 MB | 284 MB |
+| Largest peak memory | 171 MB | 909 MB |
 
 Semgrep fetches and compiles its rule packs on every run, which accounts for several seconds of
-each run (its fastest repository took 5.9 s); its peak memory is that of the whole process tree
+each run (its fastest repository took 5.3 s); its peak memory is that of the whole process tree
 as reported by `time`. The two tools also do different work: Semgrep applies about 1,300
 general rules, mcpscan about 30 MCP-specific ones. The comparison shows what each costs to run in
 CI on an MCP server, not the speed of equivalent analyses.
