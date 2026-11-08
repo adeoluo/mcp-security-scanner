@@ -1,0 +1,15 @@
+flowchart TB
+    classDef edge     fill:#F59E0B,stroke:#1E293B,color:#1E293B,stroke-width:1px;
+    classDef core     fill:#6366F1,stroke:#1E293B,color:#ffffff,stroke-width:1px;
+    classDef data     fill:#10B981,stroke:#1E293B,color:#ffffff,stroke-width:1px;
+    classDef control  fill:#0EA5E9,stroke:#1E293B,color:#ffffff,stroke-width:1px;
+    classDef obs      fill:#CBD5E1,stroke:#1E293B,color:#1E293B,stroke-width:1px;
+    W["Walk tree"]:::core --> P["Parse each file in parallel<br/>tokens, brackets, aliases, functions"]:::core
+    P --> S["Secret and configuration rules<br/>per file"]:::control
+    P --> X["Extract tool definitions"]:::core
+    X --> D["Mark inferred handlers<br/>by tool name"]:::core
+    D --> E["Taint engine over all handlers"]:::core
+    X --> T["Tool text checks"]:::control
+    E --> F["Findings"]:::obs
+    S --> F
+    T --> F

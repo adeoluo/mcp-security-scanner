@@ -23,18 +23,11 @@ generator) and four analyzers that share a finding model and the rule catalog in
 
 ## Static scan
 
-```mermaid
-flowchart LR
-    W[Walk tree] --> P[Parse each file in parallel<br/>tokens, brackets, aliases, functions]
-    P --> S[Secret and configuration rules<br/>per file]
-    P --> X[Extract tool definitions]
-    X --> D[Mark inferred handlers<br/>by tool name]
-    D --> E[Taint engine over all handlers]
-    X --> T[Tool text checks]
-    E --> F[Findings]
-    S --> F
-    T --> F
-```
+<p align="center">
+  <img src="architecture/static-scan.svg" alt="Static scan diagram" width="552">
+</p>
+
+<sub>Legend: amber = entry points and external systems, indigo = core logic, green = data and state, blue = validation and control, grey = observability and outputs.</sub>
 
 1. **Collect.** Walk the tree, skipping `node_modules`, build output, hidden directories, test
    files and directories (unless `--include-tests`), files over 1 MB and minified bundles.
@@ -56,21 +49,9 @@ flowchart LR
 
 ## Live probe
 
-```mermaid
-sequenceDiagram
-    participant S as mcpscan
-    participant M as MCP server
-    S->>M: initialize (protocol 2025-06-18)
-    M-->>S: serverInfo, capabilities, instructions
-    S->>M: notifications/initialized
-    loop until nextCursor is empty
-        S->>M: tools/list (cursor)
-        M-->>S: tools
-    end
-    S->>M: prompts/list, resources/list (if advertised)
-    Note over S,M: HTTP only: a second initialize with a foreign Origin header
-    S->>S: schema checks, poisoning checks across all servers, optional lock verification
-```
+<p align="center">
+  <img src="architecture/live-probe.svg" alt="Live probe diagram" width="433">
+</p>
 
 Server to client requests are answered (`ping`) or declined (sampling, roots, elicitation),
 non-JSON lines on stdout are skipped, and writes to a stuck server time out instead of blocking.
