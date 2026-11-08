@@ -1,0 +1,13 @@
+sequenceDiagram
+    participant S as mcpscan
+    participant M as MCP server
+    S->>M: initialize (protocol 2025-06-18)
+    M-->>S: serverInfo, capabilities, instructions
+    S->>M: notifications/initialized
+    loop until nextCursor is empty
+        S->>M: tools/list (cursor)
+        M-->>S: tools
+    end
+    S->>M: prompts/list, resources/list (if advertised)
+    Note over S,M: HTTP only: a second initialize with a foreign Origin header
+    S->>S: schema checks, poisoning checks across all servers, optional lock verification
