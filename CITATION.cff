@@ -1,10 +1,22 @@
 cff-version: 1.2.0
-message: "If you use this work, please cite it."
-title: "Mcp Security Scanner"
+message: "If you use this software, please cite it as below."
+type: software
+title: "MCP Security Scanner"
+abstract: "Go scanner for Model Context Protocol servers: taint analysis of server source, tool poisoning checks, live probing, rug pull pinning and SARIF output for CI"
 authors:
   - family-names: "Ogunnoiki"
     given-names: "Adeolu"
-version: 0.1.0
-date-released: 2026-01-01
+version: "0.1.0"
+date-released: "2026-11-04"
 license: MIT
-url: "REPO_URL"
+repository-code: "https://github.com/adeoluo/mcp-security-scanner"
+url: "https://github.com/adeoluo/mcp-security-scanner"
+keywords:
+  - "golang"
+  - "llm-security"
+  - "mcp"
+  - "model-context-protocol"
+  - "sarif"
+  - "security"
+  - "static-analysis"
+  - "taint-analysis"
