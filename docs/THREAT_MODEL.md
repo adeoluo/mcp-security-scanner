@@ -35,6 +35,36 @@ treated as instructions from whoever controls the server.
 | Prompt injection against the scanner | Poisoned descriptions in scanned manifests | The scanner uses no model; descriptions are matched, never executed or followed. |
 | Supply chain | Malicious dependency | The Go module has no third-party dependencies; the benchmark harness pins its Python dev tools in `benchmarks/uv.lock`; CodeQL runs on every push to `main` and weekly. |
 
+## Standards mapping
+
+MCP servers are agent tools, so every threat is mapped to the OWASP Top 10 for Agentic
+Applications 2026 as well as the OWASP Top 10 for LLM Applications 2026 and MITRE ATLAS
+v2026.10. ATLAS IDs and names were checked against `ATLAS.yaml` from the
+[v2026.10 release of mitre-atlas/atlas-data](https://github.com/mitre-atlas/atlas-data/releases).
+
+| Threat | OWASP LLM 2026 | OWASP Agentic 2026 | MITRE ATLAS v2026.10 | Rules |
+|---|---|---|---|---|
+| Command or code injection | LLM10:2026 Improper Output Handling; LLM03:2026 Excessive Agency | ASI02 Tool Misuse and Exploitation; ASI05 Unexpected Code Execution | AML.T0053 AI Agent Tool Invocation; AML.T0050 Command and Scripting Interpreter | MCP101, MCP102 |
+| Arbitrary file access | LLM10:2026 Improper Output Handling; LLM02:2026 Sensitive Information Disclosure | ASI02 Tool Misuse and Exploitation | AML.T0053 AI Agent Tool Invocation; AML.T0037 Data from Local System | MCP111 |
+| Server-side request forgery | LLM10:2026 Improper Output Handling | ASI02 Tool Misuse and Exploitation | AML.T0053 AI Agent Tool Invocation; AML.T0086 Exfiltration via AI Agent Tool Invocation | MCP121 |
+| Credential exposure | LLM02:2026 Sensitive Information Disclosure | ASI03 Identity and Privilege Abuse | AML.T0055 Unsecured Credentials; AML.T0083 Credentials from AI Agent Configuration | MCP131, MCP132 |
+| Over-broad access | LLM03:2026 Excessive Agency | ASI03 Identity and Privilege Abuse | AML.T0132 Misconfigured or Publicly Exposed AI Services | MCP141 to MCP144 |
+| Tool poisoning | LLM01:2026 Prompt Injection | ASI01 Agent Goal Hijack; ASI04 Agentic Supply Chain Vulnerabilities | AML.T0110.000 AI Agent Tool Poisoning: Definition and Instructions; AML.T0051.001 LLM Prompt Injection: Indirect; AML.T0068 LLM Prompt Obfuscation | MCP201 to MCP209 |
+| Tool shadowing | LLM01:2026 Prompt Injection | ASI04 Agentic Supply Chain Vulnerabilities; ASI02 Tool Misuse and Exploitation | AML.T0110.000 AI Agent Tool Poisoning: Definition and Instructions; AML.T0074 Masquerading | MCP205, MCP207 |
+| Rug pull | LLM04:2026 Supply Chain | ASI04 Agentic Supply Chain Vulnerabilities | AML.T0109 AI Supply Chain Rug Pull; AML.T0010.005 Supply Chain Compromise: AI Agent Tool | MCP401 to MCP404 |
+| Misleading metadata | LLM03:2026 Excessive Agency | ASI02 Tool Misuse and Exploitation; ASI09 Human-Agent Trust Exploitation | AML.T0074 Masquerading | MCP301 to MCP308 |
+| DNS rebinding and open endpoints | LLM03:2026 Excessive Agency | ASI03 Identity and Privilege Abuse | AML.T0049 Exploit Public-Facing Application; AML.T0132 Misconfigured or Publicly Exposed AI Services | MCP501 to MCP503 |
+| Running an untrusted server during `probe` | | ASI05 Unexpected Code Execution | AML.T0011.002 User Execution: Poisoned AI Agent Tool | Opt-in only; run in a container or VM |
+| Hostile source or manifests sent to the scanner | | | AML.T0119 Exploit Automated Artifact Processing Pipeline | Fuzzed lexer, size limits |
+| Malicious dependency of mcpscan | LLM04:2026 Supply Chain | | AML.T0010.001 Supply Chain Compromise: Software | No third-party Go modules; CodeQL |
+
+`mcpscan` applies AML.M0016 Vulnerability Scanning to agent tools, and rug-pull pinning is a form
+of AML.M0014 Verify AI Artifacts. It finds the server-side defects behind the agentic risks in
+the table above; it does not cover ASI06 Memory and Context Poisoning, ASI07 Insecure Inter-Agent
+Communication, ASI08 Cascading Failures or ASI10 Rogue Agents, which are properties of the
+agent and its runtime rather than of server code. In NIST AI 600-1 (Generative AI Profile) terms
+it addresses the Information Security and Value Chain and Component Integration risks.
+
 ## Residual risk
 
 - Static analysis misses flows it does not model (see the hard tier of the planted benchmark
