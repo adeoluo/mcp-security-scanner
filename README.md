@@ -301,6 +301,12 @@ results), and a Docker build probed over HTTP; CodeQL runs on every push to `mai
 
 ## Responsible AI
 
+- **Standards.** The [threat model](docs/THREAT_MODEL.md#standards-mapping) maps each rule
+  family to the OWASP Top 10 for Agentic Applications 2026 (ASI01 Agent Goal Hijack through
+  ASI05 Unexpected Code Execution), the OWASP Top 10 for LLM Applications 2026 (for example
+  LLM01:2026 Prompt Injection and LLM10:2026 Improper Output Handling) and MITRE ATLAS
+  v2026.10 (for example AML.T0110.000 AI Agent Tool Poisoning: Definition and Instructions
+  and AML.T0109 AI Supply Chain Rug Pull).
 - **Defensive use and dual use.** The poisoning checks are public patterns; an attacker can
   read them and paraphrase around them (the hard tier shows that this works). Treat a clean
   report as absence of known techniques, not as approval.
