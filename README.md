@@ -16,6 +16,27 @@
 
 > **Evidence level: publicly benchmarked, with limits.** Compared with Semgrep on 432 cases planted by the author, and run over 1,013 public MCP repositories with a sample of findings audited by an AI agent against a written rubric. Not independently reproduced and not used in production. [What the levels mean](https://github.com/adeoluo#evidence-levels).
 
+## In plain English
+
+MCP is the plug that lets AI assistants use tools: read files, run commands, call websites.
+A badly written MCP server lets an attacker take over those tools through the AI. This
+scanner reads a server's code and points at those holes before it ships.
+
+- **It finds the planted bugs.** On 432 test servers it found every command injection, path
+  traversal and SSRF bug with about 2% false alarms. Semgrep, a well-known scanner, found
+  59%, 0% and 11% of them.
+- **It spots hidden instructions.** It caught 200 of 200 known tricks for hiding orders in a
+  tool's description, including invisible characters.
+- **It ran on the real world.** 1,013 public MCP repositories, 12.2 million lines of code.
+- **It is fast.** 20 repositories in 2.1 seconds. Semgrep took 490 seconds, doing broader
+  work.
+
+**Where it falls short:** the test servers were written by the scanner's author, so that
+score is a safety net, not a real-world score. On real code many alerts are wrong: SSRF
+alerts were right 22% of the time, and none of the 29 audited "hidden instruction" alerts was
+a real attack. Attacks written in new words are missed (0 of 60). The audit was done by an AI
+agent following a written rubric, not by a person.
+
 ## Motivation
 
 An MCP client gives a model a list of tools and lets it call them with arguments it chooses.
