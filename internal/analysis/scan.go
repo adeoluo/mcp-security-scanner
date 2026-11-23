@@ -244,8 +244,9 @@ func ScanSources(srcs []Source, opt Options) *Result {
 			}
 		}
 	}
+	own := poison.Names(allTools)
 	for _, t := range allTools {
-		res.Findings = append(res.Findings, poison.CheckTool(t)...)
+		res.Findings = append(res.Findings, poison.CheckToolIn(t, own)...)
 	}
 	res.Tools = allTools
 	res.Stats.Tools = len(allTools)

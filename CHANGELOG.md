@@ -20,6 +20,18 @@ with `make cut-release`.
   432 planted cases and 400 benchmark descriptions: identical findings and exit codes before and
   after. No precision number was re-measured for this change.
 
+### Fixes
+
+- Fewer false alarms on real servers, from the patterns the corpus audit named. A handler's
+  second parameter and the response of an earlier request are no longer treated as tool input
+  (SSRF: 2 of 9 audited false positives gone, both true positives kept). Tool-poisoning checks
+  read only tool metadata and ignore guidance about the server's own tools (5 of 34 audited
+  false positives gone). `MCP204` is low when a description only names a credential or
+  configuration file and high when it tells the model to act on it or carries another poisoning
+  signal (14 of 15 audited false positives no longer high). The planted benchmark is unchanged.
+  The audit labels were re-scored against current findings; `confidence` now reports those
+  counts.
+
 ## [0.1.1] 2026-11-08
 
 ### Documentation

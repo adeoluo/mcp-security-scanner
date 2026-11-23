@@ -2,25 +2,25 @@
 
 Written by `mcpscan rules --format markdown`. SARIF results link to the entries below.
 
-Audit confidence is the rule's precision on the rubric-audited sample of public corpus findings, measured on scanner v0.1.1 (docs/EVALUATION_REPORT.md): high from 0.80, medium from 0.50, low below that, unaudited when no finding of the rule was in the sample. It is a property of the rule, not of one finding; `--min-confidence` filters on it.
+Audit confidence is the rule's precision on the rubric-audited sample of public corpus findings, measured on scanner v0.1.1 audit, re-scored 2026-11-23 (docs/EVALUATION_REPORT.md): high from 0.80, medium from 0.50, low below that, unaudited when no finding of the rule was in the sample. It is a property of the rule, not of one finding; `--min-confidence` filters on it.
 
 | ID | Name | Category | Severity | CWE | Audit confidence |
 |---|---|---|---|---|---|
 | [MCP101](#mcp101) | shell-command-injection | command-injection | critical | CWE-78 | low (2/7) |
 | [MCP102](#mcp102) | code-injection | command-injection | critical | CWE-94 | unaudited |
 | [MCP111](#mcp111) | path-traversal | path-traversal | high | CWE-22 | high (22/24) |
-| [MCP121](#mcp121) | server-side-request-forgery | ssrf | high | CWE-918 | low (2/11) |
+| [MCP121](#mcp121) | server-side-request-forgery | ssrf | high | CWE-918 | low (2/9) |
 | [MCP131](#mcp131) | hardcoded-provider-secret | secrets | high | CWE-798 | low (0/7) |
 | [MCP132](#mcp132) | hardcoded-generic-secret | secrets | medium | CWE-798 | medium (11/15) |
 | [MCP141](#mcp141) | over-broad-oauth-scope | over-broad-scope | medium | CWE-250 | high (12/15) |
 | [MCP142](#mcp142) | listen-all-interfaces | over-broad-scope | low | CWE-1327 | high (13/15) |
 | [MCP143](#mcp143) | cors-wildcard | over-broad-scope | medium | CWE-942 | high (14/15) |
 | [MCP144](#mcp144) | tls-verification-disabled | over-broad-scope | medium | CWE-295 | high (15/15) |
-| [MCP201](#mcp201) | hidden-instructions | tool-poisoning | high | CWE-74 | low (0/10) |
+| [MCP201](#mcp201) | hidden-instructions | tool-poisoning | high | CWE-74 | low (0/7) |
 | [MCP202](#mcp202) | unicode-tag-characters | tool-poisoning | critical | CWE-116 | unaudited |
 | [MCP203](#mcp203) | invisible-characters | tool-poisoning | medium | CWE-116 | unaudited |
 | [MCP204](#mcp204) | sensitive-file-reference | tool-poisoning | high | CWE-200 | low (0/15) |
-| [MCP205](#mcp205) | tool-shadowing | tool-poisoning | high | CWE-74 | low (0/4) |
+| [MCP205](#mcp205) | tool-shadowing | tool-poisoning | high | CWE-74 | low (0/2) |
 | [MCP206](#mcp206) | exfiltration-channel | tool-poisoning | high | CWE-200 | low (0/5) |
 | [MCP207](#mcp207) | duplicate-tool-name | tool-poisoning | medium | CWE-694 | unaudited |
 | [MCP208](#mcp208) | encoded-payload | tool-poisoning | medium | CWE-116 | unaudited |
@@ -47,7 +47,7 @@ Audit confidence is the rule's precision on the rubric-audited sample of public 
 
 **Tool input reaches a shell command.** A value supplied by the model through a tool call flows into a function that runs a shell command (exec, execSync, spawn with shell, os.system, subprocess with shell=True). A prompt-injected model can run arbitrary commands. Pass arguments as an array without a shell, or validate against an allowlist.
 
-Category: command-injection. Default severity: critical. CWE-78. Audit confidence: low (rule audit: 2 of 7 corpus findings correct, precision 0.29, v0.1.1).
+Category: command-injection. Default severity: critical. CWE-78. Audit confidence: low (rule audit: 2 of 7 corpus findings correct, precision 0.29, v0.1.1 audit, re-scored 2026-11-23).
 
 <a id="mcp102"></a>
 
@@ -63,7 +63,7 @@ Category: command-injection. Default severity: critical. CWE-94. Audit confidenc
 
 **Tool input reaches a file system path without containment.** A tool argument is used as or joined into a file path that is read, written or deleted, with no check that the resolved path stays inside an allowed root. Resolve the real path and verify it is inside the allowed directories before use.
 
-Category: path-traversal. Default severity: high. CWE-22. Audit confidence: high (rule audit: 22 of 24 corpus findings correct, precision 0.92, v0.1.1).
+Category: path-traversal. Default severity: high. CWE-22. Audit confidence: high (rule audit: 22 of 24 corpus findings correct, precision 0.92, v0.1.1 audit, re-scored 2026-11-23).
 
 <a id="mcp121"></a>
 
@@ -71,7 +71,7 @@ Category: path-traversal. Default severity: high. CWE-22. Audit confidence: high
 
 **Tool input controls the host of an outbound request.** A tool argument decides where the server sends an HTTP request (the whole URL, or the scheme and host part). The server can be steered to internal services or cloud metadata endpoints. Fix the host, or check the parsed host against an allowlist and block private address ranges.
 
-Category: ssrf. Default severity: high. CWE-918. Audit confidence: low (rule audit: 2 of 11 corpus findings correct, precision 0.18, v0.1.1).
+Category: ssrf. Default severity: high. CWE-918. Audit confidence: low (rule audit: 2 of 9 corpus findings correct, precision 0.22, v0.1.1 audit, re-scored 2026-11-23).
 
 <a id="mcp131"></a>
 
@@ -79,7 +79,7 @@ Category: ssrf. Default severity: high. CWE-918. Audit confidence: low (rule aud
 
 **Credential with a known provider format in source.** A string matches the format of a real credential (cloud keys, API tokens, private keys). Revoke it, load it from the environment or a secret manager, and remove it from history.
 
-Category: secrets. Default severity: high. CWE-798. Audit confidence: low (rule audit: 0 of 7 corpus findings correct, precision 0.00, v0.1.1).
+Category: secrets. Default severity: high. CWE-798. Audit confidence: low (rule audit: 0 of 7 corpus findings correct, precision 0.00, v0.1.1 audit, re-scored 2026-11-23).
 
 <a id="mcp132"></a>
 
@@ -87,7 +87,7 @@ Category: secrets. Default severity: high. CWE-798. Audit confidence: low (rule 
 
 **High-entropy literal assigned to a secret-named variable.** A long, high-entropy string literal is assigned to a variable or key whose name suggests a secret (token, api_key, password). Load secrets from the environment.
 
-Category: secrets. Default severity: medium. CWE-798. Audit confidence: medium (rule audit: 11 of 15 corpus findings correct, precision 0.73, v0.1.1).
+Category: secrets. Default severity: medium. CWE-798. Audit confidence: medium (rule audit: 11 of 15 corpus findings correct, precision 0.73, v0.1.1 audit, re-scored 2026-11-23).
 
 <a id="mcp141"></a>
 
@@ -95,7 +95,7 @@ Category: secrets. Default severity: medium. CWE-798. Audit confidence: medium (
 
 **OAuth scope wider than a tool server usually needs.** The server requests a scope that grants full account, repository, mailbox, drive or directory access. Request the narrowest scopes the tools need.
 
-Category: over-broad-scope. Default severity: medium. CWE-250. Audit confidence: high (rule audit: 12 of 15 corpus findings correct, precision 0.80, v0.1.1).
+Category: over-broad-scope. Default severity: medium. CWE-250. Audit confidence: high (rule audit: 12 of 15 corpus findings correct, precision 0.80, v0.1.1 audit, re-scored 2026-11-23).
 
 <a id="mcp142"></a>
 
@@ -103,7 +103,7 @@ Category: over-broad-scope. Default severity: medium. CWE-250. Audit confidence:
 
 **Network transport bound to all interfaces.** The server listens on 0.0.0.0 or ::. A local MCP server bound to every interface is reachable from the network. Bind to 127.0.0.1 unless remote access is intended and authenticated.
 
-Category: over-broad-scope. Default severity: low. CWE-1327. Audit confidence: high (rule audit: 13 of 15 corpus findings correct, precision 0.87, v0.1.1).
+Category: over-broad-scope. Default severity: low. CWE-1327. Audit confidence: high (rule audit: 13 of 15 corpus findings correct, precision 0.87, v0.1.1 audit, re-scored 2026-11-23).
 
 <a id="mcp143"></a>
 
@@ -111,7 +111,7 @@ Category: over-broad-scope. Default severity: low. CWE-1327. Audit confidence: h
 
 **CORS allows any origin.** The HTTP transport sends Access-Control-Allow-Origin: * (or an equivalent framework setting), so any web page can call it from a browser. Restrict origins.
 
-Category: over-broad-scope. Default severity: medium. CWE-942. Audit confidence: high (rule audit: 14 of 15 corpus findings correct, precision 0.93, v0.1.1).
+Category: over-broad-scope. Default severity: medium. CWE-942. Audit confidence: high (rule audit: 14 of 15 corpus findings correct, precision 0.93, v0.1.1 audit, re-scored 2026-11-23).
 
 <a id="mcp144"></a>
 
@@ -119,7 +119,7 @@ Category: over-broad-scope. Default severity: medium. CWE-942. Audit confidence:
 
 **TLS certificate verification disabled.** Outbound requests skip certificate verification (rejectUnauthorized: false, NODE_TLS_REJECT_UNAUTHORIZED=0, verify=False), so a network attacker can read and change tool traffic.
 
-Category: over-broad-scope. Default severity: medium. CWE-295. Audit confidence: high (rule audit: 15 of 15 corpus findings correct, precision 1.00, v0.1.1).
+Category: over-broad-scope. Default severity: medium. CWE-295. Audit confidence: high (rule audit: 15 of 15 corpus findings correct, precision 1.00, v0.1.1 audit, re-scored 2026-11-23).
 
 <a id="mcp201"></a>
 
@@ -127,7 +127,7 @@ Category: over-broad-scope. Default severity: medium. CWE-295. Audit confidence:
 
 **Tool description contains instructions aimed at the model.** The description contains text that tries to steer the model rather than describe the tool: hidden-instruction tags, requests to ignore earlier instructions, or requests to keep actions from the user. Descriptions are read by the model as trusted context.
 
-Category: tool-poisoning. Default severity: high. CWE-74. Audit confidence: low (rule audit: 0 of 10 corpus findings correct, precision 0.00, v0.1.1).
+Category: tool-poisoning. Default severity: high. CWE-74. Audit confidence: low (rule audit: 0 of 7 corpus findings correct, precision 0.00, v0.1.1 audit, re-scored 2026-11-23).
 
 <a id="mcp202"></a>
 
@@ -151,7 +151,7 @@ Category: tool-poisoning. Default severity: medium. CWE-116. Audit confidence: u
 
 **Tool description refers to credential or configuration files.** The description mentions files such as SSH keys, cloud credentials, .env files or MCP client configuration. Combined with an instruction to read or send them this is the classic tool-poisoning exfiltration pattern.
 
-Category: tool-poisoning. Default severity: high. CWE-200. Audit confidence: low (rule audit: 0 of 15 corpus findings correct, precision 0.00, v0.1.1).
+Category: tool-poisoning. Default severity: high. CWE-200. Audit confidence: low (rule audit: 0 of 15 corpus findings correct, precision 0.00, v0.1.1 audit, re-scored 2026-11-23).
 
 <a id="mcp205"></a>
 
@@ -159,7 +159,7 @@ Category: tool-poisoning. Default severity: high. CWE-200. Audit confidence: low
 
 **Tool description tries to change how other tools behave.** The description gives rules for other tools (when another tool is called, instead of using another tool, all messages must be sent to an address). A server can use this to hijack tools from other, trusted servers.
 
-Category: tool-poisoning. Default severity: high. CWE-74. Audit confidence: low (rule audit: 0 of 4 corpus findings correct, precision 0.00, v0.1.1).
+Category: tool-poisoning. Default severity: high. CWE-74. Audit confidence: low (rule audit: 0 of 2 corpus findings correct, precision 0.00, v0.1.1 audit, re-scored 2026-11-23).
 
 <a id="mcp206"></a>
 
@@ -167,7 +167,7 @@ Category: tool-poisoning. Default severity: high. CWE-74. Audit confidence: low 
 
 **Tool description asks the model to pass data through a parameter or URL.** The description instructs the model to put file contents, conversation history or credentials into a parameter or to send them to an address.
 
-Category: tool-poisoning. Default severity: high. CWE-200. Audit confidence: low (rule audit: 0 of 5 corpus findings correct, precision 0.00, v0.1.1).
+Category: tool-poisoning. Default severity: high. CWE-200. Audit confidence: low (rule audit: 0 of 5 corpus findings correct, precision 0.00, v0.1.1 audit, re-scored 2026-11-23).
 
 <a id="mcp207"></a>
 

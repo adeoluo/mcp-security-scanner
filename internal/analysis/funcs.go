@@ -10,6 +10,7 @@ import (
 // cannot carry an injection payload and starts untainted.
 type Param struct {
 	Names     []string // more than one for destructuring patterns
+	Pattern   bool     // bound by a destructuring pattern
 	NonString bool
 	Skip      bool // framework context objects (ctx: Context), self, cls
 }
@@ -25,9 +26,12 @@ type Func struct {
 	Handler bool
 	// Inferred handlers were found by name or by an execute/handler key rather than by a
 	// registration call or decorator; only input-like parameters are treated as tool input.
-	Inferred  bool
-	Tool      string
-	nonString map[string]bool // handler: input properties declared non-string in the schema
+	Inferred bool
+	// Dispatchers are Python functions under @call_tool, @get_prompt or @read_resource: they
+	// receive tool input, but their docstring is not sent to the client as a description.
+	Dispatcher bool
+	Tool       string
+	nonString  map[string]bool // handler: input properties declared non-string in the schema
 }
 
 // Line is the 1-based declaration line.
@@ -54,6 +58,10 @@ var handlerCallees = map[string]bool{
 var pyHandlerDecorators = map[string]bool{
 	"tool": true, "call_tool": true, "resource": true, "prompt": true, "get_prompt": true, "read_resource": true,
 }
+
+// pyDispatchDecorators are the low-level server decorators. One function handles every tool,
+// prompt or resource; descriptions come from the list_* handlers, not from its docstring.
+var pyDispatchDecorators = map[string]bool{"call_tool": true, "get_prompt": true, "read_resource": true}
 
 func (f *File) discoverFuncs() {
 	if f.Lang == lexer.Python {
@@ -264,6 +272,7 @@ func (f *File) jsParams(o int) []Param {
 		switch {
 		case (f.is(a, "{") || f.is(a, "[")) && f.match[a] > a:
 			p.Names = f.patternNames(a)
+			p.Pattern = true
 		case f.ident(a):
 			if f.Toks[a].Text == "this" {
 				continue
@@ -627,6 +636,7 @@ func (f *File) markPyHandler(fn *Func) {
 		segs, end := f.chainForward(s + 1)
 		if len(segs) > 0 && pyHandlerDecorators[segs[len(segs)-1]] {
 			fn.Handler = true
+			fn.Dispatcher = pyDispatchDecorators[segs[len(segs)-1]]
 			fn.Tool = fn.Name
 			if f.is(end, "(") && f.match[end] > end {
 				for _, r := range f.splitArgs(end) {

@@ -2,6 +2,7 @@ package analysis
 
 import (
 	"fmt"
+	"regexp"
 	"strings"
 
 	"github.com/adeoluo/mcp-security-scanner/internal/lexer"
@@ -79,8 +80,9 @@ func (e *Engine) newState(fn *Func, depth int) *state {
 // AnalyzeHandler returns the sink hits reachable from a tool handler's parameters.
 func (e *Engine) AnalyzeHandler(fn *Func) []hit {
 	s := e.newState(fn, 0)
-	for _, p := range fn.Params {
-		if p.Skip {
+	serverSide := serverSideParams(fn)
+	for i, p := range fn.Params {
+		if p.Skip || serverSide[i] {
 			continue
 		}
 		if fn.Inferred && len(p.Names) == 1 && !inputLike[strings.ToLower(p.Names[0])] {
@@ -96,6 +98,44 @@ func (e *Engine) AnalyzeHandler(fn *Func) []hit {
 	}
 	s.run(fn.Start, fn.End)
 	return s.hits
+}
+
+// reServerSide matches parameter names of objects a server hands to its own handlers:
+// configuration, API clients, framework context and loggers. The rubric-audited corpus sample
+// names env, link and apiConfig as the source of SSRF false positives (docs/EVALUATION_REPORT.md).
+var reServerSide = regexp.MustCompile(`^(?i:_?(env|environment|extra|ctx|context|cfg|conf|config|configuration|settings|client|server|logger|log|session|link|db))$|[a-z0-9](Config|Settings|Client|Context|Env)$|_(config|settings|client|context|env)$`)
+
+// serverSideParams returns the parameters of a registered JavaScript or TypeScript handler that
+// are not tool input. Such a handler receives the tool arguments as one object; when it has
+// further parameters they are what the SDK or a wrapper passes along (extra, context, env).
+// An identifier with a server-side name is skipped in any position, a destructuring pattern
+// only after the first position and when every name it binds is server-side. Nothing is
+// skipped when that would leave no parameter to carry the arguments. Python handlers are left
+// alone: FastMCP binds every parameter to a tool argument.
+func serverSideParams(fn *Func) map[int]bool {
+	if fn.Inferred || fn.File.Lang != lexer.JS || len(fn.Params) < 2 {
+		return nil
+	}
+	out := map[int]bool{}
+	for i, p := range fn.Params {
+		if len(p.Names) == 0 || p.Pattern && i == 0 {
+			continue
+		}
+		all := true
+		for _, n := range p.Names {
+			if !reServerSide.MatchString(n) {
+				all = false
+				break
+			}
+		}
+		if all {
+			out[i] = true
+		}
+	}
+	if len(out) == len(fn.Params) {
+		return nil
+	}
+	return out
 }
 
 // inputLike are parameter names that carry the tool arguments in inferred handlers.
@@ -494,7 +534,8 @@ func (s *state) callFields(a, b int) (map[string]uint8, bool) {
 func (s *state) callResult(segs []string, start, o int) uint8 {
 	f := s.f
 	args := f.splitArgs(o)
-	if _, isSink := f.lookupSink(f.resolve(segs), segs); !isSink {
+	spec, isSink := f.lookupSink(f.resolve(segs), segs)
+	if !isSink {
 		if sb, ok := sanitizerBits(segs); ok {
 			var b uint8
 			for _, r := range args {
@@ -541,6 +582,13 @@ func (s *state) callResult(segs []string, start, o int) uint8 {
 	}
 	for _, r := range args {
 		b |= s.expr(r[0], r[1])
+	}
+	if isSink && spec.kind == sinkURL {
+		// The response of an outbound request is chosen by the remote service. Tool input in
+		// the query, body or headers can still reach a shell or a path through it, but it
+		// does not decide the host of a later request. A request to a host the input does
+		// control is reported at this call.
+		b &^= tURL
 	}
 	// a call on a call result: a(x).b(y)
 	_ = start

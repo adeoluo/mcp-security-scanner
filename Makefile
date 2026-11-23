@@ -70,7 +70,7 @@ compare: build ## Planted benchmark with Semgrep and Bandit (writes benchmarks/r
 corpus: build ## Scan the cloned corpus (writes benchmarks/results/corpus.json)
 	uv run --project benchmarks python benchmarks/corpus/scan_corpus.py --corpus $(CORPUS) --private $(PRIVATE)
 
-precision: ## Score the hand labels against current corpus findings (writes benchmarks/results/precision.*)
+precision: ## Score the rubric-audited labels against current corpus findings (writes benchmarks/results/precision.*)
 	uv run --project benchmarks python benchmarks/precision/score.py --private $(PRIVATE) --current corpus_findings.jsonl
 
 speed: build ## mcpscan and Semgrep on 20 corpus repositories (writes benchmarks/results/speed.json)

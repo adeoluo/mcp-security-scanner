@@ -68,10 +68,10 @@ func TestConfidenceLevels(t *testing.T) {
 			t.Errorf("%s: finding carries %+v, want %+v", r.ID, f.Confidence, c)
 		}
 	}
-	if c := ConfidenceOf("MCP121"); *c.Precision != 0.18 || c.Correct != 2 || c.Labeled != 11 || c.MeasuredOn != AuditVersion {
+	if c := ConfidenceOf("MCP121"); *c.Precision != 0.22 || c.Correct != 2 || c.Labeled != 9 || c.MeasuredOn != AuditVersion {
 		t.Fatalf("%+v", c)
 	}
-	if s := ConfidenceOf("MCP121").String(); !strings.Contains(s, "low") || !strings.Contains(s, "2 of 11") || !strings.Contains(s, "0.18") {
+	if s := ConfidenceOf("MCP121").String(); !strings.Contains(s, "low") || !strings.Contains(s, "2 of 9") || !strings.Contains(s, "0.22") {
 		t.Fatal(s)
 	}
 	if s := ConfidenceOf("MCP401").String(); !strings.HasPrefix(s, "unaudited") {
@@ -88,7 +88,7 @@ func TestConfidenceJSON(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if !strings.Contains(string(b), `"confidence":{"level":"high","precision":0.92,"correct":22,"labeled":24,"measured_on":"v0.1.1"}`) {
+	if !strings.Contains(string(b), `"confidence":{"level":"high","precision":0.92,"correct":22,"labeled":24,"measured_on":"v0.1.1 audit, re-scored 2026-11-23"}`) {
 		t.Fatal(string(b))
 	}
 	b, _ = json.Marshal(New("MCP401", "x"))

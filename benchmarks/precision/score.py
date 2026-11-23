@@ -1,4 +1,4 @@
-"""Compute precision from the hand labels and export the anonymized labels.
+"""Compute precision from the rubric-audited labels and export the anonymized labels.
 
 Inputs (private, never committed): the worksheet drawn by sample.py and the labels file written
 during review. Outputs (committed): labels.jsonl with sample id, stratum, rule, pseudonymous

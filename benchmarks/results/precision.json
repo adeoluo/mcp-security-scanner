@@ -1,6 +1,6 @@
 {
- "labeled": 158,
- "set_aside_no_longer_reported": 25,
+ "labeled": 151,
+ "set_aside_no_longer_reported": 32,
  "by_type": {
   "command-injection": {
    "labeled": 7,
@@ -37,20 +37,20 @@
    ]
   },
   "ssrf": {
-   "labeled": 11,
-   "repositories": 8,
-   "seen_in_development": 11,
+   "labeled": 9,
+   "repositories": 7,
+   "seen_in_development": 9,
    "correct": 2,
-   "precision": 0.18181818181818182,
+   "precision": 0.2222222222222222,
    "precision_ci95": [
-    0.051367689278583956,
-    0.47698056435423286
+    0.06322510654056959,
+    0.5474110333077882
    ],
    "actionable": 2,
-   "actionable_share": 0.18181818181818182,
+   "actionable_share": 0.2222222222222222,
    "actionable_ci95": [
-    0.051367689278583956,
-    0.47698056435423286
+    0.06322510654056959,
+    0.5474110333077882
    ]
   },
   "secrets": {
@@ -115,20 +115,20 @@
    ]
   },
   "tool-poisoning": {
-   "labeled": 34,
-   "repositories": 24,
-   "seen_in_development": 34,
+   "labeled": 29,
+   "repositories": 20,
+   "seen_in_development": 29,
    "correct": 0,
    "precision": 0.0,
    "precision_ci95": [
     0.0,
-    0.10151455559221921
+    0.11696980012918376
    ],
    "actionable": 0,
    "actionable_share": 0.0,
    "actionable_ci95": [
     0.0,
-    0.10151455559221921
+    0.11696980012918376
    ]
   }
  }

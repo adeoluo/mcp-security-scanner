@@ -56,9 +56,12 @@ type Confidence struct {
 	MeasuredOn string          `json:"measured_on,omitempty"`
 }
 
-// AuditVersion is the scanner release whose findings on the public corpus were rubric-audited.
-// The analyzer code of v0.1.0 and v0.1.1 is identical.
-const AuditVersion = "v0.1.1"
+// AuditVersion names the measurement behind the counts below. The findings of release v0.1.1
+// on the public corpus were rubric-audited (the analyzer code of v0.1.0 and v0.1.1 is
+// identical). Later rule changes only removed findings, so the labels were re-scored against
+// what the scanner still reports: an audited finding that is gone leaves the sample, and the
+// rest remain a random sample of the current findings.
+const AuditVersion = "v0.1.1 audit, re-scored 2026-11-23"
 
 // audited holds, per rule, the correct and labeled counts of the rubric-audited sample of
 // corpus findings (benchmarks/precision/labels.jsonl). TestAuditMatchesLabels fails when the
@@ -66,16 +69,16 @@ const AuditVersion = "v0.1.1"
 var audited = map[string][2]int{
 	"MCP101": {2, 7},
 	"MCP111": {22, 24},
-	"MCP121": {2, 11},
+	"MCP121": {2, 9},
 	"MCP131": {0, 7},
 	"MCP132": {11, 15},
 	"MCP141": {12, 15},
 	"MCP142": {13, 15},
 	"MCP143": {14, 15},
 	"MCP144": {15, 15},
-	"MCP201": {0, 10},
+	"MCP201": {0, 7},
 	"MCP204": {0, 15},
-	"MCP205": {0, 4},
+	"MCP205": {0, 2},
 	"MCP206": {0, 5},
 }
 

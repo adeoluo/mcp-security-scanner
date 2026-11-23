@@ -126,7 +126,7 @@ func TestMinConfidence(t *testing.T) {
 	}
 	// Text output names the audit behind each label.
 	_, out, _ := run(t, "scan", fixture)
-	for _, want := range []string{"confidence: low (rule audit: 2 of 11 corpus findings correct, precision 0.18, v0.1.1)", "confidence: high (rule audit: 22 of 24"} {
+	for _, want := range []string{"confidence: low (rule audit: 2 of 9 corpus findings correct, precision 0.22, v0.1.1 audit, re-scored 2026-11-23)", "confidence: high (rule audit: 22 of 24"} {
 		if !strings.Contains(out, want) {
 			t.Errorf("missing %q in\n%s", want, out)
 		}
@@ -326,7 +326,7 @@ func TestRules(t *testing.T) {
 	if code != 0 || !strings.Contains(out, "MCP401") {
 		t.Fatal(out)
 	}
-	if !strings.Contains(out, "low (2/11)") || !strings.Contains(out, "unaudited") {
+	if !strings.Contains(out, "low (2/9)") || !strings.Contains(out, "unaudited") {
 		t.Fatal(out)
 	}
 	code, out, _ = run(t, "rules", "--format", "markdown")

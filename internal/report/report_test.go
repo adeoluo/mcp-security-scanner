@@ -69,8 +69,8 @@ func TestConfidenceInReports(t *testing.T) {
 		t.Fatal(err)
 	}
 	for _, want := range []string{
-		"confidence: low (rule audit: 2 of 7 corpus findings correct, precision 0.29, v0.1.1)",
-		"confidence: low (rule audit: 0 of 10 corpus findings correct, precision 0.00, v0.1.1)",
+		"confidence: low (rule audit: 2 of 7 corpus findings correct, precision 0.29, v0.1.1 audit, re-scored 2026-11-23)",
+		"confidence: low (rule audit: 0 of 7 corpus findings correct, precision 0.00, v0.1.1 audit, re-scored 2026-11-23)",
 		"confidence: unaudited",
 	} {
 		if !strings.Contains(buf.String(), want) {

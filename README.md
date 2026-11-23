@@ -102,11 +102,11 @@ those findings (section below):
 | Category | Repositories flagged | Precision of findings |
 |---|---|---|
 | Command injection | 2 (0.2%, 0.1 to 0.7) | 2 of 7 |
-| Path traversal | 30 (3.0%, 2.1 to 4.2) | 0.92 correct, 0.08 actionable |
-| SSRF | 15 (1.5%, 0.9 to 2.4) | 0.18 |
+| Path traversal | 29 (2.9%, 2.0 to 4.1) | 0.92 correct, 0.08 actionable |
+| SSRF | 14 (1.4%, 0.8 to 2.3) | 0.22 |
 | Hard-coded secrets | 12 (1.2%, 0.7 to 2.1) | 0.50 |
 | Wildcard CORS, bind-all, TLS off, broad OAuth scopes | 194 (19.2%, 16.8 to 21.7) | 0.80 to 1.00 |
-| Tool-poisoning text in source | 24 (2.4%, 1.6 to 3.5) | 0 of 34 |
+| Tool-poisoning text in source | 20 (2.0%, 1.3 to 3.0) | 0 of 29 |
 
 Findings are reported only in aggregate; no individual project is named
 ([ADR 0006](docs/adr/0006-corpus-research-without-disclosure.md)).
@@ -116,7 +116,8 @@ Findings are reported only in aggregate; no individual project is named
 183 findings drawn by stratified random sampling after the last analyzer change that adds
 findings (excluding the 291 findings looked at while tuning, except in strata too small to
 exclude them), source-inspected and labeled by the evaluation agent against a written rubric;
-158 remain after a final change that only removes findings. *Correct* means the finding is
+151 remain after later changes that only remove findings (158 before the tightening of
+2026-11-23 described below). *Correct* means the finding is
 factually right; *actionable* means a reviewer would ask for a fix rather than accept by-design
 behavior.
 
@@ -124,13 +125,37 @@ behavior.
 |---|---:|---:|---|---:|
 | Command injection | 7 | 2 | 0.29 (0.08 to 0.64) | 2 |
 | Path traversal | 24 | 22 | 0.92 (0.74 to 0.98) | 2 |
-| SSRF | 11 | 2 | 0.18 (0.05 to 0.48) | 2 |
+| SSRF | 9 | 2 | 0.22 (0.06 to 0.55) | 2 |
 | Secrets | 22 | 11 | 0.50 (0.31 to 0.69) | 11 |
 | Wildcard CORS | 15 | 14 | 0.93 (0.70 to 0.99) | n/a |
 | Bind to all interfaces | 15 | 13 | 0.87 (0.62 to 0.96) | n/a |
 | TLS verification disabled | 15 | 15 | 1.00 (0.80 to 1.00) | n/a |
 | Broad OAuth scope | 15 | 12 | 0.80 (0.55 to 0.93) | n/a |
-| Tool poisoning | 34 | 0 | 0.00 (0.00 to 0.10) | 0 |
+| Tool poisoning | 29 | 0 | 0.00 (0.00 to 0.12) | 0 |
+
+#### Rule tightening after the audit (2026-11-23)
+
+The audit named the false-positive patterns, so three of them were removed and the labels
+re-scored against what the scanner still reports (`make corpus precision`). The changes only
+remove or downgrade findings; an audited finding that is gone leaves the sample.
+
+| Change | Audited false positives removed | Audited true positives lost |
+|---|---:|---:|
+| SSRF: a handler's second parameter (the SDK `extra`, an `env` or config object) and the response of an earlier request are not tool input | 2 of 9 | 0 of 2 |
+| Tool poisoning: only tool metadata is checked, and guidance about the server's own tools is not shadowing | 5 of 34 | none in the sample |
+| Tool poisoning: a description that only names a credential or configuration file (`MCP204`) is low, and high only when it tells the model to act on the file or carries another poisoning signal | 14 of 15 no longer high | none in the sample |
+
+- SSRF precision moves from 2 of 11 (0.18) to 2 of 9 (0.22). It is still low, for the same
+  reason: fixed hosts set by client helpers and URLs taken from API responses.
+- No sampled tool-poisoning finding was a real attack, so that precision is 0 whatever is
+  removed. What changed is the noise: high-severity tool-poisoning findings across the 1,013
+  repositories fell from 25 to 15, and repositories with any such finding from 24 to 20.
+- The parameter change also removed 38 of 366 path-traversal findings (30 repositories to 29).
+  None of the 24 audited ones was among them, so whether those 38 were right is not measured.
+- The planted benchmark is unchanged by all three: `mcpscan bench` prints identical tables for
+  the 432 cases and the 400 descriptions before and after.
+- These rules were tuned on the labeled findings, so the new figures describe this sample and
+  are not an independent estimate. The paraphrase result (0 of 60) is untouched.
 
 What goes wrong: objects passed whole into helpers make every field look tainted (5 of 7
 command-injection findings); SSRF hosts that come from server configuration objects; PEM
@@ -198,14 +223,14 @@ the rule was in the sample), with the counts behind it:
 ```text
 HIGH     MCP121 server-side-request-forgery  server.ts:21:21
          input of tool "fetch_page" reaches the host of an outbound request via fetch()
-         confidence: low (rule audit: 2 of 11 corpus findings correct, precision 0.18, v0.1.1)
+         confidence: low (rule audit: 2 of 9 corpus findings correct, precision 0.22, v0.1.1 audit, re-scored 2026-11-23)
 ```
 
-| Audit confidence | Rules (correct / labeled, measured on v0.1.1) |
+| Audit confidence | Rules (correct / labeled; v0.1.1 audit re-scored against current findings) |
 |---|---|
 | high | MCP111 path traversal (22/24), MCP141 OAuth scope (12/15), MCP142 bind-all (13/15), MCP143 CORS (14/15), MCP144 TLS (15/15) |
 | medium | MCP132 generic secret (11/15) |
-| low | MCP101 shell injection (2/7), MCP121 SSRF (2/11), MCP131 provider-format secret (0/7), MCP201 (0/10), MCP204 (0/15), MCP205 (0/4), MCP206 (0/5) tool poisoning |
+| low | MCP101 shell injection (2/7), MCP121 SSRF (2/9), MCP131 provider-format secret (0/7), MCP201 (0/7), MCP204 (0/15), MCP205 (0/2), MCP206 (0/5) tool poisoning |
 | unaudited | the other 21 rules, including every schema, rug-pull and transport rule |
 
 The label is a property of the rule on that corpus, not a probability for one finding, and the
@@ -363,8 +388,9 @@ results), and a Docker build probed over HTTP; CodeQL runs on every push to `mai
   checked live.
 - Objects passed into helpers are field-insensitive; there is no alias analysis, no flow
   through object state between calls, and no dynamic dispatch through computed keys.
-- SSRF precision on the corpus is low (0.18): hosts taken from configuration objects passed to
-  handlers look like tool input.
+- SSRF precision on the corpus is low (0.22, 2 of 9): hosts fixed by client helpers and URLs
+  taken from API responses still look like tool input. Configuration objects passed to
+  handlers no longer do.
 - The private-key rule fires on PEM headers without a key body; public analytics keys and
   contract addresses can match the generic secret rule.
 - Tool-poisoning checks are patterns and miss paraphrases; on real servers they mostly flag

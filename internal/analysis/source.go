@@ -28,6 +28,8 @@ type File struct {
 	// properties declared non-string by some schema in the file and string by none
 	fileNonStr map[string]bool
 	lines      [][]byte
+	// first body token of each handler function -> one past its last body token
+	handlerBodies map[int]int
 }
 
 // LangOf maps a file name to a language, reporting false for files the analyzer does not read.

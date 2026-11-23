@@ -150,13 +150,13 @@ whose impact depends on deployment.
 |---|---:|---:|---:|---|---|
 | Command injection (all corpus findings) | 7 | 2 | 2 | 0.29 (0.08 to 0.64) | 0.29 (0.08 to 0.64) |
 | Path traversal | 24 | 15 | 22 | 0.92 (0.74 to 0.98) | 0.08 (0.02 to 0.26) |
-| SSRF | 11 | 8 | 2 | 0.18 (0.05 to 0.48) | 0.18 (0.05 to 0.48) |
+| SSRF | 9 | 7 | 2 | 0.22 (0.06 to 0.55) | 0.22 (0.06 to 0.55) |
 | Secrets (all corpus findings) | 22 | 12 | 11 | 0.50 (0.31 to 0.69) | 0.50 (0.31 to 0.69) |
 | Wildcard CORS | 15 | 12 | 14 | 0.93 (0.70 to 0.99) | n/a |
 | Bind to all interfaces | 15 | 8 | 13 | 0.87 (0.62 to 0.96) | n/a |
 | TLS verification disabled | 15 | 12 | 15 | 1.00 (0.80 to 1.00) | n/a |
 | Broad OAuth scope | 15 | 4 | 12 | 0.80 (0.55 to 0.93) | n/a |
-| Tool poisoning (all corpus findings) | 34 | 24 | 0 | 0.00 (0.00 to 0.10) | 0.00 (0.00 to 0.10) |
+| Tool poisoning (all corpus findings) | 29 | 20 | 0 | 0.00 (0.00 to 0.12) | 0.00 (0.00 to 0.12) |
 
 Confidence intervals treat findings as independent; several come from the same repository, so
 the true uncertainty is wider. Labels: [`benchmarks/precision/labels.jsonl`](../benchmarks/precision/labels.jsonl).
@@ -189,12 +189,37 @@ the true uncertainty is wider. Labels: [`benchmarks/precision/labels.jsonl`](../
   purpose involves `.env` files, SSH keys or client configuration. 34 flags over 15,953 tool
   definitions is a rate of 0.21 percent; on benign text the benchmark gives 0 of 120 and 1 of 20.
 
+### Rule tightening after the audit (2026-11-23)
+
+The audit named the false-positive patterns, so three of them were removed and the labels
+re-scored against what the scanner still reports (`make corpus precision`). The changes only
+remove or downgrade findings; an audited finding that is gone leaves the sample.
+
+| Change | Audited false positives removed | Audited true positives lost |
+|---|---:|---:|
+| SSRF: a handler's second parameter (the SDK `extra`, an `env` or config object) and the response of an earlier request are not tool input | 2 of 9 | 0 of 2 |
+| Tool poisoning: only tool metadata is checked, and guidance about the server's own tools is not shadowing | 5 of 34 | none in the sample |
+| Tool poisoning: a description that only names a credential or configuration file (`MCP204`) is low, and high only when it tells the model to act on the file or carries another poisoning signal | 14 of 15 no longer high | none in the sample |
+
+- SSRF precision moves from 2 of 11 (0.18) to 2 of 9 (0.22). It is still low, for the same
+  reason: fixed hosts set by client helpers and URLs taken from API responses.
+- No sampled tool-poisoning finding was a real attack, so that precision is 0 whatever is
+  removed. What changed is the noise: high-severity tool-poisoning findings across the 1,013
+  repositories fell from 25 to 15, and repositories with any such finding from 24 to 20.
+- The parameter change also removed 38 of 366 path-traversal findings (30 repositories to 29).
+  None of the 24 audited ones was among them, so whether those 38 were right is not measured.
+- The planted benchmark is unchanged by all three: `mcpscan bench` prints identical tables for
+  the 432 cases and the 400 descriptions before and after.
+- These rules were tuned on the labeled findings, so the new figures describe this sample and
+  are not an independent estimate. The paraphrase result (0 of 60) is untouched.
+
 ### Per-rule audit confidence
 
 The same labels, counted per rule instead of per finding type, are the audit record that
 `mcpscan` attaches to every finding ([ADR 0007](adr/0007-audit-confidence-on-findings.md)):
 `high` from 0.80, `medium` from 0.50, `low` below that, `unaudited` when no finding of the rule
-was in the sample. The findings were produced by scanner v0.1.1 (its analyzer is identical to
+was in the sample. The labeled findings were produced by scanner v0.1.1 and re-scored against
+current findings on 2026-11-23 (the v0.1.1 analyzer is identical to
 v0.1.0). `internal/findings/confidence.go` holds the counts and `TestAuditMatchesLabels` fails
 when they differ from [`labels.jsonl`](../benchmarks/precision/labels.jsonl).
 
@@ -202,16 +227,16 @@ when they differ from [`labels.jsonl`](../benchmarks/precision/labels.jsonl).
 |---|---|---:|---:|---:|---|
 | MCP101 shell-command-injection | Command injection | 7 | 2 | 0.29 | low |
 | MCP111 path-traversal | Path traversal | 24 | 22 | 0.92 | high |
-| MCP121 server-side-request-forgery | SSRF | 11 | 2 | 0.18 | low |
+| MCP121 server-side-request-forgery | SSRF | 9 | 2 | 0.22 | low |
 | MCP131 hardcoded-provider-secret | Secrets | 7 | 0 | 0.00 | low |
 | MCP132 hardcoded-generic-secret | Secrets | 15 | 11 | 0.73 | medium |
 | MCP141 over-broad-oauth-scope | Broad OAuth scope | 15 | 12 | 0.80 | high |
 | MCP142 listen-all-interfaces | Bind to all interfaces | 15 | 13 | 0.87 | high |
 | MCP143 cors-wildcard | Wildcard CORS | 15 | 14 | 0.93 | high |
 | MCP144 tls-verification-disabled | TLS verification disabled | 15 | 15 | 1.00 | high |
-| MCP201 hidden-instructions | Tool poisoning | 10 | 0 | 0.00 | low |
+| MCP201 hidden-instructions | Tool poisoning | 7 | 0 | 0.00 | low |
 | MCP204 sensitive-file-reference | Tool poisoning | 15 | 0 | 0.00 | low |
-| MCP205 tool-shadowing | Tool poisoning | 4 | 0 | 0.00 | low |
+| MCP205 tool-shadowing | Tool poisoning | 2 | 0 | 0.00 | low |
 | MCP206 exfiltration-channel | Tool poisoning | 5 | 0 | 0.00 | low |
 
 The other 21 rules are `unaudited`: MCP102 (code injection) and MCP202, MCP203, MCP208 and

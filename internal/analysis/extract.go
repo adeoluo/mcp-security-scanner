@@ -154,11 +154,30 @@ func (f *File) objHasKey(o int, keys ...string) bool {
 	return false
 }
 
+// handlerBody returns the end of the handler function body that starts at token k, if any.
+func (f *File) handlerBody(k int) (int, bool) {
+	if f.handlerBodies == nil {
+		f.handlerBodies = map[int]int{}
+		for _, fn := range f.Funcs {
+			if fn.Handler && fn.End > fn.Start {
+				f.handlerBodies[fn.Start] = fn.End
+			}
+		}
+	}
+	end, ok := f.handlerBodies[k]
+	return end, ok
+}
+
 // paramDescriptions collects .describe("...") strings and nested description: "..." values,
-// keyed by the nearest enclosing property name.
+// keyed by the nearest enclosing property name. Handler bodies inside the range are skipped:
+// a string in the implementation of a tool is not metadata the client receives.
 func (f *File) paramDescriptions(a, b int) map[string]string {
 	out := map[string]string{}
 	for k := a + 1; k < b; k++ {
+		if end, ok := f.handlerBody(k); ok {
+			k = end - 1
+			continue
+		}
 		var text string
 		ok := false
 		switch {
@@ -223,6 +242,12 @@ func (f *File) extractPython() []poison.Tool {
 			continue
 		}
 		tool := poison.Tool{Name: fn.Tool, File: f.Path, Line: fn.Line()}
+		if fn.Dispatcher {
+			// The docstring of a call_tool, get_prompt or read_resource dispatcher is developer
+			// documentation; the client never sees it.
+			out = append(out, tool)
+			continue
+		}
 		// description= in a decorator call
 		for k := fn.Decl - 1; k >= 0 && f.Toks[k].Kind == lexer.Newline; {
 			st := k - 1

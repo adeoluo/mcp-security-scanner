@@ -19,26 +19,26 @@
    "findings": 7
   },
   "path-traversal": {
-   "repos_flagged": 30,
-   "share": 0.029615004935834157,
+   "repos_flagged": 29,
+   "share": 0.028627838104639685,
    "ci95": [
-    0.020822031888302138,
-    0.04196205143529957
+    0.020005420536633692,
+    0.040811787830669174
    ],
-   "repos_flagged_among_with_handlers": 30,
-   "share_among_with_handlers": 0.06593406593406594,
-   "findings": 366
+   "repos_flagged_among_with_handlers": 29,
+   "share_among_with_handlers": 0.06373626373626373,
+   "findings": 328
   },
   "ssrf": {
-   "repos_flagged": 15,
-   "share": 0.014807502467917079,
+   "repos_flagged": 14,
+   "share": 0.013820335636722606,
    "ci95": [
-    0.008993796262737854,
-    0.024287162716381216
+    0.008250095259443922,
+    0.0230639887633763
    ],
-   "repos_flagged_among_with_handlers": 15,
-   "share_among_with_handlers": 0.03296703296703297,
-   "findings": 23
+   "repos_flagged_among_with_handlers": 14,
+   "share_among_with_handlers": 0.03076923076923077,
+   "findings": 19
   },
   "secrets": {
    "repos_flagged": 12,
@@ -63,15 +63,15 @@
    "findings": 787
   },
   "tool-poisoning": {
-   "repos_flagged": 24,
-   "share": 0.023692003948667325,
+   "repos_flagged": 20,
+   "share": 0.019743336623889437,
    "ci95": [
-    0.01597186746872095,
-    0.0350109661170877
+    0.012816599569662525,
+    0.030298734190950756
    ],
-   "repos_flagged_among_with_handlers": 23,
-   "share_among_with_handlers": 0.05054945054945055,
-   "findings": 34
+   "repos_flagged_among_with_handlers": 20,
+   "share_among_with_handlers": 0.04395604395604396,
+   "findings": 29
   }
  },
  "by_rule": {
@@ -80,12 +80,12 @@
    "repos": 2
   },
   "MCP111": {
-   "findings": 366,
-   "repos": 30
+   "findings": 328,
+   "repos": 29
   },
   "MCP121": {
-   "findings": 23,
-   "repos": 15
+   "findings": 19,
+   "repos": 14
   },
   "MCP131": {
    "findings": 7,
@@ -112,29 +112,29 @@
    "repos": 15
   },
   "MCP201": {
-   "findings": 10,
-   "repos": 9
+   "findings": 7,
+   "repos": 7
   },
   "MCP204": {
    "findings": 15,
    "repos": 9
   },
   "MCP205": {
-   "findings": 4,
-   "repos": 4
+   "findings": 2,
+   "repos": 2
   },
   "MCP206": {
    "findings": 5,
    "repos": 5
   }
  },
- "repos_with_any_injection_class_finding": 41,
+ "repos_with_any_injection_class_finding": 39,
  "scan_errors": 0,
- "seconds_total": 78.74,
+ "seconds_total": 30.32,
  "source_bytes_scanned": 522188229,
- "throughput_mb_per_s": 6.63,
- "peak_rss_mb_largest_repo": 755.4,
- "machine": "arm64 Darwin 27.0.0",
+ "throughput_mb_per_s": 17.22,
+ "peak_rss_mb_largest_repo": 853.1,
+ "machine": "arm64 Darwin 27.2.0",
  "corpus_lock": "benchmarks/corpus/corpus.lock.json",
  "registry_unique_github_repos": 4869,
  "note": "Rates are shares of scanned repositories with at least one finding of a category. Findings are unreviewed scanner output; see precision.json for the rubric-audited precision."
