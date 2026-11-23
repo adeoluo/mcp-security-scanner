@@ -11,7 +11,7 @@ Three questions:
    vulnerabilities, and leave safe look-alikes alone, compared with general-purpose scanners?
 2. **What do public MCP servers look like?** Finding rates over 1,013 public server
    repositories.
-3. **How many corpus findings are right?** Precision on a stratified, hand-labeled sample.
+3. **How many corpus findings are right?** Precision on a stratified, rubric-audited sample.
 
 ## 1. Planted-vulnerability benchmark
 
@@ -124,14 +124,16 @@ among the 455 with detected handlers:
 These are scanner outputs, not confirmed vulnerabilities; section 3 measures how many are
 right. Per-repository results are kept private ([ADR 0006](adr/0006-corpus-research-without-disclosure.md)).
 
-## 3. Precision on hand-labeled corpus findings
+## 3. Precision on rubric-audited corpus findings
 
 **Protocol.** The analyzer was tuned on corpus output in two rounds; the 291 distinct findings inspected
 during that work form a development set. After the last change to the analyzer that adds or
 changes findings, [`benchmarks/precision/sample.py`](../benchmarks/precision/sample.py) drew a
 stratified random sample (seed 20261106) that excludes the development set, except where a
 stratum had fewer than 10 unseen findings, in which case the whole stratum was used and marked.
-183 findings were labeled by hand. One later change only restricted sources in inferred handlers
+Each of the 183 sampled findings was source-inspected in its repository context and labeled by
+the evaluation agent against the fixed rubric below (no human inter-rater reliability claim is
+made; treat labels as single-auditor LLM/code-inspection judgments). One later change only restricted sources in inferred handlers
 ([ADR 0004](adr/0004-where-tool-input-comes-from.md)); it removes findings and adds none, so the
 labeled findings it still reports (158) remain a random sample of the current output, and the 25
 it no longer reports (6 path traversal, 19 SSRF, all labeled false positives) are set aside.

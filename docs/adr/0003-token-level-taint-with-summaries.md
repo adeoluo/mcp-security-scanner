@@ -34,6 +34,6 @@ each function body:
   positives on safe look-alikes, against 0.30 recall for Semgrep's registry packs.
 - Objects passed whole into helpers are field-insensitive: a helper that receives `info` sees
   every field as tainted. This caused five of the seven command-injection false positives in
-  the hand-labeled corpus sample.
+  the rubric-audited corpus sample.
 - No alias analysis, no flow through object state between calls, no dynamic dispatch through
   computed keys. The hard tier of the planted benchmark measures exactly these misses.

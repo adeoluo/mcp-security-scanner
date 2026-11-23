@@ -166,7 +166,7 @@ def main(argv: list[str] | None = None) -> int:
             "corpus_lock": str(args.lock),
             "registry_unique_github_repos": lock.get("registry_unique_github_repos"),
             "note": "Rates are shares of scanned repositories with at least one finding of a category. "
-            "Findings are unreviewed scanner output; see precision.json for the hand-labeled precision.",
+            "Findings are unreviewed scanner output; see precision.json for the rubric-audited precision.",
         }
     )
     args.out.parent.mkdir(parents=True, exist_ok=True)

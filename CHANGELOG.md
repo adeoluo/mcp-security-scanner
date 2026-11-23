@@ -28,7 +28,7 @@ with `make cut-release`.
 - Live MCP probing over stdio and HTTP with schema checks and rug pull pinning (#2)
 - Mcpscan CLI with text, JSON and SARIF reports, HTTP service, Docker image and GitHub Action (#3)
 - Planted-vulnerability benchmark with Semgrep and Bandit comparison (#4)
-- Public corpus scan of 1,013 MCP servers with hand-labeled precision (#6)
+- Public corpus scan of 1,013 MCP servers with rubric-audited precision (#6)
 
 ### Bug fixes
 

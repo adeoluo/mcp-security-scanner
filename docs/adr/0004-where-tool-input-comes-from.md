@@ -29,7 +29,7 @@ Sources come from two kinds of handlers:
 
 - Inferred handlers cover servers that dispatch through a switch or a map, which registered
   handlers alone miss.
-- The input-like restriction was introduced after the first hand-labeled sample showed that
+- The input-like restriction was introduced after the first rubric-audited sample showed that
   inferred handlers with server-side parameters (`env`, `cfg`, `link`, `store_path`) produced
   most SSRF false positives. It removed 19 of the 28 labeled SSRF false positives and no
   labeled true positive (see docs/EVALUATION_REPORT.md).

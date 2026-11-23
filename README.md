@@ -30,8 +30,9 @@ from source or live over the protocol; pins approved tool definitions by hash; a
 text, JSON or SARIF so it can gate a pull request.
 
 It was measured on a planted-vulnerability benchmark against Semgrep and Bandit, run over 1,013
-public MCP server repositories from the official registry, and its corpus findings were
-hand-labeled to measure precision. The results below include where it is wrong.
+public MCP server repositories from the official registry, and a stratified sample of corpus
+findings was source-inspected against a written rubric to measure precision. The results below
+include where it is wrong.
 
 ## Architecture
 
@@ -95,7 +96,7 @@ The checks are patterns: they catch published techniques and miss paraphrases.
 
 A seeded random sample of the 4,869 GitHub repositories in the official MCP registry, plus the
 official reference servers: 63,668 files, 12.2 million lines, 15,852 tool handlers. Share of
-repositories with at least one finding (95% Wilson interval), and the hand-measured precision of
+repositories with at least one finding (95% Wilson interval), and the rubric-audited precision of
 those findings (section below):
 
 | Category | Repositories flagged | Precision of findings |
@@ -110,13 +111,14 @@ those findings (section below):
 Findings are reported only in aggregate; no individual project is named
 ([ADR 0006](docs/adr/0006-corpus-research-without-disclosure.md)).
 
-### Precision on hand-labeled corpus findings
+### Precision on rubric-audited corpus findings
 
 183 findings drawn by stratified random sampling after the last analyzer change that adds
 findings (excluding the 291 findings looked at while tuning, except in strata too small to
-exclude them), labeled with a written rubric; 158 remain after a final change that only removes
-findings. *Correct* means the finding is factually right; *actionable* means a reviewer would ask
-for a fix rather than accept by-design behavior.
+exclude them), source-inspected and labeled by the evaluation agent against a written rubric;
+158 remain after a final change that only removes findings. *Correct* means the finding is
+factually right; *actionable* means a reviewer would ask for a fix rather than accept by-design
+behavior.
 
 | Finding type | Labeled | Correct | Precision (95% CI) | Actionable |
 |---|---:|---:|---|---:|

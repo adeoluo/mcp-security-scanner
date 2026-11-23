@@ -16,7 +16,7 @@ maintainers have not been told.
   comments on third-party repositories, and never contact maintainers from this project.
 - Commit only aggregate counts and rates. The list of scanned repositories (URL and commit) is
   committed so the corpus can be rebuilt; per-repository findings are not.
-- Hand-labeled examples carry a salted pseudonym (`r` plus 10 hex digits). The salt stays in the
+- Rubric-labeled examples carry a salted pseudonym (`r` plus 10 hex digits). The salt stays in the
   private working directory, so pseudonyms cannot be linked back to repositories.
 - Labels record a generic reason, never code, file paths or repository names.
 
