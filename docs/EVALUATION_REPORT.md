@@ -189,6 +189,46 @@ the true uncertainty is wider. Labels: [`benchmarks/precision/labels.jsonl`](../
   purpose involves `.env` files, SSH keys or client configuration. 34 flags over 15,953 tool
   definitions is a rate of 0.21 percent; on benign text the benchmark gives 0 of 120 and 1 of 20.
 
+### Per-rule audit confidence
+
+The same labels, counted per rule instead of per finding type, are the audit record that
+`mcpscan` attaches to every finding ([ADR 0007](adr/0007-audit-confidence-on-findings.md)):
+`high` from 0.80, `medium` from 0.50, `low` below that, `unaudited` when no finding of the rule
+was in the sample. The findings were produced by scanner v0.1.1 (its analyzer is identical to
+v0.1.0). `internal/findings/confidence.go` holds the counts and `TestAuditMatchesLabels` fails
+when they differ from [`labels.jsonl`](../benchmarks/precision/labels.jsonl).
+
+| Rule | Finding type | Labeled | Correct | Precision | Audit confidence |
+|---|---|---:|---:|---:|---|
+| MCP101 shell-command-injection | Command injection | 7 | 2 | 0.29 | low |
+| MCP111 path-traversal | Path traversal | 24 | 22 | 0.92 | high |
+| MCP121 server-side-request-forgery | SSRF | 11 | 2 | 0.18 | low |
+| MCP131 hardcoded-provider-secret | Secrets | 7 | 0 | 0.00 | low |
+| MCP132 hardcoded-generic-secret | Secrets | 15 | 11 | 0.73 | medium |
+| MCP141 over-broad-oauth-scope | Broad OAuth scope | 15 | 12 | 0.80 | high |
+| MCP142 listen-all-interfaces | Bind to all interfaces | 15 | 13 | 0.87 | high |
+| MCP143 cors-wildcard | Wildcard CORS | 15 | 14 | 0.93 | high |
+| MCP144 tls-verification-disabled | TLS verification disabled | 15 | 15 | 1.00 | high |
+| MCP201 hidden-instructions | Tool poisoning | 10 | 0 | 0.00 | low |
+| MCP204 sensitive-file-reference | Tool poisoning | 15 | 0 | 0.00 | low |
+| MCP205 tool-shadowing | Tool poisoning | 4 | 0 | 0.00 | low |
+| MCP206 exfiltration-channel | Tool poisoning | 5 | 0 | 0.00 | low |
+
+The other 21 rules are `unaudited`: MCP102 (code injection) and MCP202, MCP203, MCP208 and
+MCP209 (hidden-text poisoning techniques) produced no corpus finding, and the cross-server,
+schema, rug-pull and transport rules (MCP207, MCP3xx, MCP4xx, MCP5xx) do not run in a source
+scan. Splitting the secrets row shows that all seven provider-format findings (PEM headers and
+similar) were wrong and that the generic rule was right on 11 of 15.
+
+How to read the label: it is the rule's record on this corpus, not a probability for one
+finding; samples are 4 to 24 findings from one rubric audit by the evaluation agent, so the
+intervals are wide; and the tool-poisoning rows describe descriptions in public server source,
+none of which was malicious, so they say how often benign text is flagged, not how well an
+attack is caught. Adding the label changed no finding: for all 432 planted cases and all 400
+benchmark descriptions the findings and the exit codes under default flags are the same before
+and after (compared file by file with the two binaries), and `mcpscan bench` prints the same
+tables.
+
 ## 4. Speed and memory
 
 [`benchmarks/corpus/speed.py`](../benchmarks/corpus/speed.py) ran each tool on the same 20 corpus

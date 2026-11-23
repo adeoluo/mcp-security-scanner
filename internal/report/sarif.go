@@ -126,7 +126,10 @@ func WriteSARIF(w io.Writer, r *Report) error {
 			Help:                 sarifText{rule.Help},
 			HelpURI:              InfoURI + "/blob/main/docs/RULES.md#" + strings.ToLower(rule.ID),
 			DefaultConfiguration: map[string]any{"level": level(rule.Severity)},
-			Properties:           map[string]any{"tags": tags, "security-severity": securitySeverity(rule.Severity), "precision": "medium"},
+			Properties: map[string]any{
+				"tags": tags, "security-severity": securitySeverity(rule.Severity), "precision": "medium",
+				"confidence": findings.ConfidenceOf(rule.ID),
+			},
 		})
 	}
 	results := make([]sarifResult, 0, len(r.Findings))
@@ -148,7 +151,7 @@ func WriteSARIF(w io.Writer, r *Report) error {
 			loc.LogicalLocations = []sarifLogical{{Name: f.Tool, FullyQualifiedName: fq, Kind: "function"}}
 		}
 		res.Locations = []sarifLocation{loc}
-		props := map[string]any{"severity": f.Severity.String(), "category": string(f.Category)}
+		props := map[string]any{"severity": f.Severity.String(), "category": string(f.Category), "confidence": findings.ConfidenceOf(f.RuleID)}
 		if f.Tool != "" {
 			props["tool"] = f.Tool
 		}

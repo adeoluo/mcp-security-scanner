@@ -4,6 +4,22 @@ All notable changes to this project are documented here. The file is generated
 from Conventional Commits by [git-cliff](https://git-cliff.org) when a release is cut
 with `make cut-release`.
 
+## [Unreleased]
+
+### Features
+
+- Audit confidence on every finding. Each rule carries its record from the rubric-audited
+  corpus sample (correct and labeled counts from `benchmarks/precision/labels.jsonl`, measured
+  on v0.1.1) and a label derived from it: `high` (0.80 or more), `medium` (0.50 or more), `low`
+  (below 0.50) or `unaudited`. The record is in the JSON field `confidence`, in
+  `properties.confidence` of every SARIF result and rule, in a `confidence:` line of the text
+  report, in `summary.by_confidence` and in `mcpscan rules` and `docs/RULES.md`.
+- `--min-confidence LEVEL` on `scan`, `probe`, `tools` and `verify` drops findings of rules below
+  a level (`low < unaudited < medium < high`). The default `low` keeps everything: which findings
+  are produced, the default exit code and every benchmark number are unchanged. Checked on all
+  432 planted cases and 400 benchmark descriptions: identical findings and exit codes before and
+  after. No precision number was re-measured for this change.
+
 ## [0.1.1] 2026-11-08
 
 ### Documentation

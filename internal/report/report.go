@@ -28,22 +28,24 @@ type Report struct {
 	Findings []findings.Finding `json:"findings"`
 }
 
-// Summary counts findings by severity, category and rule.
+// Summary counts findings by severity, category, rule and audit confidence of the rule.
 type Summary struct {
-	Total      int            `json:"total"`
-	BySeverity map[string]int `json:"by_severity"`
-	ByCategory map[string]int `json:"by_category"`
-	ByRule     map[string]int `json:"by_rule"`
+	Total        int            `json:"total"`
+	BySeverity   map[string]int `json:"by_severity"`
+	ByCategory   map[string]int `json:"by_category"`
+	ByRule       map[string]int `json:"by_rule"`
+	ByConfidence map[string]int `json:"by_confidence"`
 }
 
 // Summarize fills Summary from Findings.
 func (r *Report) Summarize() {
-	s := Summary{BySeverity: map[string]int{}, ByCategory: map[string]int{}, ByRule: map[string]int{}}
+	s := Summary{BySeverity: map[string]int{}, ByCategory: map[string]int{}, ByRule: map[string]int{}, ByConfidence: map[string]int{}}
 	for _, f := range r.Findings {
 		s.Total++
 		s.BySeverity[f.Severity.String()]++
 		s.ByCategory[string(f.Category)]++
 		s.ByRule[f.RuleID]++
+		s.ByConfidence[findings.ConfidenceOf(f.RuleID).Level.String()]++
 	}
 	r.Summary = s
 }
@@ -53,6 +55,18 @@ func Filter(fs []findings.Finding, min findings.Severity, exclude map[string]boo
 	out := make([]findings.Finding, 0, len(fs))
 	for _, f := range fs {
 		if f.Severity >= min && !exclude[f.RuleID] {
+			out = append(out, f)
+		}
+	}
+	return out
+}
+
+// FilterConfidence keeps findings whose rule has at least the given audit confidence.
+// The lowest level keeps everything.
+func FilterConfidence(fs []findings.Finding, min findings.ConfidenceLevel) []findings.Finding {
+	out := make([]findings.Finding, 0, len(fs))
+	for _, f := range fs {
+		if findings.ConfidenceOf(f.RuleID).Level >= min {
 			out = append(out, f)
 		}
 	}
@@ -94,6 +108,7 @@ func WriteText(w io.Writer, r *Report, color bool) error {
 		loc := location(f)
 		fmt.Fprintf(w, "%s %s %s  %s\n", paint(f.Severity, fmt.Sprintf("%-8s", strings.ToUpper(f.Severity.String()))), f.RuleID, rule.Name, loc)
 		fmt.Fprintf(w, "         %s\n", f.Message)
+		fmt.Fprintf(w, "         %s\n", dim("confidence: "+findings.ConfidenceOf(f.RuleID).String()))
 		if f.Snippet != "" {
 			fmt.Fprintf(w, "         %s\n", dim("> "+f.Snippet))
 		}

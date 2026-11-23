@@ -184,9 +184,38 @@ mcpscan bench                            # planted-vulnerability and poisoning b
 `probe --config` checks every configured server together, so tool-name collisions and
 descriptions that mention another server's tools are reported across servers. `probe` starts
 the commands in the configuration; run untrusted servers in a container. Common flags:
-`--fail-on SEVERITY` (default `high`; `none` never fails), `--min-severity`, `--exclude-rules`.
-Exit status is 0 when nothing reaches `--fail-on`, 1 when something does, 2 on errors.
-Rules and remediation: [docs/RULES.md](docs/RULES.md).
+`--fail-on SEVERITY` (default `high`; `none` never fails), `--min-severity`, `--min-confidence`,
+`--exclude-rules`. Exit status is 0 when nothing reaches `--fail-on`, 1 when something does, 2
+on errors. Rules and remediation: [docs/RULES.md](docs/RULES.md).
+
+### Audit confidence
+
+Every finding carries the audit confidence of its rule, taken from the rubric-audited corpus
+sample in [Results](#precision-on-rubric-audited-corpus-findings): `high` (audited precision
+0.80 or more), `medium` (0.50 to below 0.80), `low` (below 0.50) or `unaudited` (no finding of
+the rule was in the sample), with the counts behind it:
+
+```text
+HIGH     MCP121 server-side-request-forgery  server.ts:21:21
+         input of tool "fetch_page" reaches the host of an outbound request via fetch()
+         confidence: low (rule audit: 2 of 11 corpus findings correct, precision 0.18, v0.1.1)
+```
+
+| Audit confidence | Rules (correct / labeled, measured on v0.1.1) |
+|---|---|
+| high | MCP111 path traversal (22/24), MCP141 OAuth scope (12/15), MCP142 bind-all (13/15), MCP143 CORS (14/15), MCP144 TLS (15/15) |
+| medium | MCP132 generic secret (11/15) |
+| low | MCP101 shell injection (2/7), MCP121 SSRF (2/11), MCP131 provider-format secret (0/7), MCP201 (0/10), MCP204 (0/15), MCP205 (0/4), MCP206 (0/5) tool poisoning |
+| unaudited | the other 21 rules, including every schema, rug-pull and transport rule |
+
+The label is a property of the rule on that corpus, not a probability for one finding, and the
+samples are small. It is in the JSON field `confidence` of each finding, in
+`properties.confidence` of each SARIF result and rule, and in `summary.by_confidence`.
+`--min-confidence LEVEL` drops findings of rules below a level, in the order
+`low < unaudited < medium < high`; the default `low` keeps everything. `--min-confidence
+unaudited` drops only the rules measured as imprecise; `medium` and `high` also hide every
+unaudited rule, including rug-pull findings from `verify`. In the GitHub Action, pass it through
+`args: --min-confidence unaudited`. Details: [ADR 0007](docs/adr/0007-audit-confidence-on-findings.md).
 
 ### GitHub Action and SARIF
 
@@ -210,7 +239,8 @@ jobs:
 ```
 
 SARIF results carry rule metadata, `security-severity`, CWE tags, a stable
-`partialFingerprints` entry and, for live findings, a logical location `server/tool`.
+`partialFingerprints` entry, the audit confidence of the rule in `properties.confidence` and,
+for live findings, a logical location `server/tool`.
 
 ### HTTP service
 
@@ -276,6 +306,8 @@ The planted-vulnerability benchmark, scored in well under a second.
   SHA-256 hashes of canonical JSON.
 - [ADR 0006](docs/adr/0006-corpus-research-without-disclosure.md): corpus results published only
   in aggregate, with salted pseudonyms.
+- [ADR 0007](docs/adr/0007-audit-confidence-on-findings.md): the audited precision of each rule
+  shown on every finding, and `--min-confidence` to gate on it.
 
 ## Testing
 
@@ -298,6 +330,7 @@ results), and a Docker build probed over HTTP; CodeQL runs on every push to `mai
 | `manifest` tests, canonical JSON property test | schema rules, pin and verify with key reordering, lock file round trip |
 | `mcp` tests | stdio probe of the demo server (the test binary re-executes itself as the server), rug pull across two processes, Streamable HTTP with JSON and SSE, Origin checks, server-to-client requests, timeouts |
 | `cli` and `server` tests | every command and exit code, SARIF structure, the HTTP endpoints and metrics |
+| `findings.TestAuditMatchesLabels`, `cli.TestMinConfidence` | the confidence table equals the committed audit labels; the default keeps every finding and exit code |
 | `cli.TestBench` | regression gate: every standard-tier planted case must be detected |
 | `benchmarks/tests` (pytest, Hypothesis) | Wilson intervals, scoring, rule mapping, sampling and export without names |
 

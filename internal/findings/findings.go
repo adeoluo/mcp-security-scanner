@@ -75,20 +75,22 @@ type Rule struct {
 	CWE      string
 }
 
-// Finding is one reported issue.
+// Finding is one reported issue. Confidence is the audit record of the rule, not a judgment
+// about this particular finding.
 type Finding struct {
-	RuleID   string   `json:"rule_id"`
-	Category Category `json:"category"`
-	Severity Severity `json:"severity"`
-	Message  string   `json:"message"`
-	File     string   `json:"file,omitempty"`
-	Line     int      `json:"line,omitempty"`
-	Column   int      `json:"column,omitempty"`
-	Server   string   `json:"server,omitempty"`
-	Tool     string   `json:"tool,omitempty"`
-	Snippet  string   `json:"snippet,omitempty"`
-	Trace    []string `json:"trace,omitempty"`
-	Evidence string   `json:"evidence,omitempty"`
+	RuleID     string     `json:"rule_id"`
+	Category   Category   `json:"category"`
+	Severity   Severity   `json:"severity"`
+	Confidence Confidence `json:"confidence"`
+	Message    string     `json:"message"`
+	File       string     `json:"file,omitempty"`
+	Line       int        `json:"line,omitempty"`
+	Column     int        `json:"column,omitempty"`
+	Server     string     `json:"server,omitempty"`
+	Tool       string     `json:"tool,omitempty"`
+	Snippet    string     `json:"snippet,omitempty"`
+	Trace      []string   `json:"trace,omitempty"`
+	Evidence   string     `json:"evidence,omitempty"`
 }
 
 // Fingerprint is a stable identifier for baselining and SARIF partialFingerprints.
@@ -98,13 +100,13 @@ func (f Finding) Fingerprint() string {
 	return hex.EncodeToString(h.Sum(nil))[:32]
 }
 
-// New fills category and severity from the rule catalog.
+// New fills category, severity and audit confidence from the rule catalog.
 func New(ruleID, msg string) Finding {
 	r, ok := Catalog[ruleID]
 	if !ok {
 		panic("unknown rule " + ruleID)
 	}
-	return Finding{RuleID: ruleID, Category: r.Category, Severity: r.Severity, Message: msg}
+	return Finding{RuleID: ruleID, Category: r.Category, Severity: r.Severity, Confidence: ConfidenceOf(ruleID), Message: msg}
 }
 
 // Sort orders findings by severity (descending), then location.

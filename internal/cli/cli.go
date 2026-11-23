@@ -98,9 +98,11 @@ type outputFlags struct {
 	output   string
 	failOn   string
 	minSev   string
+	minConf  string
 	exclude  string
 	noColor  bool
 	minLevel findings.Severity
+	minAudit findings.ConfidenceLevel
 	failLvl  findings.Severity
 	excluded map[string]bool
 }
@@ -112,6 +114,7 @@ func (o *outputFlags) register(fs *flag.FlagSet) {
 	fs.StringVar(&o.output, "o", "", "shorthand for --output")
 	fs.StringVar(&o.failOn, "fail-on", "high", "exit 1 when a finding has at least this severity (info, low, medium, high, critical, none)")
 	fs.StringVar(&o.minSev, "min-severity", "info", "omit findings below this severity")
+	fs.StringVar(&o.minConf, "min-confidence", "low", "omit findings of rules below this audit confidence (low, unaudited, medium, high); low keeps everything")
 	fs.StringVar(&o.exclude, "exclude-rules", "", "comma-separated rule IDs to omit")
 	fs.BoolVar(&o.noColor, "no-color", false, "disable colored text output")
 }
@@ -124,6 +127,9 @@ func (o *outputFlags) validate() error {
 	}
 	var err error
 	if o.minLevel, err = findings.ParseSeverity(o.minSev); err != nil {
+		return err
+	}
+	if o.minAudit, err = findings.ParseConfidence(o.minConf); err != nil {
 		return err
 	}
 	if o.failOn == "none" {
@@ -146,6 +152,7 @@ func (o *outputFlags) validate() error {
 // emit filters, writes the report and returns the exit code.
 func (o *outputFlags) emit(r *report.Report, stdout io.Writer) (int, error) {
 	r.Findings = report.Filter(findings.Dedupe(r.Findings), o.minLevel, o.excluded)
+	r.Findings = report.FilterConfidence(r.Findings, o.minAudit)
 	findings.Sort(r.Findings)
 	r.Summarize()
 	w := stdout
@@ -523,26 +530,44 @@ func cmdRules(args []string, stdout io.Writer) (int, error) {
 	rules := findings.SortedRules()
 	switch *format {
 	case "json":
+		type ruleJSON struct {
+			findings.Rule
+			Confidence findings.Confidence
+		}
+		out := make([]ruleJSON, 0, len(rules))
+		for _, r := range rules {
+			out = append(out, ruleJSON{r, findings.ConfidenceOf(r.ID)})
+		}
 		enc := json.NewEncoder(stdout)
 		enc.SetIndent("", "  ")
-		return 0, enc.Encode(rules)
+		return 0, enc.Encode(out)
 	case "markdown":
 		fmt.Fprint(stdout, "# Rules\n\nWritten by `mcpscan rules --format markdown`. SARIF results link to the entries below.\n\n")
-		fmt.Fprint(stdout, "| ID | Name | Category | Severity | CWE |\n|---|---|---|---|---|\n")
+		fmt.Fprintf(stdout, "Audit confidence is the rule's precision on the rubric-audited sample of public corpus findings, measured on scanner %s (docs/EVALUATION_REPORT.md): high from 0.80, medium from 0.50, low below that, unaudited when no finding of the rule was in the sample. It is a property of the rule, not of one finding; `--min-confidence` filters on it.\n\n", findings.AuditVersion)
+		fmt.Fprint(stdout, "| ID | Name | Category | Severity | CWE | Audit confidence |\n|---|---|---|---|---|---|\n")
 		for _, r := range rules {
-			fmt.Fprintf(stdout, "| [%s](#%s) | %s | %s | %s | %s |\n", r.ID, strings.ToLower(r.ID), r.Name, r.Category, r.Severity, r.CWE)
+			fmt.Fprintf(stdout, "| [%s](#%s) | %s | %s | %s | %s | %s |\n", r.ID, strings.ToLower(r.ID), r.Name, r.Category, r.Severity, r.CWE, shortConfidence(r.ID))
 		}
 		for _, r := range rules {
 			fmt.Fprintf(stdout, "\n<a id=\"%s\"></a>\n\n## %s %s\n\n**%s.** %s\n\nCategory: %s. Default severity: %s.", strings.ToLower(r.ID), r.ID, r.Name, r.Short, r.Help, r.Category, r.Severity)
 			if r.CWE != "" {
 				fmt.Fprintf(stdout, " %s.", r.CWE)
 			}
-			fmt.Fprintln(stdout)
+			fmt.Fprintf(stdout, " Audit confidence: %s.\n", findings.ConfidenceOf(r.ID))
 		}
 		return 0, nil
 	}
 	for _, r := range rules {
-		fmt.Fprintf(stdout, "%s  %-9s %-17s %-34s %s\n", r.ID, r.Severity, r.Category, r.Name, r.Short)
+		fmt.Fprintf(stdout, "%s  %-9s %-17s %-34s %-17s %s\n", r.ID, r.Severity, r.Category, r.Name, shortConfidence(r.ID), r.Short)
 	}
 	return 0, nil
+}
+
+// shortConfidence is the compact audit label of a rule: "low (2/11)" or "unaudited".
+func shortConfidence(ruleID string) string {
+	c := findings.ConfidenceOf(ruleID)
+	if c.Precision == nil {
+		return c.Level.String()
+	}
+	return fmt.Sprintf("%s (%d/%d)", c.Level, c.Correct, c.Labeled)
 }

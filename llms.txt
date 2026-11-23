@@ -21,6 +21,7 @@ Languages: Go. License: MIT. Source: https://github.com/adeoluo/mcp-security-sca
 - [ADR 0004: Where tool input comes from](https://github.com/adeoluo/mcp-security-scanner/blob/main/docs/adr/0004-where-tool-input-comes-from.md)
 - [ADR 0005: Pinning tool definitions by hash](https://github.com/adeoluo/mcp-security-scanner/blob/main/docs/adr/0005-pinning-tool-definitions.md)
 - [ADR 0006: Measuring public servers without disclosing them](https://github.com/adeoluo/mcp-security-scanner/blob/main/docs/adr/0006-corpus-research-without-disclosure.md)
+- [ADR 0007: Audit confidence on every finding](https://github.com/adeoluo/mcp-security-scanner/blob/main/docs/adr/0007-audit-confidence-on-findings.md)
 - [ADR-NNNN: <short title>](https://github.com/adeoluo/mcp-security-scanner/blob/main/docs/adr/template.md)
 - [Changelog](https://github.com/adeoluo/mcp-security-scanner/blob/main/CHANGELOG.md): release history
 
