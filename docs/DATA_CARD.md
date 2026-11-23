@@ -55,8 +55,8 @@ The techniques follow public write-ups of tool poisoning and tool shadowing (Inv
 "MCP Security Notification: Tool Poisoning Attacks", April 2025) and of hidden Unicode tag text
 (Johann Rehberger, "ASCII Smuggler", 2024). The canary files and addresses are fictional.
 
-## 4. Hand labels
+## 4. Rubric-audited labels
 
-183 corpus findings drawn by stratified random sampling after the last analyzer change, labeled
-by the author with a written rubric (see `docs/EVALUATION_REPORT.md`). Exported in
+183 corpus findings drawn by stratified random sampling after the last analyzer change, source-inspected
+and labeled by the evaluation agent against a written rubric (see `docs/EVALUATION_REPORT.md`). Exported in
 `benchmarks/precision/labels.jsonl` with salted repository pseudonyms and generic reasons only.
