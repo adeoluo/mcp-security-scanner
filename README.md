@@ -16,7 +16,7 @@
 
 > **Evidence level: publicly benchmarked, with limits.** Compared with Semgrep on 432 cases planted by the author, and run over 1,013 public MCP repositories with a sample of findings audited by an AI agent against a written rubric. Not independently reproduced and not used in production. [What the levels mean](https://github.com/adeoluo#evidence-levels).
 
-## In plain English
+## Summary
 
 MCP is the plug that lets AI assistants use tools: read files, run commands, call websites.
 A badly written MCP server lets an attacker take over those tools through the AI. This
