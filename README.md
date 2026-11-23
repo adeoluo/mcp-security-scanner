@@ -14,6 +14,8 @@
 
 ---
 
+> **Evidence level: publicly benchmarked, with limits.** Compared with Semgrep on 432 cases planted by the author, and run over 1,013 public MCP repositories with a sample of findings audited by an AI agent against a written rubric. Not independently reproduced and not used in production. [What the levels mean](https://github.com/adeoluo#evidence-levels).
+
 ## Motivation
 
 An MCP client gives a model a list of tools and lets it call them with arguments it chooses.
