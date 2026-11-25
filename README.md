@@ -14,7 +14,7 @@
 
 ---
 
-> **Evidence level: publicly benchmarked, with limits.** The scanner was compared with Semgrep (a widely used code scanner) on 432 test cases written by the author. It was also run on 1,013 public MCP repositories, and an AI agent checked a sample of its findings against a written rubric (a fixed set of labeling rules). Nobody else has reproduced the results, and the scanner is not used in production. [What the levels mean](https://github.com/adeoluo#evidence-levels).
+> **Evidence level: publicly benchmarked, with limits.** The scanner was compared with Semgrep (a widely used code scanner) on 432 test cases written by the author. It was also run on 1,013 public MCP repositories, and an AI agent checked a sample of its findings against a written rubric (a fixed set of labeling rules). Nobody else has reproduced the results, and the scanner is not used in production.
 
 ## Highlights
 
